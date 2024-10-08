@@ -134,7 +134,7 @@ public class MapGenerator : MonoBehaviour
     // If the chunk is far enough from the player then disable it, else enable it
     void OptimizeChunk()
     {
-        // We don't want to check every frame so we set a cooldown before we can 
+        // We don't want to check every frame so we set a cooldown before we can optimize
         OptimizerCooldown -= Time.deltaTime;
         if (OptimizerCooldown <= 0)
         {

@@ -5,12 +5,19 @@ public class PlayerMovement : MonoBehaviour
     //Movement
     public float moveSpeed;
     private Rigidbody2D body;
+    [HideInInspector]
     public Vector2 moveDir;
+    [HideInInspector]
+    public Vector2 ShootDir;
+    [HideInInspector]
+    public Vector2 lastHorizontal;
     
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        // Set the default facing: right
+        ShootDir = new Vector2(1, 0);
     }
 
     // Update is called once per frame
@@ -34,6 +41,20 @@ public class PlayerMovement : MonoBehaviour
 
         // Get ONLY direction of movement by normalizing the Vector's length to 1
         moveDir = new Vector2(moveX, moveY).normalized;
+
+        // Get the last horizontal movement
+        if (moveDir.x != 0)
+        {
+            lastHorizontal.x = moveDir.x;
+        }
+
+        // Set the shooting direction to be moving direction if move
+        if (moveDir.x != 0 || moveDir.y != 0)
+        {
+            ShootDir = moveDir;
+        }
+
+
     }
 
     void Move()
