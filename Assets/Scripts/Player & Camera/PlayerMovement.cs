@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Movement
-    public float moveSpeed;
-    private Rigidbody2D body;
+    // Movement
     [HideInInspector]
     public Vector2 moveDir;
     [HideInInspector]
     public Vector2 ShootDir;
     [HideInInspector]
     public Vector2 lastHorizontal;
-    
+
+    // Character stats
+    private Rigidbody2D body;
+    public CharacterScriptableObject characterData;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,6 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         // Get the direction then multiply it with moveSpeed to get the velocity
-        body.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+        body.velocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * characterData.MoveSpeed);
     }
 }
