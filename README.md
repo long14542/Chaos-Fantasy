@@ -7,7 +7,9 @@
 1. Fork this repository
 2. Add changes to the forked repository
 3. Create pull requests
+
 ` Before commiting, please SAVE THE SCENE AND THE PROJECT `
+
 `Note: pull request needs to have the information of what it would do.`
 
 
