@@ -9,6 +9,7 @@
 3. Create pull requests
 
 ` Before commiting, please SAVE THE SCENE AND THE PROJECT `
+
 `Note: pull request needs to have the information of what it would do.`
 
 
