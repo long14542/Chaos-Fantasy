@@ -3,11 +3,8 @@ using UnityEngine;
 // Base weapon script
 public class WeaponsMother : MonoBehaviour
 {
-    public GameObject prefab;
-    public float speed;
-    public float cooldownDuration;
+    public WeaponScriptableObject weaponData;
     private float cooldown;
-    public int pierce;
 
     protected PlayerMovement pm;
 
@@ -15,7 +12,7 @@ public class WeaponsMother : MonoBehaviour
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
-        cooldown = cooldownDuration;
+        cooldown = weaponData.CooldownDuration;
     }
 
     // Update is called once per frame
@@ -30,6 +27,6 @@ public class WeaponsMother : MonoBehaviour
 
     protected virtual void Attack()
     {
-        cooldown = cooldownDuration;
+        cooldown = weaponData.CooldownDuration;
     }
 }

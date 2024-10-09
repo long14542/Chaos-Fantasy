@@ -13,7 +13,7 @@ public class Knife : WeaponsMother
         base.Attack();
 
         // Create knife GameObject and assign its position to the current class which is parented to the Player
-        GameObject knife = Instantiate(prefab);
+        GameObject knife = Instantiate(weaponData.Prefab);
         knife.transform.position = this.transform.position;
 
         // Reference KnifeBehavior and check direction
