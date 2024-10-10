@@ -1,3 +1,5 @@
+# To play in unity, you need to play the menu scene first
+
 # First off, add project to Unity
 1. Clone the repository
 2. Open Unity Hub and click "Add" -> "Add project from disk"
