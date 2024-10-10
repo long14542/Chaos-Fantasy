@@ -4,9 +4,9 @@ public class EnemyHandler : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
     
-    private float currentSpeed;
-    private float currentDamage;
-    private float currentHealth;
+    public float currentSpeed;
+    public float currentDamage;
+    public float currentHealth;
 
     // Use Awake because it is called before Start
     void Awake()

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0f7cda59422ab4ebb51db63d8ac540, type: 3}
   m_Name: Reaper
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
+  startingWeapon: {fileID: 5386848642831577647, guid: 1b5af089d237bce47be6aabbc7530315, type: 3}
   maxHealth: 10000
   moveSpeed: 10
-  recovery: 0
+  recovery: 1
   might: 0
   projectileSpeed: 20
+  magnet: 2

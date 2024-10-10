@@ -7,7 +7,14 @@ public class ExperienceGem : MonoBehaviour, InterfaceCollectibles
     {
         CharacterHandler player = FindFirstObjectByType<CharacterHandler>();
         player.IncreaseExp(expGranted);
-        Destroy(gameObject);
     }
 
+    // Destroy the object once it touches the player
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

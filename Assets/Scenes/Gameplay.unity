@@ -234,51 +234,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7421707153407737763, guid: 2db5c58bfd1d71145ad42738f43ffcbd, type: 3}
   m_PrefabInstance: {fileID: 6226329493502288221}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &875999518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 875999519}
-  - component: {fileID: 875999520}
-  m_Layer: 0
-  m_Name: Knife
-  m_TagString: Knife
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &875999519
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875999518}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1824087626}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &875999520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875999518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 523b4522e6cd97b4a9b705d55c358156, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: a974aa9640c05fb46bc0a7f03a060f9b, type: 2}
 --- !u!1001 &1052975848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,6 +518,87 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 084748fe9b6321847824a24f6237826b, type: 3}
+--- !u!1 &1708384266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708384267}
+  - component: {fileID: 1708384269}
+  - component: {fileID: 1708384268}
+  m_Layer: 0
+  m_Name: MagnetCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708384267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708384266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1824087626}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1708384268
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708384266}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1708384269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708384266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5ab0e6ed3ec064d80d81a24f7f4d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullSpeed: 150
 --- !u!1 &1824087622
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +615,6 @@ GameObject:
   - component: {fileID: 1824087629}
   - component: {fileID: 1824087628}
   - component: {fileID: 1824087630}
-  - component: {fileID: 1824087631}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -657,7 +692,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.67, y: 0.8}
   m_EdgeRadius: 0
 --- !u!212 &1824087625
 SpriteRenderer:
@@ -724,7 +759,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 875999519}
+  - {fileID: 1708384267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1824087627
@@ -742,7 +777,6 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0}
   ShootDir: {x: 0, y: 0}
   lastHorizontal: {x: 0, y: 0}
-  characterData: {fileID: 11400000, guid: 0d9c4414c67e2c943afe2d240283a1e8, type: 2}
 --- !u!95 &1824087628
 Animator:
   serializedVersion: 5
@@ -788,7 +822,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc36f326552d4c4cb1cd146cabcfd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 0d9c4414c67e2c943afe2d240283a1e8, type: 2}
+  characterData: {fileID: 0}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentRecovery: 0
+  currentMight: 0
+  currentProjectileSpeed: 0
+  currentMagnet: 0
+  heldWeapons: []
   exp: 0
   level: 1
   expCap: 0
@@ -806,18 +847,6 @@ MonoBehaviour:
   - startLevel: 41
     endLevel: 999
     expCapIncrease: 16
---- !u!114 &1824087631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824087622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5ab0e6ed3ec064d80d81a24f7f4d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6226329493502288221
 PrefabInstance:
   m_ObjectHideFlags: 0

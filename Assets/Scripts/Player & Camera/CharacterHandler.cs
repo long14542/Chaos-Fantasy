@@ -6,11 +6,21 @@ public class CharacterHandler : MonoBehaviour
     public CharacterScriptableObject characterData;
 
     // Current character stats
-    private float currentMoveSpeed;
-    private float currentHealth;
-    private float currentRecovery;
-    private float currentMight;
-    private float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentRecovery;
+    [HideInInspector]
+    public float currentMight;
+    [HideInInspector]
+    public float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentMagnet;
+
+    // Character's weapons
+    public List<GameObject> heldWeapons;
 
     // Experience variables
     public int exp = 0;
@@ -41,12 +51,21 @@ public class CharacterHandler : MonoBehaviour
 
     void Awake()
     {
+        // Load character
+        characterData = CharacterSelector.LoadData();
+        CharacterSelector.instance.DestroySingleton();
+
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
+
+        // Set the starting weapon
+        AcquireWeapon(characterData.StartingWeapon);
+
     }
     // Start is called before the first frame update
     void Start()
@@ -66,6 +85,9 @@ public class CharacterHandler : MonoBehaviour
         {
             isInvincible = false;
         }
+
+        // Recover health over time
+        Recover();
     }
 
     // Increase exp on pick up exp gems/defeated a boss
@@ -112,9 +134,32 @@ public class CharacterHandler : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
         Debug.Log("Player is Dead");
+    }
+    
+    // Character health regeneration
+    void Recover()
+    {
+        if (currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
+
+            // To make sure currentHealth never exceed maxHealth
+            if (currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+    }
+
+    public void AcquireWeapon(GameObject wp)
+    {
+        // Instantiate the weapon and then set the weapon to be the child of the character
+        GameObject spawnedWeapon = Instantiate(wp, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(this.transform);
+        // Put the weapon into the list of weapons that the character have
+        heldWeapons.Add(spawnedWeapon);
     }
 }

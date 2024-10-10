@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
 
     // Character stats
     private Rigidbody2D body;
-    public CharacterScriptableObject characterData;
+    private CharacterHandler player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<CharacterHandler>();
         body = GetComponent<Rigidbody2D>();
         // Set the default facing: right
         ShootDir = new Vector2(1, 0);
@@ -61,6 +62,6 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         // Get the direction then multiply it with moveSpeed to get the velocity
-        body.velocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * characterData.MoveSpeed);
+        body.velocity = new Vector2(moveDir.x * player.currentMoveSpeed, moveDir.y * player.currentMoveSpeed);
     }
 }
