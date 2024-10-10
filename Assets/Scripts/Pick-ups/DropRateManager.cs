@@ -15,13 +15,23 @@ public class DropRateManager : MonoBehaviour
     // Call this method whenever an enemy dies
     void OnDestroy()
     {
-        float randNum = UnityEngine.Random.Range(0f, 100f);
-
+        float cumulatedChance = 0f;
+        foreach (Drop rate in drops)
+        {
+            cumulatedChance += rate.dropRate;
+        }
+        float randNum = UnityEngine.Random.Range(0f, cumulatedChance);
+        
         foreach (Drop item in drops)
         {
             if (randNum <= item.dropRate)
             {
                 Instantiate(item.itemPrefab, transform.position, Quaternion.identity);
+                break;
+            }
+            else
+            {
+                randNum -= item.dropRate;
             }
         }
     }

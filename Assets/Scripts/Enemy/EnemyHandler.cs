@@ -26,4 +26,14 @@ public class EnemyHandler : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Collision with the player
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            CharacterHandler player = collision.gameObject.GetComponent<CharacterHandler>();
+            player.TakeDamage(currentDamage); // Use currentDamage in case of future damage buffs
+        }
+    }
 }

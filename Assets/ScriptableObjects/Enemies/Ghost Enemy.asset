@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ghost Enemy
   m_EditorClassIdentifier: 
   speed: 3
-  maxHealth: 10
-  damage: 0
+  maxHealth: 100
+  damage: 10
