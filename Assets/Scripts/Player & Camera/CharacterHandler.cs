@@ -52,8 +52,8 @@ public class CharacterHandler : MonoBehaviour
     void Awake()
     {
         // Load character
-        characterData = CharacterSelector.LoadData();
-        CharacterSelector.instance.DestroySingleton();
+        //characterData = CharacterSelector.LoadData();
+        //CharacterSelector.instance.DestroySingleton();
 
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;

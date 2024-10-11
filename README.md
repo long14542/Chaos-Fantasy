@@ -1,5 +1,3 @@
-# To play in unity, you need to play the menu scene first
-
 # First off, add project to Unity
 1. Clone the repository
 2. Open Unity Hub and click "Add" -> "Add project from disk"
@@ -14,4 +12,7 @@
 
 `Note: pull request needs to have the information of what it would do.`
 
+### (Optional) To play in unity, you need to play the menu scene first
 
+Now you need to make sure the enemyName in EnemyHandler and enemyName in EnemySpawner are
+EXACTLY THE SAME, if not the object pool won't work

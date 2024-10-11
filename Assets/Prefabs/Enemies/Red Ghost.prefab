@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 494248391997350068}
   - component: {fileID: 2529118881617628883}
   m_Layer: 0
-  m_Name: Ghost
+  m_Name: Red Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1990387026, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+  m_Sprite: {fileID: -207517905, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 7129871366706181994}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bccd45da1c4fd0d43873a8dd984a258f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 20ab9679b1e85824294e403ead623a7e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: ab23076558962d04db54ac5adcc88fdc, type: 2}
-  enemyName: Ghost
+  enemyName: Red Ghost
   currentSpeed: 0
   currentDamage: 0
   currentHealth: 0

@@ -3,7 +3,9 @@ using UnityEngine;
 public class EnemyHandler : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
-    
+    EnemySpawner spawner;
+    public string enemyName;
+
     public float currentSpeed;
     public float currentDamage;
     public float currentHealth;
@@ -11,6 +13,7 @@ public class EnemyHandler : MonoBehaviour
     // Use Awake because it is called before Start
     void Awake()
     {
+        spawner = FindFirstObjectByType<EnemySpawner>();
         currentDamage = enemyData.Damage;
         currentSpeed = enemyData.Speed;
         currentHealth = enemyData.MaxHealth;
@@ -20,10 +23,11 @@ public class EnemyHandler : MonoBehaviour
     {
         currentHealth -= dmg;
 
-        // Destroy object if current health is lower or equal to 0
+        // Deactivate object if current health is lower or equal to 0
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            ObjectPools.EnqueueObject(this, enemyName);
+            spawner.enemiesAlive -= 1;
         }
     }
 
@@ -36,4 +40,6 @@ public class EnemyHandler : MonoBehaviour
             player.TakeDamage(currentDamage); // Use currentDamage in case of future damage buffs
         }
     }
+
+
 }
