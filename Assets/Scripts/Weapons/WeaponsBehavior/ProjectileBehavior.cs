@@ -7,6 +7,7 @@ public class ProjectileBehavior : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
     protected Vector3 direction;
+    CharacterHandler playerStats;
 
     protected float currentDamage;
     protected float currentSpeed;
@@ -26,8 +27,15 @@ public class ProjectileBehavior : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        playerStats = FindFirstObjectByType<CharacterHandler>();
         // Destroy the game object this script is attached to after a lifeTime amount of time
         Destroy(gameObject, weaponData.LifeTime);
+    }
+
+    // Apply player's might to projectiles' damage
+    public float MightAppliedDamaged()
+    {
+        return currentDamage *= playerStats.currentMight;
     }
 
     public void CheckDirection(Vector3 dir)
@@ -86,8 +94,8 @@ public class ProjectileBehavior : MonoBehaviour
         {
             // Reference the enemyHandler from the Collider
             EnemyHandler enemy = collision.GetComponent<EnemyHandler>();
-            // Use currentDamage instead of weapon.Damage in case of future damage debuffs/buffs
-            enemy.TakeDamage(currentDamage);
+            // Use damage increased with might
+            enemy.TakeDamage(MightAppliedDamaged());
             DecreasePierce();
         }
     }
