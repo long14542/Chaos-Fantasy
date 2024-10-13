@@ -19,9 +19,6 @@ public class CharacterHandler : MonoBehaviour
     [HideInInspector]
     public float currentMagnet;
 
-    // Character's weapons
-    public List<GameObject> heldWeapons;
-
     // Experience variables
     public int exp = 0;
     public int level = 1;
@@ -49,11 +46,16 @@ public class CharacterHandler : MonoBehaviour
     [Header("Level Ranges")]
     public List<LevelRange> levelRanges;
 
+    Inventory inventory;
+
+
     void Awake()
     {
         // Load character
         //characterData = CharacterSelector.LoadData();
         //CharacterSelector.instance.DestroySingleton();
+
+        inventory = GetComponent<Inventory>();
 
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
@@ -64,7 +66,7 @@ public class CharacterHandler : MonoBehaviour
         currentMagnet = characterData.Magnet;
 
         // Set the starting weapon
-        AcquireWeapon(characterData.StartingWeapon);
+        AcquireWeapon("wp", characterData.StartingWeapon);
 
     }
     // Start is called before the first frame update
@@ -154,12 +156,22 @@ public class CharacterHandler : MonoBehaviour
         }
     }
 
-    public void AcquireWeapon(GameObject wp)
+    public void AcquireWeapon(string name, GameObject wp)
     {
         // Instantiate the weapon and then set the weapon to be the child of the character
         GameObject spawnedWeapon = Instantiate(wp, transform.position, Quaternion.identity);
         spawnedWeapon.transform.SetParent(this.transform);
-        // Put the weapon into the list of weapons that the character have
-        heldWeapons.Add(spawnedWeapon);
+        // Put the weapon into the inventory
+        inventory.AddWeapon(name, spawnedWeapon.GetComponent<WeaponsMother>());
     }
+
+    public void AcquireItem(string name, GameObject item)
+    {
+        // Instantiate the item and then set the item to be the child of the character
+        GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
+        spawnedItem.transform.SetParent(this.transform);
+        // Put the item into the inventory
+        inventory.AddItem(name, spawnedItem.GetComponent<PassiveItemMother>());
+    }
+
 }

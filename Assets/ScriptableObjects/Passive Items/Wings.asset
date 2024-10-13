@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Wings
   m_EditorClassIdentifier: 
   multiplier: 200
+  level: 1
+  multiplierUpNextLevel: 10
+  maxLevel: 5

@@ -110,4 +110,9 @@ public class ProjectileBehavior : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void IncreaseDamage()
+    {
+        currentDamage += weaponData.DamageUpNextLevel;
+    }
 }

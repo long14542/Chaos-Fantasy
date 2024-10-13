@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bace600abc978499a1b952189bb23a, type: 3}
   m_Name: Spinach
   m_EditorClassIdentifier: 
-  multiplier: 50
+  multiplier: 10
+  level: 1
+  multiplierUpNextLevel: 10
+  maxLevel: 5

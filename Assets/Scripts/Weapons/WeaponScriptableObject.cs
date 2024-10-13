@@ -29,4 +29,17 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField]
     private float lifeTime;
     public float LifeTime { get => lifeTime; private set => lifeTime = value; }
+
+    [SerializeField]
+    private int level;
+    public int Level { get => level; private set => level = value; }
+
+    // Every time the weapon levels up, its damage is increased by this amount
+    [SerializeField]
+    private int damageUpNextLevel;
+    public int DamageUpNextLevel { get => damageUpNextLevel; private set => damageUpNextLevel = value; }
+
+    [SerializeField]
+    private int maxLevel;
+    public int MaxLevel { get => maxLevel; private set => maxLevel = value; }
 }

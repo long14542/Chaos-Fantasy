@@ -7,4 +7,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
+
+    public void OnQuitButton()
+    {
+        Application.Quit();
+    }
 }

@@ -6,6 +6,7 @@ public class WeaponsMother : MonoBehaviour
     public WeaponScriptableObject weaponData;
     private float cooldown;
 
+    public int currentLevel;
     protected PlayerMovement pm;
 
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class WeaponsMother : MonoBehaviour
     {
         pm = FindObjectOfType<PlayerMovement>();
         cooldown = weaponData.CooldownDuration;
+        currentLevel = weaponData.Level;
     }
 
     // Update is called once per frame
@@ -23,6 +25,16 @@ public class WeaponsMother : MonoBehaviour
         {
             Attack();
         }
+    }
+
+    protected virtual void LevelUpWeapon()
+    {
+        if (currentLevel >= weaponData.MaxLevel)
+        {
+            return;
+        }
+        currentLevel += 1;
+        Debug.Log("Leveled up: " + currentLevel);
     }
 
     protected virtual void Attack()

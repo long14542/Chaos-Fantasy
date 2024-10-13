@@ -357,16 +357,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952471127}
-        m_TargetAssemblyTypeName: Mainmenu, Assembly-CSharp
-        m_MethodName: OnPlayButton
-        m_Mode: 1
+      - m_Target: {fileID: 11500000, guid: 447ccf99b2c77d24fafec5a6886400aa, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gameplay
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &485682094
@@ -661,9 +661,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952471127}
+      - m_Target: {fileID: 11500000, guid: 447ccf99b2c77d24fafec5a6886400aa, type: 3}
         m_TargetAssemblyTypeName: Mainmenu, Assembly-CSharp
-        m_MethodName: OnQuitButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -968,6 +968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952471126}
   - component: {fileID: 952471127}
+  - component: {fileID: 952471128}
   m_Layer: 5
   m_Name: Mainmenu
   m_TagString: Untagged
@@ -1007,6 +1008,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1c3b62a7271a6949834f3129ce91d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &952471128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952471125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447ccf99b2c77d24fafec5a6886400aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1001615135

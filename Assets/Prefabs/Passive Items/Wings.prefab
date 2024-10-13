@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passiveItemData: {fileID: 11400000, guid: f8915c487d79a8c46ad7e2853a1ff22b, type: 2}
+  currentLevel: 0
+  currentMultiplier: 0

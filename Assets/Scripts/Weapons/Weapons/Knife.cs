@@ -19,4 +19,16 @@ public class Knife : WeaponsMother
         // Reference KnifeBehavior and check direction
         knife.GetComponent<KnifeBehavior>().CheckDirection(pm.ShootDir);
     }
+
+    protected override void LevelUpWeapon()
+    {
+        base.LevelUpWeapon();
+
+        // Find every knife in the game and update their damage
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Knife");
+        foreach (var obj in objs)
+        {
+            obj.GetComponent<KnifeBehavior>().IncreaseDamage();
+        }
+    }
 }
