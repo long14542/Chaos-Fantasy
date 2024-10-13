@@ -112,7 +112,6 @@ public class EnemySpawner : MonoBehaviour
                     EnemyHandler instance = ObjectPools.DequeueObject<EnemyHandler>(group.enemyName);
                     instance.gameObject.transform.position = player.position + spawnPoints[Random.Range(0, spawnPoints.Count)].position;
                     instance.gameObject.SetActive(true);
-
                     //Instantiate(group.enemyPrefab, player.position + spawnPoints[Random.Range(0, spawnPoints.Count)].position, Quaternion.identity);
 
                     group.spawnCount += 1;

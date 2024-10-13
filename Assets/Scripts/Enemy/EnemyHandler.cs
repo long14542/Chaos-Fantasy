@@ -4,6 +4,7 @@ public class EnemyHandler : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
     EnemySpawner spawner;
+    DropRateManager drop;
     public string enemyName;
 
     public float currentSpeed;
@@ -14,6 +15,7 @@ public class EnemyHandler : MonoBehaviour
     void Awake()
     {
         spawner = FindFirstObjectByType<EnemySpawner>();
+        drop = GetComponent<DropRateManager>();
         currentDamage = enemyData.Damage;
         currentSpeed = enemyData.Speed;
         currentHealth = enemyData.MaxHealth;
@@ -26,6 +28,7 @@ public class EnemyHandler : MonoBehaviour
         // Deactivate object if current health is lower or equal to 0
         if (currentHealth <= 0)
         {
+            drop.DropPickUp();
             ObjectPools.EnqueueObject(this, enemyName);
             spawner.enemiesAlive -= 1;
         }

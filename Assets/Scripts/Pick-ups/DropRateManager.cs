@@ -13,14 +13,14 @@ public class DropRateManager : MonoBehaviour
     public List<Drop> drops;
 
     // Call this method whenever an enemy dies
-    void OnDestroy()
+    public void DropPickUp()
     {
-        float cumulatedChance = 0f;
+        float accumulatedChance = 0f;
         foreach (Drop rate in drops)
         {
-            cumulatedChance += rate.dropRate;
+            accumulatedChance += rate.dropRate;
         }
-        float randNum = UnityEngine.Random.Range(0f, cumulatedChance);
+        float randNum = UnityEngine.Random.Range(0f, accumulatedChance);
         
         foreach (Drop item in drops)
         {

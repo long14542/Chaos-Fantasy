@@ -187,7 +187,7 @@ MonoBehaviour:
   drops:
   - name: BlueGem
     itemPrefab: {fileID: 4373212321340365832, guid: cdaf7ea55e7f4ff4a987a67920912a0d, type: 3}
-    dropRate: 50
+    dropRate: 100
   - name: GreenGem
     itemPrefab: {fileID: 4373212321340365832, guid: 9d30dd8d8ba176740855f4bf5fdee955, type: 3}
     dropRate: 50

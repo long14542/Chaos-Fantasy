@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7129871366706181994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.275285, y: -1.0341358, z: 0}
+  m_LocalPosition: {x: -2.275285, y: -1.034136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -187,7 +187,7 @@ MonoBehaviour:
   drops:
   - name: BlueGem
     itemPrefab: {fileID: 4373212321340365832, guid: cdaf7ea55e7f4ff4a987a67920912a0d, type: 3}
-    dropRate: 50
+    dropRate: 100
   - name: GreenGem
     itemPrefab: {fileID: 4373212321340365832, guid: 9d30dd8d8ba176740855f4bf5fdee955, type: 3}
     dropRate: 50
