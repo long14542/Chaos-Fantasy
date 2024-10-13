@@ -16,3 +16,4 @@ MonoBehaviour:
   level: 1
   multiplierUpNextLevel: 10
   maxLevel: 5
+  icon: {fileID: 21300000, guid: e247c30c7ca52b3419b3ea244620ff2c, type: 3}

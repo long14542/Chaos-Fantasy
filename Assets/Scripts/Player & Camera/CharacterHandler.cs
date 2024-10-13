@@ -47,7 +47,8 @@ public class CharacterHandler : MonoBehaviour
     public List<LevelRange> levelRanges;
 
     Inventory inventory;
-
+    public int weaponId;
+    public int itemId;
 
     void Awake()
     {
@@ -66,7 +67,7 @@ public class CharacterHandler : MonoBehaviour
         currentMagnet = characterData.Magnet;
 
         // Set the starting weapon
-        AcquireWeapon("wp", characterData.StartingWeapon);
+        AcquireWeapon(characterData.StartingWeapon);
 
     }
     // Start is called before the first frame update
@@ -156,22 +157,24 @@ public class CharacterHandler : MonoBehaviour
         }
     }
 
-    public void AcquireWeapon(string name, GameObject wp)
+    public void AcquireWeapon(GameObject wp)
     {
         // Instantiate the weapon and then set the weapon to be the child of the character
         GameObject spawnedWeapon = Instantiate(wp, transform.position, Quaternion.identity);
         spawnedWeapon.transform.SetParent(this.transform);
         // Put the weapon into the inventory
-        inventory.AddWeapon(name, spawnedWeapon.GetComponent<WeaponsMother>());
+        inventory.AddWeapon(weaponId, spawnedWeapon.GetComponent<WeaponsMother>());
+        weaponId += 1;
     }
 
-    public void AcquireItem(string name, GameObject item)
+    public void AcquireItem(GameObject item)
     {
         // Instantiate the item and then set the item to be the child of the character
         GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
         spawnedItem.transform.SetParent(this.transform);
         // Put the item into the inventory
-        inventory.AddItem(name, spawnedItem.GetComponent<PassiveItemMother>());
+        inventory.AddItem(itemId, spawnedItem.GetComponent<PassiveItemMother>());
+        itemId += 1;
     }
 
 }

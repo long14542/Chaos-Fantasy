@@ -18,4 +18,8 @@ public class PassiveItemScriptableObject : ScriptableObject
     [SerializeField]
     private int maxLevel;
     public int MaxLevel { get => maxLevel; private set => maxLevel = value; }
+
+    [SerializeField]
+    Sprite icon; // Do not modify in-game, only in inspector
+    public Sprite Icon { get => icon; private set => icon = value; }
 }

@@ -1,37 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Inventory system to manage the items and weapons that the player currently have
 public class Inventory : MonoBehaviour
 {
-    public Dictionary<string, WeaponsMother> weaponSlots = new(6);
-    public Dictionary<string, PassiveItemMother> itemSlots = new(6);
+    public List<WeaponsMother> weaponSlots = new(6);
+    public List<PassiveItemMother> itemSlots = new(6);
 
-    public void AddWeapon(string name, WeaponsMother weapon)
+    public List<Image> weaponImages = new(6);
+    public List<Image> itemImages = new(6);
+
+    public void AddWeapon(int id, WeaponsMother weapon)
     {
-        weaponSlots[name] = weapon;
+        weaponSlots[id] = weapon;
+        weaponImages[id].sprite = weapon.weaponData.Icon;
     }
 
-    public void AddItem(string name, PassiveItemMother item)
+    public void AddItem(int id, PassiveItemMother item)
     {
-        itemSlots[name] = item;
+        itemSlots[id] = item;
+        itemImages[id].sprite = item.passiveItemData.Icon;
     }
-
-    //public List<WeaponsMother> weaponSlots = new(6);
-    //public int[] weaponLevels = new int[6];
-    //public List<PassiveItemMother> itemSlots = new(6);
-    //public int[] itemLevels = new int[6];
-
-    //public void AddWeapon(int id, WeaponsMother weapon)
-    //{
-    //    weaponSlots[id] = weapon;
-    //    weaponLevels[id] = weapon.weaponData.Level;
-    //}
-
-    //public void AddItem(int id, PassiveItemMother item)
-    //{
-    //    itemSlots[id] = item;
-    //    itemLevels[id] = item.passiveItemData.Level;
-    //}
 
 }
