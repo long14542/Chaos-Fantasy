@@ -19,6 +19,7 @@ public class CharacterHandler : MonoBehaviour
     [HideInInspector]
     public float currentMagnet;
 
+    PlayerCollector collector;
     // Experience variables
     public int exp = 0;
     public int level = 1;
@@ -57,6 +58,7 @@ public class CharacterHandler : MonoBehaviour
         //CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<Inventory>();
+        collector = GetComponentInChildren<PlayerCollector>();
 
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
@@ -65,6 +67,8 @@ public class CharacterHandler : MonoBehaviour
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentMagnet = characterData.Magnet;
+
+        collector.SetRadius(currentMagnet);
 
         // Set the starting weapon
         AcquireWeapon(characterData.StartingWeapon);

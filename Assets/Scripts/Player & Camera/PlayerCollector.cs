@@ -1,35 +1,36 @@
 using UnityEngine;
 
+// Ensuring that whenever this class is initiated, component CircleCollider2D is also initiated for this class
+[RequireComponent(typeof(CircleCollider2D))]
 public class PlayerCollector : MonoBehaviour
 {
     private CharacterHandler player;
-    private CircleCollider2D magnetCollector;
+    private CircleCollider2D detector;
     public float pullSpeed;
 
     void Start()
     {
+        // Can change to GetComponentInParent for multiplayer
         player = FindFirstObjectByType<CharacterHandler>();
-        magnetCollector = GetComponent<CircleCollider2D>();
 
-        magnetCollector.radius = player.currentMagnet;
+    }
+
+    public void SetRadius(float r)
+    {
+        if (!detector)
+        {
+            detector = GetComponent<CircleCollider2D>();
+        }
+        detector.radius = r;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the collided gameObject has the interface collectibles 
-        if (collision.gameObject.TryGetComponent(out InterfaceCollectibles collectible))
+        // Check if the collided gameObject has the class Pickup
+        if (collision.gameObject.TryGetComponent(out Pickup collectible))
         {
-            // Pulling the collectible toward the player position
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            // Find the vector direction to the player by subtracting the current player position 
-            //and the collision position then normalized it
-            Vector2 forceDirection = (transform.position - collision.transform.position).normalized;
-            // Apply force
-            rb.AddForce(forceDirection * pullSpeed);
-
-
             // Call that object Collect method
-            collectible.Collect();
+            collectible.Collect(player, pullSpeed);
         }
     }
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1979690306720218679}
   - component: {fileID: 7167078377143429493}
-  - component: {fileID: 1281350735607795939}
   - component: {fileID: -8329005427641290149}
   - component: {fileID: 8125464262493883647}
+  - component: {fileID: 672676449279461819}
   m_Layer: 0
   m_Name: BlueGem
   m_TagString: Untagged
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1281350735607795939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4373212321340365832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17696a6aa049294ab907cd08b320184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expGranted: 3
 --- !u!58 &-8329005427641290149
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &672676449279461819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373212321340365832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a98c043d06a7014788948c3b2b1a23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expGranted: 3
