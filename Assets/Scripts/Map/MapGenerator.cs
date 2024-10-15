@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,7 @@ public class MapGenerator : MonoBehaviour
     public LayerMask terrainMask;
     public GameObject currentChunk;
 
-    private Vector3 freeChunkPosition;
-    private PlayerMovement pm;
+    private Vector3 playerLastPosition;
 
     [Header("Optimization")]
     public List<GameObject> spawnedChunks;
@@ -22,8 +22,7 @@ public class MapGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // reference PlayerMovement script to access PlayerMovement methods and properties
-        pm = FindObjectOfType<PlayerMovement>();
+        playerLastPosition = player.transform.position;
     }
 
     // Update is called once per frame
@@ -40,94 +39,94 @@ public class MapGenerator : MonoBehaviour
             return;
         }
 
-        // Check if the player move right
-        if (pm.moveDir.x > 0 && pm.moveDir.y == 0)
+        // Check the player's moving direction by substracting the current position to the last position
+        Vector3 moveDir = player.transform.position - playerLastPosition;
+        playerLastPosition = player.transform.position;
+
+        // Get the direction name, that is also the name of the spawn point
+        string directionName = GetDirectionName(moveDir);
+
+        CheckAndSpawnChunk(directionName);
+
+        // Check and spawn adjacent chunks if the player move diagonally
+        if (directionName.Contains("Up"))
         {
-            // Check if the currentChunk's RightChunkSpawnPoint is not colliding with anything in the terrainMask
-            // the same for other operations but with different spawn point
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("RightChunkSpawnPoint").position, checkRadius, terrainMask))
-            {
-                // Update freeChunkPosition
-                freeChunkPosition = currentChunk.transform.Find("RightChunkSpawnPoint").position;
-                SpawnChunk();
-            }
+            CheckAndSpawnChunk("Up");
+        }
+        if (directionName.Contains("Right"))
+        {
+            CheckAndSpawnChunk("Right");
+        }
+        if (directionName.Contains("Left"))
+        {
+            CheckAndSpawnChunk("Left");
+        }
+        if (directionName.Contains("Down"))
+        {
+            CheckAndSpawnChunk("Down");
         }
 
-        // Check if the player move left
-        if (pm.moveDir.x < 0 && pm.moveDir.y == 0)
-        {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("LeftChunkSpawnPoint").position, checkRadius, terrainMask))
-            {
-                freeChunkPosition = currentChunk.transform.Find("LeftChunkSpawnPoint").position;
-                SpawnChunk();
-            }
-        }
+    }
 
-        // Check if the player move up
-        if (pm.moveDir.x == 0 && pm.moveDir.y > 0)
+    void CheckAndSpawnChunk(string direction)
+    {
+        // Check if the current chunk directionName's spawn point is not colliding with anything in the terrainMask
+        if (!Physics2D.OverlapCircle(currentChunk.transform.Find(direction).position, checkRadius, terrainMask))
         {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("UpChunkSpawnPoint").position, checkRadius, terrainMask))
-            {
-                freeChunkPosition = currentChunk.transform.Find("UpChunkSpawnPoint").position;
-                SpawnChunk();
-            }
+            // Spawn chunk at that spawn point position
+            SpawnChunk(currentChunk.transform.Find(direction).position);
         }
-        
-        // Check if the player move down
-        if (pm.moveDir.x == 0 && pm.moveDir.y < 0)
-        {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("DownChunkSpawnPoint").position, checkRadius, terrainMask))
-            {
-                freeChunkPosition = currentChunk.transform.Find("DownChunkSpawnPoint").position;
-                SpawnChunk();
-            }
-        }
+    }
 
-        // Check if the player move right up
-        if (pm.moveDir.x > 0 && pm.moveDir.y > 0)
+    string GetDirectionName(Vector3 direction)
+    {
+        direction = direction.normalized;
+
+        // Check if the player is moving horizontally more than vertically
+        if (Math.Abs(direction.x) > Math.Abs(direction.y))
         {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("RightUpChunkSpawnPoint").position, checkRadius, terrainMask))
+            // If the player moving up
+            if (direction.y > 0.5f)
             {
-                freeChunkPosition = currentChunk.transform.Find("RightUpChunkSpawnPoint").position;
-                SpawnChunk();
+                return direction.x > 0 ? "Right Up" : "Left Up";
+            }
+            // If the player moving down
+            else if (direction.y < -0.5f)
+            {
+                return direction.x > 0 ? "Right Down" : "Left Down";
+            }
+            // If the player not moving up or down
+            else
+            {
+                return direction.x > 0 ? "Right" : "Left";
             }
         }
-
-        // Check if the player move right down
-        if (pm.moveDir.x > 0 && pm.moveDir.y < 0)
+        // If the player move vertically more than horizontally
+        else
         {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("RightDownChunkSpawnPoint").position, checkRadius, terrainMask))
+            // If the player moving right
+            if (direction.x > 0.5f)
             {
-                freeChunkPosition = currentChunk.transform.Find("RightDownChunkSpawnPoint").position;
-                SpawnChunk();
+                return direction.y > 0 ? "Right Up" : "Right Down";
             }
-        }
-
-        // Check if the player move left up
-        if (pm.moveDir.x < 0 && pm.moveDir.y > 0)
-        {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("LeftUpChunkSpawnPoint").position, checkRadius, terrainMask))
+            // If the player moving left
+            else if (direction.x < -0.5f)
             {
-                freeChunkPosition = currentChunk.transform.Find("LeftUpChunkSpawnPoint").position;
-                SpawnChunk();
+                return direction.y > 0 ? "Left Up" : "Left Down";
             }
-        }
-
-        // Check if the player move left down
-        if (pm.moveDir.x < 0 && pm.moveDir.y < 0)
-        {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("LeftDownChunkSpawnPoint").position, checkRadius, terrainMask))
+            // If the player not moving right or left
+            else
             {
-                freeChunkPosition = currentChunk.transform.Find("LeftDownChunkSpawnPoint").position;
-                SpawnChunk();
+                return direction.y > 0 ? "Up" : "Down";
             }
         }
     }
-    void SpawnChunk()
+
+    void SpawnChunk(Vector3 spawnPosition)
     {
         // Randomize chunk and spawn it
-        int rand = Random.Range(0, chunks.Count);
-        latestChunk = Instantiate(chunks[rand], freeChunkPosition, Quaternion.identity);
+        int rand = UnityEngine.Random.Range(0, chunks.Count);
+        latestChunk = Instantiate(chunks[rand], spawnPosition, Quaternion.identity);
         spawnedChunks.Add(latestChunk);
     }
 
