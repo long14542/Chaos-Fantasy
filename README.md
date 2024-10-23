@@ -12,7 +12,7 @@
 
 `Note: pull request needs to have the information of what it would do.`
 
-### To play in unity, you need to play the menu scene first
+### For the gameplay to work, you need to play the character selector scene first
 
 Now you need to make sure the enemyName in EnemyHandler and enemyName in EnemySpawner are
 EXACTLY THE SAME, if not the object pool won't work
