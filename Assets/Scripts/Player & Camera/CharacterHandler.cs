@@ -54,8 +54,8 @@ public class CharacterHandler : MonoBehaviour
     void Awake()
     {
         // Load character
-        //characterData = CharacterSelector.LoadData();
-        //CharacterSelector.instance.DestroySingleton();
+        characterData = CharacterSelector.LoadData();
+        CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<Inventory>();
         collector = GetComponentInChildren<PlayerCollector>();

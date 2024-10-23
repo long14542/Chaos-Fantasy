@@ -33,11 +33,9 @@ public class Pickup : MonoBehaviour
             if (distance.sqrMagnitude > speed * speed * Time.deltaTime)
             {
                 transform.position += speed * Time.deltaTime * (Vector3)distance.normalized;
-                Debug.Log("Here");
             }
             else
             {
-                Debug.Log("Destroy");
                 Destroy(gameObject);
             }
         }

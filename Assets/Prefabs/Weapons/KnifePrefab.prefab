@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5135990587541529949}
   - component: {fileID: 8788367512090056816}
   - component: {fileID: 8332656672684231548}
-  - component: {fileID: 7000572970278176117}
   - component: {fileID: -1554058470579480261}
   m_Layer: 0
   m_Name: KnifePrefab
@@ -100,33 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: a974aa9640c05fb46bc0a7f03a060f9b, type: 2}
---- !u!50 &7000572970278176117
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826361756072723164}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &-1554058470579480261
 BoxCollider2D:
   m_ObjectHideFlags: 0
