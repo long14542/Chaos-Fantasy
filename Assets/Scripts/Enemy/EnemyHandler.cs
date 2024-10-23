@@ -35,9 +35,9 @@ public class EnemyHandler : MonoBehaviour
     }
 
     // Collision with the player
-    void OnTriggerStay2D(Collider2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             CharacterHandler player = collision.gameObject.GetComponent<CharacterHandler>();
             player.TakeDamage(currentDamage); // Use currentDamage in case of future damage buffs

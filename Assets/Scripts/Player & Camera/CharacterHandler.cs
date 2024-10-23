@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterHandler : MonoBehaviour
 {
@@ -36,6 +38,12 @@ public class CharacterHandler : MonoBehaviour
         public int endLevel;
         public int expCapIncrease;
     }
+
+    // Player's components UI
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public TextMeshProUGUI levelText;
 
     // This determines how many seconds the character has before taking damage again
     [Header("I-Frames")]
@@ -79,6 +87,11 @@ public class CharacterHandler : MonoBehaviour
     {
         // Initialize expCap as the first expCapIncrease so the character can level up immediately
         expCap = levelRanges[0].expCapIncrease;
+
+        // Init player's UI elements
+        UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
 
     void Update()
@@ -102,6 +115,7 @@ public class CharacterHandler : MonoBehaviour
     {
         exp += amount;
         LevelUpChecker();
+        UpdateExpBar();  
     }
 
     void LevelUpChecker()
@@ -110,6 +124,8 @@ public class CharacterHandler : MonoBehaviour
         {
             level += 1;
             exp -= expCap;
+
+            UpdateLevelText();
 
             foreach (LevelRange range in levelRanges)
             {
@@ -140,6 +156,8 @@ public class CharacterHandler : MonoBehaviour
         {
             Die();
         }
+        
+        UpdateHealthBar();
     }
     void Die()
     {
@@ -181,4 +199,21 @@ public class CharacterHandler : MonoBehaviour
         itemId += 1;
     }
 
+    // Update health bar UI
+    public void UpdateHealthBar()
+    {
+        healthBar.fillAmount = currentHealth / characterData.MaxHealth;
+    }
+
+    // Update experience bar UI
+    public void UpdateExpBar()
+    {
+        expBar.fillAmount = (float) exp / expCap;
+    }
+
+    // Update level text UI
+    public void UpdateLevelText()
+    {
+        levelText.text = "Lv " + level.ToString();
+    }
 }
