@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0f7cda59422ab4ebb51db63d8ac540, type: 3}
   m_Name: Reaper
   m_EditorClassIdentifier: 
+  playerSprite: {fileID: -1114726145, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
   startingWeapon: {fileID: 5386848642831577647, guid: 1b5af089d237bce47be6aabbc7530315, type: 3}
   maxHealth: 100
   moveSpeed: 3

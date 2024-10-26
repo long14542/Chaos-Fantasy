@@ -21,7 +21,10 @@ public class CharacterHandler : MonoBehaviour
     [HideInInspector]
     public float currentMagnet;
 
+    SpriteRenderer spriteRenderer;
+
     PlayerCollector collector;
+    
     // Experience variables
     public int exp = 0;
     public int level = 1;
@@ -67,6 +70,7 @@ public class CharacterHandler : MonoBehaviour
 
         inventory = GetComponent<Inventory>();
         collector = GetComponentInChildren<PlayerCollector>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
@@ -77,6 +81,8 @@ public class CharacterHandler : MonoBehaviour
         currentMagnet = characterData.Magnet;
 
         collector.SetRadius(currentMagnet);
+
+        spriteRenderer.sprite = characterData.PlayerSprite;
 
         // Set the starting weapon
         AcquireWeapon(characterData.StartingWeapon);
