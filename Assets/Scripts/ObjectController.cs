@@ -9,6 +9,6 @@ public class ObjectController : MonoBehaviour
     void Awake()
     {
         for (int i = 0; i < enemyPrefabs.Count; i++)
-            ObjectPools.SetupPool(enemyPrefabs[i], 200, enemyPrefabs[i].name);
+            ObjectPools.SetupPool(enemyPrefabs[i], 50, enemyPrefabs[i].name);
     }
 }

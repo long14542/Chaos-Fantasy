@@ -48,22 +48,46 @@ public class MapGenerator : MonoBehaviour
 
         CheckAndSpawnChunk(directionName);
 
-        // Check and spawn adjacent chunks if the player move diagonally
-        if (directionName.Contains("Up"))
-        {
-            CheckAndSpawnChunk("Up");
-        }
-        if (directionName.Contains("Right"))
+        // Check and spawn adjacent chunks
+        if (directionName == "Right Up")
         {
             CheckAndSpawnChunk("Right");
+            CheckAndSpawnChunk("Up");
         }
-        if (directionName.Contains("Left"))
+        else if (directionName == "Right Down")
+        {
+            CheckAndSpawnChunk("Right");
+            CheckAndSpawnChunk("Down");
+        }
+        else if (directionName == "Left Up")
         {
             CheckAndSpawnChunk("Left");
+            CheckAndSpawnChunk("Up");
         }
-        if (directionName.Contains("Down"))
+        else if (directionName == "Left Down")
         {
+            CheckAndSpawnChunk("Left");
             CheckAndSpawnChunk("Down");
+        }
+        else if (directionName == "Left")
+        {
+            CheckAndSpawnChunk("Left Up");
+            CheckAndSpawnChunk("Left Down");
+        }
+        else if (directionName == "Right")
+        {
+            CheckAndSpawnChunk("Right Up");
+            CheckAndSpawnChunk("Right Down");
+        }
+        else if (directionName == "Down")
+        {
+            CheckAndSpawnChunk("Left Down");
+            CheckAndSpawnChunk("Right Down");
+        }
+        else if (directionName == "Up")
+        {
+            CheckAndSpawnChunk("Left Up");
+            CheckAndSpawnChunk("Right Up");
         }
 
     }

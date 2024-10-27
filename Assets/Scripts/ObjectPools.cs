@@ -3,7 +3,7 @@ using UnityEngine;
 
 // Pools of objects to pre-instantiate the objects before runtime
 // This removes the need for creating and destroying objects while the game is running
-// VERY IMPORTANT for bullet hell games
+// VERY IMPORTANT for games with many objects
 public static class ObjectPools
 {
     // A dictionary contains all object pool types. Ex: enemies, projectiles,....
