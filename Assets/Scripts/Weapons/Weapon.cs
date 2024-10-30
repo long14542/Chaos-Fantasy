@@ -1,20 +1,26 @@
 using UnityEngine;
 
 // Base weapon script
-public class WeaponsMother : MonoBehaviour
+public class Weapon : Item
 {
-    public WeaponScriptableObject weaponData;
+    public WeaponData weaponData;
     private float cooldown;
+    private float currentCooldownDuration;
 
-    public int currentLevel;
     protected PlayerMovement pm;
+
+    public virtual void Initialize(WeaponData data)
+    {
+        base.Initialize(data);
+
+        currentCooldownDuration = data.cooldownDuration;
+    }
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
-        cooldown = weaponData.CooldownDuration;
-        currentLevel = weaponData.Level;
+        Initialize(weaponData);
     }
 
     // Update is called once per frame
@@ -27,18 +33,8 @@ public class WeaponsMother : MonoBehaviour
         }
     }
 
-    protected virtual void LevelUpWeapon()
-    {
-        if (currentLevel >= weaponData.MaxLevel)
-        {
-            return;
-        }
-        currentLevel += 1;
-        Debug.Log("Leveled up: " + currentLevel);
-    }
-
     protected virtual void Attack()
     {
-        cooldown = weaponData.CooldownDuration;
+        cooldown = currentCooldownDuration;
     }
 }

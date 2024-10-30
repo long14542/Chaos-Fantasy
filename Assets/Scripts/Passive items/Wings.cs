@@ -1,17 +1,17 @@
 using UnityEngine;
 // Wings increases player's movement speed
-public class Wings : PassiveItemMother
+public class Wings : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.currentMoveSpeed *= 1 + currentMultiplier / 100f;
+        owner.currentMoveSpeed *= 1 + currentMultiplier / 100f;
     }
 
-    protected override void LevelUpItem()
+    public override void LevelUp()
     {
-        base.LevelUpItem();
+        base.LevelUp();
 
-        currentMultiplier += passiveItemData.MultiplierUpNextLevel;
+        currentMultiplier += passiveItemData.multiplierUpNextLevel;
         //Debug.Log($"wings: lev {currentLevel}, multi {currentMultiplier}");
     }
 }

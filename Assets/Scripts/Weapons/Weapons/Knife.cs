@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Knife : WeaponsMother
+public class Knife : Weapon
 {
     // Start is called before the first frame update
     protected override void Start()
@@ -13,16 +13,16 @@ public class Knife : WeaponsMother
         base.Attack();
 
         // Create knife GameObject and assign its position to the current class which is parented to the Player
-        GameObject knife = Instantiate(weaponData.Prefab);
+        GameObject knife = Instantiate(weaponData.prefab);
         knife.transform.position = this.transform.position;
 
         // Reference KnifeBehavior and check direction
         knife.GetComponent<KnifeBehavior>().CheckDirection(pm.ShootDir);
     }
 
-    protected override void LevelUpWeapon()
+    public override void LevelUp()
     {
-        base.LevelUpWeapon();
+        base.LevelUp();
 
         // Find every knife in the game and update their damage
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Knife");

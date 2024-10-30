@@ -2613,33 +2613,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  itemSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  weaponImages:
-  - {fileID: 901972081}
-  - {fileID: 274744849}
-  - {fileID: 542944553}
-  - {fileID: 1932280050}
-  - {fileID: 940815024}
-  - {fileID: 655549378}
-  itemImages:
-  - {fileID: 1369460852}
-  - {fileID: 943618383}
-  - {fileID: 402711513}
-  - {fileID: 258942333}
-  - {fileID: 796447203}
-  - {fileID: 325480223}
+  - item: {fileID: 0}
+    image: {fileID: 901972081}
+  - item: {fileID: 0}
+    image: {fileID: 274744849}
+  - item: {fileID: 0}
+    image: {fileID: 542944553}
+  - item: {fileID: 0}
+    image: {fileID: 1932280050}
+  - item: {fileID: 0}
+    image: {fileID: 940815024}
+  - item: {fileID: 0}
+    image: {fileID: 655549378}
+  passiveItemSlots:
+  - item: {fileID: 0}
+    image: {fileID: 1369460852}
+  - item: {fileID: 0}
+    image: {fileID: 943618383}
+  - item: {fileID: 0}
+    image: {fileID: 402711513}
+  - item: {fileID: 0}
+    image: {fileID: 258942333}
+  - item: {fileID: 0}
+    image: {fileID: 796447203}
+  - item: {fileID: 0}
+    image: {fileID: 325480223}
 --- !u!58 &1824087632
 CircleCollider2D:
   m_ObjectHideFlags: 0
