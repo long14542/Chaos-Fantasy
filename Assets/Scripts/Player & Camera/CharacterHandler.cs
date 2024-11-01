@@ -191,7 +191,7 @@ public class CharacterHandler : MonoBehaviour
         GameObject spawnedWeapon = Instantiate(wp, transform.position, Quaternion.identity);
         spawnedWeapon.transform.SetParent(this.transform);
         // Put the weapon into the inventory
-        inventory.AddWeapon(weaponId, spawnedWeapon.GetComponent<WeaponsMother>());
+        inventory.AddWeapon(weaponId, spawnedWeapon.GetComponent<Weapon>());
         weaponId += 1;
     }
 
@@ -201,7 +201,7 @@ public class CharacterHandler : MonoBehaviour
         GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
         spawnedItem.transform.SetParent(this.transform);
         // Put the item into the inventory
-        inventory.AddItem(itemId, spawnedItem.GetComponent<PassiveItemMother>());
+        inventory.AddItem(itemId, spawnedItem.GetComponent<PassiveItem>());
         itemId += 1;
     }
 

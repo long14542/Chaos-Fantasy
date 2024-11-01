@@ -5,22 +5,40 @@ using UnityEngine.UI;
 // Inventory system to manage the items and weapons that the player currently have
 public class Inventory : MonoBehaviour
 {
-    public List<WeaponsMother> weaponSlots = new(6);
-    public List<PassiveItemMother> itemSlots = new(6);
+    public List<Slot> weaponSlots = new(6);
+    public List<Slot> passiveItemSlots = new(6);
 
-    public List<Image> weaponImages = new(6);
-    public List<Image> itemImages = new(6);
-
-    public void AddWeapon(int id, WeaponsMother weapon)
+    // Each slot will hold an item and its icon
+    [System.Serializable]
+    public class Slot
     {
-        weaponSlots[id] = weapon;
-        weaponImages[id].sprite = weapon.weaponData.Icon;
+        public Item item;
+        public Image image;
+
+        public void AssignItem(Item assignedItem)
+        {
+            item = assignedItem;
+            if (item is Weapon)
+            {
+                Weapon weapon = item as Weapon;
+                image.sprite = weapon.weaponData.icon;
+            }
+            else
+            {
+                PassiveItem passiveItem = item as PassiveItem;
+                image.sprite = passiveItem.passiveItemData.icon;
+            }
+        }
     }
 
-    public void AddItem(int id, PassiveItemMother item)
+    public void AddWeapon(int id, Weapon weapon)
     {
-        itemSlots[id] = item;
-        itemImages[id].sprite = item.passiveItemData.Icon;
+        weaponSlots[id].AssignItem(weapon);
+    }
+
+    public void AddItem(int id, PassiveItem item)
+    {
+        passiveItemSlots[id].AssignItem(item);
     }
 
 }

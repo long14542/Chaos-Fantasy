@@ -5,7 +5,7 @@ using UnityEngine;
 // This script is placed upon the prefab of a weapon that is a projectile
 public class ProjectileBehavior : MonoBehaviour
 {
-    public WeaponScriptableObject weaponData;
+    public WeaponData weaponData;
     protected Vector3 direction;
     CharacterHandler playerStats;
 
@@ -17,11 +17,11 @@ public class ProjectileBehavior : MonoBehaviour
 
     void Awake()
     {
-        currentCooldownDuration = weaponData.CooldownDuration;
-        currentDamage = weaponData.Damage;
-        currentPierce = weaponData.Pierce;
-        currentSpeed = weaponData.Speed;
-        currentLifetime = weaponData.LifeTime;
+        currentCooldownDuration = weaponData.cooldownDuration;
+        currentDamage = weaponData.damage;
+        currentPierce = weaponData.pierce;
+        currentSpeed = weaponData.speed;
+        currentLifetime = weaponData.lifeTime;
     }
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         playerStats = FindFirstObjectByType<CharacterHandler>();
         // Destroy the game object this script is attached to after a lifeTime amount of time
-        Destroy(gameObject, weaponData.LifeTime);
+        Destroy(gameObject, weaponData.lifeTime);
     }
 
     // Apply player's might to projectiles' damage
@@ -113,6 +113,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     public void IncreaseDamage()
     {
-        currentDamage += weaponData.DamageUpNextLevel;
+        currentDamage += weaponData.damageUpNextLevel;
     }
 }
