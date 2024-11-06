@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,9 +7,36 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         Playing,
-        Paused
+        Paused,
+        LevelUp
     }
     public GameState currentState;
+    
+    public static GameManager instance;
+
+    [Header("Screens")]
+    public GameObject levelUpScreen;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        // Prevent the creation of another instance of this class
+        else
+        {
+            Debug.Log("GameManager duplicate destroyed: " + this);
+            Destroy(gameObject);
+        }
+
+        DisableScreens();
+    }
+
+    void DisableScreens()
+    {
+        levelUpScreen.SetActive(false);
+    }
 
     void Update()
     {
@@ -25,6 +53,7 @@ public class GameManager : MonoBehaviour
                 PauseGame();
             }
         }
+
     }
 
     public void PauseGame()
@@ -38,5 +67,19 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.Playing;
         Time.timeScale = 1f;
+    }
+
+    public void StartLevelUpScreen()
+    {
+        currentState = GameState.LevelUp;
+        Time.timeScale = 0f;
+        levelUpScreen.SetActive(true);
+    }
+
+    public void EndLevelUpScreen()
+    {
+        currentState = GameState.Playing;
+        Time.timeScale = 1f;
+        levelUpScreen.SetActive(false);
     }
 }

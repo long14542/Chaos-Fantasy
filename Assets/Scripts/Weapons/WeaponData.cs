@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponData", menuName = "ScriptableObjects/Weapon")]
 public class WeaponData : ItemData
 {
+    public GameObject controller;
     public GameObject prefab;
     public float speed;
     public float damage;

@@ -16,7 +16,7 @@ public class CharacterSelector : MonoBehaviour
         // Prevent the creation of another instance of this class
         else
         {
-            Debug.Log("SelectCharacter destroyed: " + this);
+            Debug.Log("CharacterSelector duplicate destroyed: " + this);
             Destroy(gameObject);
         }
     }
