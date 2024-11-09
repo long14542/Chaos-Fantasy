@@ -44,7 +44,7 @@ public class ItemPool : MonoBehaviour
             // Remove the selected item from remaining item list
             remainingItems.RemoveAt(randNum);
         }
-        Debug.Log($"ITEMS: {choosenItems.Count}");
+        //Debug.Log($"ITEMS: {choosenItems.Count}");
         CreateItemTable(choosenItems);
     }
 
@@ -95,10 +95,10 @@ public class ItemPool : MonoBehaviour
                     PassiveItem passiveItem = inventory.passiveItemSlots[i].item as PassiveItem;
                     if (passiveItem == null)
                     {
-                        Debug.Log($"new item iterator: {i}");
+                        //Debug.Log($"new item iterator: {i}");
                         TableUI[a].optionButton.onClick.AddListener(() =>
                         {
-                            Debug.Log("adding");
+                            //Debug.Log("adding");
                             player.AcquireItem(passiveItemData.prefab);
                             GameManager.instance.EndLevelUpScreen();
                         });
@@ -106,7 +106,7 @@ public class ItemPool : MonoBehaviour
                         break;
                     } else if (itemData.name == passiveItem.passiveItemData.name && inventory.passiveItemSlots[i] != null)
                     {
-                        Debug.Log($"existing item iterator: {i}");
+                        //Debug.Log($"existing item iterator: {i}");
                         TableUI[a].optionButton.onClick.AddListener(() =>
                         {
                             passiveItem.LevelUp();

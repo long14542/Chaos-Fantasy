@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,7 +12,11 @@ public class GameManager : MonoBehaviour
         LevelUp
     }
     public GameState currentState;
-    
+
+    [Header("Stopwatch")]
+    public TextMeshProUGUI stopWatchDisplay;
+    private float stopWatchTime;
+
     public static GameManager instance;
 
     [Header("Screens")]
@@ -40,6 +45,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (currentState == GameState.Playing)
+        {
+            UpdateStopWatch();
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // If the game is paused then resume it
@@ -81,5 +91,19 @@ public class GameManager : MonoBehaviour
         currentState = GameState.Playing;
         Time.timeScale = 1f;
         levelUpScreen.SetActive(false);
+    }
+
+    void UpdateStopWatch()
+    {
+        stopWatchTime += Time.deltaTime;
+        UpdateStopWatchDisplay();
+    }
+
+    void UpdateStopWatchDisplay()
+    {
+        int minutes = (int)Math.Floor(stopWatchTime / 60);
+        int seconds = (int)Math.Floor(stopWatchTime % 60);
+
+        stopWatchDisplay.text = string.Format("{0}:{1:00}", minutes, seconds);
     }
 }

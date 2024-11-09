@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
     {
         public string waveName;
         public List<EnemyGroup> enemyGroups;
-        public int waveQuota; // Minimum number of enemies to spawn in the wave
         public int totalSpawnCount; // Number of spawned enemies in the wave
         public float spawnInterval;
     }
@@ -20,7 +19,6 @@ public class EnemySpawner : MonoBehaviour
     public class EnemyGroup
     {
         public string enemyName;
-        public int enemyCount; // Mininum of enemies to spawn in the group
         public int spawnCount; // Number of spawned enemies of this type in the wave
     }
 
@@ -42,13 +40,12 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<CharacterHandler>().transform;
-        CalculateWaveQuota();
     }
 
     void Update()
     {
         // Check to see if it's time to start the next wave
-        if (currentWave < waves.Count && waves[currentWave].totalSpawnCount == waves[currentWave].waveQuota)
+        if (currentWave < waves.Count)
         {
             StartCoroutine(StartNextWave());
         }
@@ -71,20 +68,9 @@ public class EnemySpawner : MonoBehaviour
         if (currentWave < waves.Count - 1)
         {
             currentWave += 1;
-            CalculateWaveQuota();
         }
     }
 
-    void CalculateWaveQuota()
-    {
-        int currentWaveQuota = 0;
-        // Calculate the number of enemies need to spawn in the wave
-        foreach (EnemyGroup group in waves[currentWave].enemyGroups)
-        {
-            currentWaveQuota += group.enemyCount;
-        }
-        waves[currentWave].waveQuota = currentWaveQuota;
-    }
 
 
     // This spawns enemies
@@ -93,31 +79,28 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemies()
     {
         // Check if the number of spawned enemies in a wave has reached its quota and max number of enemies is not reached
-        if (waves[currentWave].totalSpawnCount < waves[currentWave].waveQuota && !maxEnemiesReached)
+        if (!maxEnemiesReached)
         {
             // For each group, check if the number of spawned enemies in a group has reached its quota
             foreach (EnemyGroup group in waves[currentWave].enemyGroups)
             {
-                if (group.spawnCount < group.enemyCount)
+                // Check if the alive enemies has reached its max
+                if (enemiesAlive >= maxEnemies)
                 {
-                    // Check if the alive enemies has reached its max
-                    if (enemiesAlive >= maxEnemies)
-                    {
-                        // No more spawning
-                        maxEnemiesReached = true;
-                        return;
-                    }
-
-                    // Use object pool to create enemies
-                    EnemyHandler instance = ObjectPools.DequeueObject<EnemyHandler>(group.enemyName);
-                    instance.gameObject.transform.position = player.position + spawnPoints[Random.Range(0, spawnPoints.Count)].position;
-                    instance.gameObject.SetActive(true);
-                    //Instantiate(group.enemyPrefab, player.position + spawnPoints[Random.Range(0, spawnPoints.Count)].position, Quaternion.identity);
-
-                    group.spawnCount += 1;
-                    waves[currentWave].totalSpawnCount += 1;
-                    enemiesAlive += 1;
+                    // No more spawning
+                    maxEnemiesReached = true;
+                    return;
                 }
+
+                // Use object pool to create enemies
+                EnemyHandler instance = ObjectPools.DequeueObject<EnemyHandler>(group.enemyName);
+                instance.gameObject.transform.position = player.position + spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+                instance.gameObject.SetActive(true);
+                //Instantiate(group.enemyPrefab, player.position + spawnPoints[Random.Range(0, spawnPoints.Count)].position, Quaternion.identity);
+
+                group.spawnCount += 1;
+                waves[currentWave].totalSpawnCount += 1;
+                enemiesAlive += 1;
             }
         }
 
