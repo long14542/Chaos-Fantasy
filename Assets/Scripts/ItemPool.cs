@@ -19,6 +19,7 @@ public class ItemPool : MonoBehaviour
         public TextMeshProUGUI displayDescription;
         public Image icon;
         public Button optionButton;
+        public TextMeshProUGUI level;
 
         // static index to store
         [HideInInspector]
@@ -75,6 +76,9 @@ public class ItemPool : MonoBehaviour
                             GameManager.instance.EndLevelUpScreen();
                         });
                         TableUI[a].icon.sprite = weaponData.icon;
+                        TableUI[a].displayName.text = weaponData.name;
+                        TableUI[a].level.text = "*NEW*";
+                        TableUI[a].level.color = Color.yellow; // Yellow
                         break;
                     } else if (itemData.name == weapon.weaponData.name && inventory.weaponSlots[i] != null) // Check by name
                     {
@@ -84,6 +88,9 @@ public class ItemPool : MonoBehaviour
                             GameManager.instance.EndLevelUpScreen();
                         });
                         TableUI[a].icon.sprite = weapon.weaponData.icon;
+                        TableUI[a].displayName.text = weapon.weaponData.name;
+                        TableUI[a].level.text = $"Level {weapon.currentLevel + 1}"; // if not a new item then don't show *new*
+                        TableUI[a].level.color = Color.black;
                         break;
                     }
                 }
@@ -93,7 +100,7 @@ public class ItemPool : MonoBehaviour
                 {
                     TableUI[a].optionButton.onClick.RemoveAllListeners(); // Clear previous listeners to avoid listeners duplication
                     PassiveItem passiveItem = inventory.passiveItemSlots[i].item as PassiveItem;
-                    if (passiveItem == null)
+                    if (passiveItem == null) // if the item is not in inventory yet
                     {
                         //Debug.Log($"new item iterator: {i}");
                         TableUI[a].optionButton.onClick.AddListener(() =>
@@ -103,8 +110,11 @@ public class ItemPool : MonoBehaviour
                             GameManager.instance.EndLevelUpScreen();
                         });
                         TableUI[a].icon.sprite = passiveItemData.icon;
+                        TableUI[a].displayName.text = passiveItemData.name;
+                        TableUI[a].level.text = "*NEW*";
+                        TableUI[a].level.color = Color.yellow; // Yellow
                         break;
-                    } else if (itemData.name == passiveItem.passiveItemData.name && inventory.passiveItemSlots[i] != null)
+                    } else if (itemData.name == passiveItem.passiveItemData.name && inventory.passiveItemSlots[i] != null) // if the item is in inventory
                     {
                         //Debug.Log($"existing item iterator: {i}");
                         TableUI[a].optionButton.onClick.AddListener(() =>
@@ -113,6 +123,9 @@ public class ItemPool : MonoBehaviour
                             GameManager.instance.EndLevelUpScreen();
                         });
                         TableUI[a].icon.sprite = passiveItem.passiveItemData.icon;
+                        TableUI[a].displayName.text = passiveItem.passiveItemData.name;
+                        TableUI[a].level.text = $"Level {passiveItem.currentLevel + 1}"; // if not a new item then don't show *new*
+                        TableUI[a].level.color = Color.black;
                         break;
                     }
                 }
