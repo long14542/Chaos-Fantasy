@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Screens")]
     public GameObject levelUpScreen;
-
+    [Header("UI Elements")]
+    public GameObject pauseMenu; 
+    public Button pauseButton; 
     void Awake()
     {
         if (instance == null)
@@ -41,8 +44,16 @@ public class GameManager : MonoBehaviour
     void DisableScreens()
     {
         levelUpScreen.SetActive(false);
+        pauseMenu.SetActive(false);
     }
+    void Start()
+    {
+        currentState = GameState.Playing;
+        pauseMenu.SetActive(false);  // Hide the pause menu initially
 
+        // Set up the button's onClick event to toggle pause state
+        pauseButton.onClick.AddListener(TogglePause);
+    }
     void Update()
     {
         if (currentState == GameState.Playing)
@@ -60,10 +71,21 @@ public class GameManager : MonoBehaviour
             // If the game is playing then pause it
             else if (currentState == GameState.Playing)
             {
-                PauseGame();
+                TogglePause();
             }
         }
 
+    }
+    public void TogglePause()
+    {
+        if (currentState == GameState.Paused)
+        {
+            ResumeGame();
+        }
+        else if (currentState == GameState.Playing)
+        {
+            PauseGame();
+        }
     }
 
     public void PauseGame()
@@ -71,12 +93,14 @@ public class GameManager : MonoBehaviour
         currentState = GameState.Paused;
         // The scale at which time passes
         Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
     }
 
     public void ResumeGame()
     {
         currentState = GameState.Playing;
         Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
     }
 
     public void StartLevelUpScreen()
