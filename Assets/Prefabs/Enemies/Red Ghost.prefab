@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: ab23076558962d04db54ac5adcc88fdc, type: 2}
   enemyName: Red Ghost
+  popUp: {fileID: 7320452741239165436, guid: 009627a5eb1edae448c34b1cee4c18dc, type: 3}
   currentSpeed: 0
   currentDamage: 0
   currentHealth: 0

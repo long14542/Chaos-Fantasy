@@ -10,5 +10,5 @@ public class WeaponData : ItemData
     public float cooldownDuration;
     public int pierce;
     public float lifeTime;
-    public int damageUpNextLevel;
+    public int damagePlus;
 }

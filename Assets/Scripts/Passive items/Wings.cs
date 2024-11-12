@@ -4,7 +4,7 @@ public class Wings : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        owner.currentMoveSpeed *= 1 + currentMultiplier / 100f;
+        owner.currentMoveSpeed = owner.characterData.MoveSpeed * (1 + currentMultiplier / 100f);
     }
 
     public override void LevelUp()
@@ -12,6 +12,7 @@ public class Wings : PassiveItem
         base.LevelUp();
 
         currentMultiplier += passiveItemData.multiplierUpNextLevel;
+        ApplyModifier();
         //Debug.Log($"wings: lev {currentLevel}, multi {currentMultiplier}");
     }
 }

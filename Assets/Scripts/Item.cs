@@ -3,7 +3,7 @@ using UnityEngine;
 // Mother class for all types of items, i.e: weapon, passive item
 public class Item : MonoBehaviour
 {
-    public int currentLevel = 1, maxLevel = 1;
+    public int currentLevel, maxLevel;
     public string itemName;
 
     protected CharacterHandler owner;
@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     // ScriptableObjects' data are meant to be read only
     public virtual void Initialize(ItemData data)
     {
+        currentLevel = 1;
         maxLevel = data.maxLevel;
         itemName = data.itemName;
         owner = FindFirstObjectByType<CharacterHandler>();

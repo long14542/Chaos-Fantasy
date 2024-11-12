@@ -14,6 +14,7 @@ public class ProjectileBehavior : MonoBehaviour
     protected float currentCooldownDuration;
     protected int currentPierce;
     protected float currentLifetime;
+    protected float currentDamagePlus;
 
     void Awake()
     {
@@ -22,6 +23,7 @@ public class ProjectileBehavior : MonoBehaviour
         currentPierce = weaponData.pierce;
         currentSpeed = weaponData.speed;
         currentLifetime = weaponData.lifeTime;
+        currentDamagePlus = weaponData.damagePlus;
     }
 
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class ProjectileBehavior : MonoBehaviour
     // Apply player's might to projectiles' damage
     public float MightAppliedDamaged()
     {
+        currentDamage += currentDamagePlus;
         return currentDamage *= playerStats.currentMight;
     }
 
@@ -95,7 +98,8 @@ public class ProjectileBehavior : MonoBehaviour
             // Reference the enemyHandler from the Collider
             EnemyHandler enemy = collision.GetComponent<EnemyHandler>();
             // Use damage increased with might
-            enemy.TakeDamage(MightAppliedDamaged());
+            int dmg = (int) MightAppliedDamaged();
+            enemy.TakeDamage(dmg);
             DecreasePierce();
         }
     }
@@ -113,6 +117,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     public void IncreaseDamage()
     {
-        currentDamage += weaponData.damageUpNextLevel;
+        currentDamagePlus += 10;
     }
 }

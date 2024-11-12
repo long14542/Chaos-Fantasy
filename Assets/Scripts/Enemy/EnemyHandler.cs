@@ -21,9 +21,11 @@ public class EnemyHandler : MonoBehaviour
         currentHealth = enemyData.MaxHealth;
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+
+        DamagePopUp.Create(transform.position, dmg);
 
         // Deactivate object if current health is lower or equal to 0
         if (currentHealth <= 0)
