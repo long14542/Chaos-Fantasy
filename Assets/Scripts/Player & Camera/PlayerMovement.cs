@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     // Character stats
     private Rigidbody2D body;
     private CharacterHandler player;
+    
     // Start is called before the first frame update
     void Start()
     {

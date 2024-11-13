@@ -1700,7 +1700,7 @@ MonoBehaviour:
     - enemyName: Red Ghost
       spawnCount: 0
     totalSpawnCount: 0
-    spawnInterval: 1
+    spawnInterval: 1.5
   - waveName: wave 2
     enemyGroups:
     - enemyName: Red Ghost

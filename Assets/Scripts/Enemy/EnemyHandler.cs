@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHandler : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
+    EnemyMovement movement;
     EnemySpawner spawner;
     DropRateManager drop;
     public string enemyName;
@@ -14,6 +15,7 @@ public class EnemyHandler : MonoBehaviour
     // Use Awake because it is called before Start
     void Awake()
     {
+        movement = GetComponent<EnemyMovement>();
         spawner = FindFirstObjectByType<EnemySpawner>();
         drop = GetComponent<DropRateManager>();
         currentDamage = enemyData.Damage;
@@ -24,6 +26,7 @@ public class EnemyHandler : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+        movement.Knockback(5f, 0.2f);
 
         DamagePopUp.Create(transform.position, dmg);
 
