@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IKnockback
 {
     private EnemyHandler enemy;
     GameObject player;
