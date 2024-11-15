@@ -7,7 +7,6 @@ public class Sword : Weapon
     private Quaternion originalRotation;
     private float attackAngle = -25f;
     private bool isAttacking = false;
-    private CharacterHandler characterHandler;
     private PolygonCollider2D swordCollider;
     private new WeaponData weaponData;
 
@@ -21,7 +20,7 @@ public class Sword : Weapon
         originalRotation = swordTransform.rotation; // Lưu lại góc xoay ban đầu
 
         // Tìm và liên kết với CharacterHandler
-        characterHandler = owner.GetComponent<CharacterHandler>();
+      
 
         // Thiết lập PolygonCollider2D
         swordCollider = swordObject.GetComponent<PolygonCollider2D>();

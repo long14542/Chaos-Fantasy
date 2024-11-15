@@ -101,7 +101,7 @@ MonoBehaviour:
   currentLevel: 0
   maxLevel: 0
   itemName: 
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: f1e77e83d0d4cce48ae3f9746008e461, type: 2}
 --- !u!60 &2119200935518423027
 PolygonCollider2D:
   m_ObjectHideFlags: 0
