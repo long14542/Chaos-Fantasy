@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 494248391997350068}
   - component: {fileID: 2529118881617628883}
   - component: {fileID: -2206060429200710422}
-  - component: {fileID: 6784547661727033467}
   m_Layer: 0
   m_Name: Red Ghost
   m_TagString: Enemy
@@ -125,7 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: ab23076558962d04db54ac5adcc88fdc, type: 2}
   enemyName: Red Ghost
-  popUp: {fileID: 7320452741239165436, guid: 009627a5eb1edae448c34b1cee4c18dc, type: 3}
   currentSpeed: 0
   currentDamage: 0
   currentHealth: 0
@@ -189,36 +187,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
---- !u!50 &6784547661727033467
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4

@@ -21,5 +21,5 @@ MonoBehaviour:
   damage: 10
   cooldownDuration: 0.5
   pierce: 1
-  lifeTime: 10
-  damageUpNextLevel: 1
+  lifeTime: 1.5
+  damagePlus: 0
