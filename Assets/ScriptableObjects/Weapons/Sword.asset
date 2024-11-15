@@ -15,8 +15,8 @@ MonoBehaviour:
   icon: {fileID: -263652391, guid: a4dfd3b6a6d996b42b436de6d023179b, type: 3}
   maxLevel: 15
   itemName: Iron Sword
-  controller: {fileID: 0}
-  prefab: {fileID: 0}
+  controller: {fileID: 5386848642831577647, guid: 1b5af089d237bce47be6aabbc7530315, type: 3}
+  prefab: {fileID: 3445399263290737042, guid: 35504e6423ce90c4c9fc1113b15b8790, type: 3}
   speed: 5
   damage: 12
   cooldownDuration: 1
