@@ -175,7 +175,7 @@ public class CharacterHandler : MonoBehaviour
     }
     void Die()
     {
-        Debug.Log("Player is Dead");
+
     }
     
     // Character health regeneration
