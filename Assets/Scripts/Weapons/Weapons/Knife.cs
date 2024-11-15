@@ -24,11 +24,5 @@ public class Knife : Weapon
     {
         base.LevelUp();
 
-        // Find every knife in the game and update their damage
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Knife");
-        foreach (var obj in objs)
-        {
-            obj.GetComponent<KnifeBehavior>().IncreaseDamage();
-        }
     }
 }
