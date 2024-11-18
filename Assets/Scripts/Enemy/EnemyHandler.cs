@@ -20,10 +20,10 @@ public class EnemyHandler : MonoBehaviour
         movement = GetComponent<EnemyMovement>();
         spawner = FindFirstObjectByType<EnemySpawner>();
         drop = GetComponent<DropRateManager>();
+        collide = GetComponent<CircleCollider2D>();
         currentDamage = enemyData.Damage;
         currentSpeed = enemyData.Speed;
         currentHealth = enemyData.MaxHealth;
-        collide = GetComponent<CircleCollider2D>();
     }
 
     void Update()
@@ -39,7 +39,7 @@ public class EnemyHandler : MonoBehaviour
             // Check if the collider is an enemy
             if (collider.CompareTag("Enemy"))
             {
-                HandleOverlap(collider, 5f);
+                HandleOverlap(collider, 4f);
             }
             else if (collider.CompareTag("Player"))
             {

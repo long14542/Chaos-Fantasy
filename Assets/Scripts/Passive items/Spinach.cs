@@ -1,4 +1,3 @@
-using UnityEngine;
 
 // Spinach increases all damage done by the player
 public class Spinach : PassiveItem
@@ -14,6 +13,5 @@ public class Spinach : PassiveItem
 
         currentMultiplier += passiveItemData.multiplierUpNextLevel;
         ApplyModifier();
-        //Debug.Log($"spinach: lev {currentLevel}, multi {currentMultiplier}");
     }
 }

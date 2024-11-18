@@ -12,6 +12,6 @@ public class ObjectController : MonoBehaviour
         for (int i = 0; i < enemyPrefabs.Count; i++)
             ObjectPools.SetupPool(enemyPrefabs[i], 50, enemyPrefabs[i].name);
         
-        ObjectPools.SetupPool(popUpPrefab, 300, "DamagePopUp");
+        ObjectPools.SetupPool(popUpPrefab, 10, "DamagePopUp");
     }
 }

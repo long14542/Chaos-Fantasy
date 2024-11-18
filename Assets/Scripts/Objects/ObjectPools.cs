@@ -39,8 +39,8 @@ public static class ObjectPools
         }
 
         item.transform.position = Vector2.zero;
-        poolDictionary[name].Enqueue(item);
         item.gameObject.SetActive(false);
+        poolDictionary[name].Enqueue(item);
     }
 
     // Push the objects of type T out of the queue to run in the game

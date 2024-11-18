@@ -17,12 +17,11 @@ public class Knife : Weapon
         knife.transform.position = this.transform.position;
 
         // Reference KnifeBehavior and check direction
-        knife.GetComponent<KnifeBehavior>().CheckDirection(pm.ShootDir);
+        knife.GetComponent<KnifeProjectile>().CheckDirection(pm.ShootDir);
     }
 
     public override void LevelUp()
     {
         base.LevelUp();
-
     }
 }
