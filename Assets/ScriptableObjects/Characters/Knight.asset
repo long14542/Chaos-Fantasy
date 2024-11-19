@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc0f7cda59422ab4ebb51db63d8ac540, type: 3}
-  m_Name: Reaper
+  m_Name: Knight
   m_EditorClassIdentifier: 
-  playerSprite: {fileID: 2077301615, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
-  startingWeapon: {fileID: 5386848642831577647, guid: 1b5af089d237bce47be6aabbc7530315, type: 3}
-  maxHealth: 100
-  moveSpeed: 3
+  playerSprite: {fileID: 992134583, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+  startingWeapon: {fileID: 5386848642831577647, guid: 0f40393f2e450c44fb08274d5a6d677c, type: 3}
+  maxHealth: 200
+  moveSpeed: 2.3
   recovery: 1
   might: 1
-  projectileSpeed: 20
+  projectileSpeed: 18
   magnet: 2

@@ -81,5 +81,17 @@ public class Sword : Weapon
                 Debug.Log($"Sword attack! Causing {weaponData.damage} damage to {enemy.enemyName}.");
             }
         }
+
+        base.Attack();
+
+        GameObject slash = Instantiate(weaponData.prefab);
+        slash.GetComponent<SwordProjectile>().CheckDirection(pm.ShootDir);
+
+        slash.transform.position = this.transform.position;
+    }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
     }
 }

@@ -1700,7 +1700,7 @@ MonoBehaviour:
     - enemyName: Red Ghost
       spawnCount: 0
     totalSpawnCount: 0
-    spawnInterval: 1.5
+    spawnInterval: 0.1
   - waveName: wave 2
     enemyGroups:
     - enemyName: Red Ghost
@@ -1868,6 +1868,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 265ed854a6cfd7d4cbfcfe287d9c513a, type: 2}
   - {fileID: 11400000, guid: 0f05afe986682e340ba3544293bbced5, type: 2}
   - {fileID: 11400000, guid: f8915c487d79a8c46ad7e2853a1ff22b, type: 2}
+  - {fileID: 11400000, guid: 2c73bb546b0925a4ca3df7e57ad951da, type: 2}
   unavailableItems: []
   TableUI:
   - displayName: {fileID: 873597298}
@@ -4894,13 +4895,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1824087626}
   - component: {fileID: 1824087625}
-  - component: {fileID: 1824087623}
   - component: {fileID: 1824087627}
   - component: {fileID: 1824087629}
   - component: {fileID: 1824087628}
   - component: {fileID: 1824087630}
   - component: {fileID: 1824087631}
   - component: {fileID: 1824087632}
+  - component: {fileID: 1824087633}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4908,33 +4909,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1824087623
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824087622}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!212 &1824087625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4976,7 +4950,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1114726145, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4984,7 +4958,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1824087626
@@ -5047,7 +5021,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824087622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f6bfae54d5397049b3cfe4c17caf73a, type: 3}
   m_Name: 
@@ -5160,12 +5134,39 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!50 &1824087633
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824087622}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1932280048
 GameObject:
   m_ObjectHideFlags: 0
