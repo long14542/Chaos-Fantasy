@@ -1,24 +1,18 @@
-using UnityEngine;
-
-// Mother class for all types of items, i.e: weapon, passive item
+﻿using UnityEngine;
 public class Item : MonoBehaviour
 {
     public int currentLevel, maxLevel;
     public string itemName;
-
     protected CharacterHandler owner;
-    
-    // DO NOT try to change ItemData values, this applies to the methods that override this method
-    // ScriptableObjects' data are meant to be read only
     public virtual void Initialize(ItemData data)
     {
         currentLevel = 1;
-        maxLevel = data.maxLevel;
+        int maxLevel1 = data.maxLevel;
+        maxLevel = maxLevel1;
         itemName = data.itemName;
-        owner = FindFirstObjectByType<CharacterHandler>();
+        CharacterHandler characterHandler = FindFirstObjectByType<CharacterHandler>();
+        owner = characterHandler;
     }
-
-    // Check if the item has already reached the max level
     public virtual bool CanLevelUp()
     {
         return currentLevel < maxLevel;
@@ -26,6 +20,9 @@ public class Item : MonoBehaviour
 
     public virtual void LevelUp()
     {
-        if (CanLevelUp()) currentLevel += 1;
+        if (CanLevelUp())
+        {
+            currentLevel += 1;
+        }
     }
 }
