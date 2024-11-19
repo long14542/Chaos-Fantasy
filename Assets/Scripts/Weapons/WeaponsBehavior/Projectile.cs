@@ -3,7 +3,7 @@ using UnityEngine;
 
 // Base script for projectile behavior
 // This script is placed upon the prefab of a weapon that is a projectile
-public class ProjectileBehavior : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     public WeaponData weaponData;
     protected Vector3 direction;
@@ -11,13 +11,11 @@ public class ProjectileBehavior : MonoBehaviour
 
     protected float currentDamage;
     protected float currentSpeed;
-    protected float currentCooldownDuration;
     protected int currentPierce;
     protected float currentLifetime;
 
     void Awake()
     {
-        currentCooldownDuration = weaponData.cooldownDuration;
         currentDamage = weaponData.damage;
         currentPierce = weaponData.pierce;
         currentSpeed = weaponData.speed;
@@ -35,7 +33,7 @@ public class ProjectileBehavior : MonoBehaviour
     // Apply player's might to projectiles' damage
     public float MightAppliedDamaged()
     {
-        return currentDamage *= playerStats.currentMight;
+        return currentDamage * playerStats.currentMight;
     }
 
     public void CheckDirection(Vector3 dir)
@@ -95,7 +93,9 @@ public class ProjectileBehavior : MonoBehaviour
             // Reference the enemyHandler from the Collider
             EnemyHandler enemy = collision.GetComponent<EnemyHandler>();
             // Use damage increased with might
-            enemy.TakeDamage(MightAppliedDamaged());
+            currentDamage = weaponData.damage; // DO NOT EVER DELETE this, it will break the damage number ;v Idk why 
+            int dmg = (int) MightAppliedDamaged();
+            enemy.TakeDamage(dmg);
             DecreasePierce();
         }
     }
@@ -109,10 +109,5 @@ public class ProjectileBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void IncreaseDamage()
-    {
-        currentDamage += weaponData.damageUpNextLevel;
     }
 }

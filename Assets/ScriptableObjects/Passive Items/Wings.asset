@@ -15,5 +15,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 1d43529f67cab2841a0fbbb6c73109c5, type: 3}
   maxLevel: 5
   itemName: Wings
+  prefab: {fileID: 862188616611119623, guid: a01c2d9d08839b14dbfda73b1f2ef0b8, type: 3}
   multiplier: 10
   multiplierUpNextLevel: 10

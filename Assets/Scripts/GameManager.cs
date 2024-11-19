@@ -1,77 +1,133 @@
+using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class GameManager : MonoBehaviour
 {
     // These are the possible states of the game while running
     public enum GameState
     {
         Playing,
-        Paused
+        Paused,
+        LevelUp
     }
-    public GameObject pauseMenuUI;
-    public Button pauseButton;
     public GameState currentState;
+
+    [Header("Stopwatch")]
+    public TextMeshProUGUI stopWatchDisplay;
+    private float stopWatchTime;
+
+    public static GameManager instance;
+
+    [Header("Screens")]
+    public GameObject levelUpScreen;
+    [Header("UI Elements")]
+    public GameObject pauseMenu; 
+    public Button pauseButton; 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        // Prevent the creation of another instance of this class
+        else
+        {
+            Debug.Log("GameManager duplicate destroyed: " + this);
+            Destroy(gameObject);
+        }
+
+        DisableScreens();
+    }
+
+    void DisableScreens()
+    {
+        levelUpScreen.SetActive(false);
+        pauseMenu.SetActive(false);
+    }
     void Start()
     {
         currentState = GameState.Playing;
-        pauseMenuUI.SetActive(false);  // Hide pause menu initially
+        pauseMenu.SetActive(false);  // Hide the pause menu initially
+
+        // Set up the button's onClick event to toggle pause state
         pauseButton.onClick.AddListener(TogglePause);
     }
-
-
     void Update()
     {
+        if (currentState == GameState.Playing)
         {
-            // Check for Escape key press only
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                TogglePause();
-            }
+            UpdateStopWatch();
         }
-    }
-        public void TogglePause()
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            // If the game is paused then resume it
             if (currentState == GameState.Paused)
             {
                 ResumeGame();
             }
+            // If the game is playing then pause it
             else if (currentState == GameState.Playing)
             {
-                PauseGame();
+                TogglePause();
             }
         }
 
-        public void PauseGame()
+    }
+    public void TogglePause()
+    {
+        if (currentState == GameState.Paused)
+        {
+            ResumeGame();
+        }
+        else if (currentState == GameState.Playing)
+        {
+            PauseGame();
+        }
+    }
+
+    public void PauseGame()
     {
         currentState = GameState.Paused;
+        // The scale at which time passes
         Time.timeScale = 0f;
-        pauseMenuUI.SetActive(true);
-        pauseButton.gameObject.SetActive(false);
+        pauseMenu.SetActive(true);
     }
 
     public void ResumeGame()
     {
         currentState = GameState.Playing;
         Time.timeScale = 1f;
-        pauseMenuUI.SetActive(false);
-        pauseButton.gameObject.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
-    public void RestartGame()
+    public void StartLevelUpScreen()
     {
+        currentState = GameState.LevelUp;
+        Time.timeScale = 0f;
+        levelUpScreen.SetActive(true);
+    }
+
+    public void EndLevelUpScreen()
+    {
+        currentState = GameState.Playing;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // Restart current scene
+        levelUpScreen.SetActive(false);
     }
 
-    public void ReturnToMainMenu()
+    void UpdateStopWatch()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");  // Make sure the main menu scene is set in the build settings
+        stopWatchTime += Time.deltaTime;
+        UpdateStopWatchDisplay();
     }
 
-    public void AdjustSound(float volume)
+    void UpdateStopWatchDisplay()
     {
-        AudioListener.volume = volume;  // Set this based on a UI slider
+        int minutes = (int)Math.Floor(stopWatchTime / 60);
+        int seconds = (int)Math.Floor(stopWatchTime % 60);
+
+        stopWatchDisplay.text = string.Format("{0}:{1:00}", minutes, seconds);
     }
 }

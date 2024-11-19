@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KnifeBehavior : ProjectileBehavior
+public class KnifeProjectile : Projectile
 {
 
     // Start is called before the first frame update

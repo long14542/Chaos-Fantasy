@@ -62,6 +62,8 @@ public class CharacterHandler : MonoBehaviour
     public int weaponId;
     public int itemId;
 
+    ItemPool itemPool;
+
     void Awake()
     {
         // Load character
@@ -71,6 +73,7 @@ public class CharacterHandler : MonoBehaviour
         inventory = GetComponent<Inventory>();
         collector = GetComponentInChildren<PlayerCollector>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        itemPool = FindFirstObjectByType<ItemPool>();
 
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
@@ -141,6 +144,11 @@ public class CharacterHandler : MonoBehaviour
                     break;
                 }
             }
+            
+            // Change the state of the game to LevelUp
+            GameManager.instance.StartLevelUpScreen();
+            // Create item table
+            itemPool.ChooseItems();
         }
     }
 
@@ -167,7 +175,7 @@ public class CharacterHandler : MonoBehaviour
     }
     void Die()
     {
-        Debug.Log("Player is Dead");
+
     }
     
     // Character health regeneration

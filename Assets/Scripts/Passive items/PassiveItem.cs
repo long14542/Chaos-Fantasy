@@ -1,4 +1,3 @@
-using UnityEngine;
 
 // Mother class of all passive items
 public class PassiveItem : Item
