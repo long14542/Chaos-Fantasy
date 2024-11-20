@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b499a91e9b0ee9145bb7db3bdf0c6dc0, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  icon: {fileID: 122028613, guid: 5a4268d699d84e8408708642464eacfa, type: 3}
+  maxLevel: 5
+  itemName: Sword
+  controller: {fileID: 5386848642831577647, guid: 0f40393f2e450c44fb08274d5a6d677c, type: 3}
+  prefab: {fileID: 3445399263290737042, guid: 35504e6423ce90c4c9fc1113b15b8790, type: 3}
+  speed: 0
+  damage: 10
+  cooldownDuration: 0.5
+  pierce: 99
+  lifeTime: 0.1
+  damagePlus: 0
