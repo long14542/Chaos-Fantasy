@@ -1,11 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "ScriptableObjects/Character")]
-public class CharacterScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "CharacterData", menuName = "ScriptableObjects/Character")]
+public class CharacterData : ScriptableObject
 {
     [SerializeField]
     private Sprite playerSprite;
     public Sprite PlayerSprite { get => playerSprite; private set => playerSprite = value; }
+
+    public RuntimeAnimatorController animationController;
 
     [SerializeField]
     private GameObject startingWeapon;

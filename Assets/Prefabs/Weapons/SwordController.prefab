@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5386848642831577647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41ae04f44fb12a43848846c1e767cc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e3c72c7f3e256d4c8675d663034b3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 0
   maxLevel: 0
   itemName: 
-  weaponData: {fileID: 11400000, guid: 0ec947bb9077ae941b74462fae41f66c, type: 2}
+  weaponData: {fileID: 11400000, guid: 2c73bb546b0925a4ca3df7e57ad951da, type: 2}

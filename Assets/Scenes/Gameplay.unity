@@ -635,7 +635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -263652391, guid: a4dfd3b6a6d996b42b436de6d023179b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1697,10 +1697,8 @@ MonoBehaviour:
     enemyGroups:
     - enemyName: Ghost
       spawnCount: 0
-    - enemyName: Red Ghost
-      spawnCount: 0
     totalSpawnCount: 0
-    spawnInterval: 0.1
+    spawnInterval: 1
   - waveName: wave 2
     enemyGroups:
     - enemyName: Red Ghost
@@ -4955,7 +4953,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.56, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -5021,7 +5019,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824087622}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f6bfae54d5397049b3cfe4c17caf73a, type: 3}
   m_Name: 
