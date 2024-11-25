@@ -6,8 +6,8 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VikingController
+  m_Name: NecroController
   m_Controller: {fileID: 9100000, guid: b6f8000b091f37249a56843644da558e, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: ec9aaa1f8647d294c888594d62ed5bcc, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: ba6b4cfe0eaf8024d9160d5898a7873b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8f8ed166cc7974a49af0924bba63b938, type: 2}

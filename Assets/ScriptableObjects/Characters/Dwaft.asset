@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc0f7cda59422ab4ebb51db63d8ac540, type: 3}
-  m_Name: Knight
+  m_Name: Dwaft
   m_EditorClassIdentifier: 
-  playerSprite: {fileID: 1953742731, guid: 8497bcc4f29625145b9ed29767923f63, type: 3}
-  animationController: {fileID: 22100000, guid: b92d124b5210ad74da6e20b9fe1493f8, type: 2}
+  playerSprite: {fileID: 1380290216, guid: add9b0a5ae6149c4bb11fb4e904c9bf8, type: 3}
+  animationController: {fileID: 22100000, guid: e56f86c669cd29748a22ee70b8425c9b, type: 2}
   startingWeapon: {fileID: 5386848642831577647, guid: 0f40393f2e450c44fb08274d5a6d677c, type: 3}
-  maxHealth: 170
-  moveSpeed: 2.3
+  maxHealth: 200
+  moveSpeed: 2
   recovery: 1
   might: 1
   projectileSpeed: 18
