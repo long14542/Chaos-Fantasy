@@ -41,4 +41,11 @@ public class PlayerAnimation : MonoBehaviour
             render.flipX = false;
         }
     }
+
+    public void SetAnimator(RuntimeAnimatorController controller)
+    {
+        if (!am)
+            am = GetComponent<Animator>();
+        am.runtimeAnimatorController = controller; // Set the animator for the choosen character
+    }
 }

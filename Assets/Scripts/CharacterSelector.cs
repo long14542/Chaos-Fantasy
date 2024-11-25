@@ -3,7 +3,7 @@ using UnityEngine;
 public class CharacterSelector : MonoBehaviour
 {
     public static CharacterSelector instance;
-    public CharacterScriptableObject characterData;
+    public CharacterData characterData;
 
     // Create a singleton, set DontDestroyOnLoad so the game object is not destroyed when scene changes
     void Awake()
@@ -23,12 +23,12 @@ public class CharacterSelector : MonoBehaviour
     
     // Static method so we can use this method by calling the class directly and not needing objects
     // Used in CharacterHandler
-    public static CharacterScriptableObject LoadData()
+    public static CharacterData LoadData()
     {
         return instance.characterData;
     }
 
-    public void SelectCharacter(CharacterScriptableObject character)
+    public void SelectCharacter(CharacterData character)
     {
         characterData = character;
     }

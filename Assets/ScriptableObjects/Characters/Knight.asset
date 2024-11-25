@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 992134583, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+  animationController: {fileID: 22100000, guid: b92d124b5210ad74da6e20b9fe1493f8, type: 2}
   startingWeapon: {fileID: 5386848642831577647, guid: 0f40393f2e450c44fb08274d5a6d677c, type: 3}
   maxHealth: 200
   moveSpeed: 2.3
-  recovery: 1
+  recovery: 0
   might: 1
   projectileSpeed: 18
   magnet: 2

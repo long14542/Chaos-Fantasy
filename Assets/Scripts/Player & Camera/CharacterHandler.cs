@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class CharacterHandler : MonoBehaviour
 {
-    public CharacterScriptableObject characterData;
+    public CharacterData characterData;
+
+    PlayerAnimation animator;
 
     // Current character stats
     [HideInInspector]
@@ -21,8 +23,6 @@ public class CharacterHandler : MonoBehaviour
     [HideInInspector]
     public float currentMagnet;
 
-    SpriteRenderer spriteRenderer;
-
     PlayerCollector collector;
     
     // Experience variables
@@ -31,8 +31,8 @@ public class CharacterHandler : MonoBehaviour
     public int expCap;
 
     // SubClass LevelRange will determine how much will the exp required to level up increase in certain level ranges
-    // Ex: Level 1 -> 4: each time you level up the exp required is increased by 2
-    //     Level 5 -> 10: each time you level up the exp required is increased by 4
+    // Ex: Level 1 -> 4: each time you level up the expCap is increased by 2
+    //     Level 5 -> 10: each time you level up the expCap is increased by 4
     // Use System.Serializable to expose the class's variables in the inspector
     [System.Serializable]
     public class LevelRange
@@ -72,7 +72,6 @@ public class CharacterHandler : MonoBehaviour
 
         inventory = GetComponent<Inventory>();
         collector = GetComponentInChildren<PlayerCollector>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         itemPool = FindFirstObjectByType<ItemPool>();
 
         // Assign current stats to the starting stats
@@ -85,7 +84,9 @@ public class CharacterHandler : MonoBehaviour
 
         collector.SetRadius(currentMagnet);
 
-        spriteRenderer.sprite = characterData.PlayerSprite;
+        // Set animation for the character
+        animator = GetComponent<PlayerAnimation>(); 
+        animator.SetAnimator(characterData.animationController);
 
         // Set the starting weapon
         AcquireWeapon(characterData.StartingWeapon);
@@ -181,6 +182,10 @@ public class CharacterHandler : MonoBehaviour
     // Character health regeneration
     void Recover()
     {
+        if (currentRecovery == 0)
+        {
+            return;
+        }
         if (currentHealth < characterData.MaxHealth)
         {
             currentHealth += currentRecovery * Time.deltaTime;
