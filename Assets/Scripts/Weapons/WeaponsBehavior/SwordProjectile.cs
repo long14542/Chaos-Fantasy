@@ -7,7 +7,7 @@ public class SwordProjectile : Projectile
     {
         base.Start();
 
-        transform.position += direction * 0.5f;
+        transform.position += direction * -0.1f;
     }
 
 }
