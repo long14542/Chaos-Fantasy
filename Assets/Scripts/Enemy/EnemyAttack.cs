@@ -10,7 +10,6 @@ public class EnemyAttack : MonoBehaviour
     private GameObject player;
     private EnemyHandler enemyHandler;
     private Animator animator;
-    private bool isAttacking;
 
     void Start()
     {
@@ -28,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         // Nếu kẻ địch đã chết hoặc không tìm thấy người chơi, bỏ qua logic tấn công
-        if (enemyHandler == null || enemyHandler.currentHealth <= 0 || player == null)
+        if (enemyHandler == null || enemyHandler.GetCurrentHealth() <= 0 || player == null)
         {
             // Đảm bảo tắt trạng thái "isAttacking" nếu enemy đã chết
             if (animator != null && animator.GetBool("isAttacking"))
@@ -37,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
             }
 
             // Nếu kẻ địch chết, set isDead = true để kích hoạt animation chết
-            if (enemyHandler.currentHealth <= 0 && animator != null)
+            if (enemyHandler.GetCurrentHealth() <= 0 && animator != null)
             {
                 animator.SetBool("isDead", true);
             }
