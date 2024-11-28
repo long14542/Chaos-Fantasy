@@ -122,6 +122,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &87370798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 87370799}
+  - component: {fileID: 87370801}
+  - component: {fileID: 87370800}
+  m_Layer: 0
+  m_Name: Total Health Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &87370799
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87370798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 809926254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.35000002}
+  m_SizeDelta: {x: 1, y: 0.19999999}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &87370800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87370798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: f102ab3c17b72eb4c9f6f7e490448f22, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &87370801
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87370798}
+  m_CullTransparentMesh: 1
 --- !u!1 &135661197
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +407,7 @@ GameObject:
   - component: {fileID: 196112826}
   - component: {fileID: 196112825}
   m_Layer: 5
-  m_Name: Exp Bar
+  m_Name: Total Exp Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.9150943, b: 0.15638143, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -491,6 +566,7 @@ RectTransform:
   m_Children:
   - {fileID: 620359144}
   - {fileID: 196112824}
+  - {fileID: 1534292135}
   - {fileID: 500704905}
   - {fileID: 2133343729}
   - {fileID: 342780797}
@@ -1697,6 +1773,12 @@ MonoBehaviour:
     enemyGroups:
     - enemyName: Ghost
       spawnCount: 0
+    - enemyName: Bat
+      spawnCount: 0
+    - enemyName: Skeleton
+      spawnCount: 0
+    - enemyName: NightBorne
+      spawnCount: 0
     totalSpawnCount: 0
     spawnInterval: 1
   - waveName: wave 2
@@ -2182,6 +2264,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 87370799}
   - {fileID: 828086865}
   m_Father: {fileID: 1824087626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2296,7 +2379,7 @@ GameObject:
   - component: {fileID: 828086867}
   - component: {fileID: 828086866}
   m_Layer: 0
-  m_Name: HealthBar
+  m_Name: Current Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2309,7 +2392,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828086864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3984,6 +4067,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531594696}
   m_CullTransparentMesh: 1
+--- !u!1 &1534292134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534292135}
+  - component: {fileID: 1534292137}
+  - component: {fileID: 1534292136}
+  m_Layer: 5
+  m_Name: Current Exp Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1534292135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534292134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 218324850}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -16.195}
+  m_SizeDelta: {x: 0, y: 16.195}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1534292136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534292134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.9150943, b: 0.15638143, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: f102ab3c17b72eb4c9f6f7e490448f22, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1534292137
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534292134}
+  m_CullTransparentMesh: 1
 --- !u!1 &1558847822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,6 +4621,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 3757582504974892125, guid: 084748fe9b6321847824a24f6237826b, type: 3}
   - {fileID: 3757582504974892125, guid: 230df496a7d366d43bb716931c9d8f95, type: 3}
+  - {fileID: 6619004742912599845, guid: e5e6befcd9aa04f4aa751a8e2c80f335, type: 3}
+  - {fileID: -714600252653890725, guid: 556641b4fde8c794db2e7d118361a793, type: 3}
+  - {fileID: -533679909414043143, guid: 8696ddd9c66c5424eb3d1e0e436707fa, type: 3}
   popUpPrefab: {fileID: 2900527051445591179, guid: 009627a5eb1edae448c34b1cee4c18dc, type: 3}
 --- !u!4 &1752563134
 Transform:
@@ -5047,7 +5208,7 @@ MonoBehaviour:
   level: 1
   expCap: 0
   healthBar: {fileID: 828086866}
-  expBar: {fileID: 196112825}
+  expBar: {fileID: 1534292136}
   levelText: {fileID: 500704906}
   invincibilityDuration: 0.5
   levelRanges:

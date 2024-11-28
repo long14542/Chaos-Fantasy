@@ -706,11 +706,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 0cd4e321-6886-44a4-9e8e-d75513cda5c7
+  cloudProjectId: 6dad2f21-1ce9-4427-a77e-f0738232d86c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Chaos-Fantasy 2024-11-25_19-11-21
-  organizationId: burevestniks
+  projectName: Chaos-Fantasy
+  organizationId: ckodfads
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
