@@ -1773,6 +1773,12 @@ MonoBehaviour:
     enemyGroups:
     - enemyName: Ghost
       spawnCount: 0
+    - enemyName: Bat
+      spawnCount: 0
+    - enemyName: Skeleton
+      spawnCount: 0
+    - enemyName: NightBorne
+      spawnCount: 0
     totalSpawnCount: 0
     spawnInterval: 1
   - waveName: wave 2
@@ -4615,6 +4621,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 3757582504974892125, guid: 084748fe9b6321847824a24f6237826b, type: 3}
   - {fileID: 3757582504974892125, guid: 230df496a7d366d43bb716931c9d8f95, type: 3}
+  - {fileID: 6619004742912599845, guid: e5e6befcd9aa04f4aa751a8e2c80f335, type: 3}
+  - {fileID: -714600252653890725, guid: 556641b4fde8c794db2e7d118361a793, type: 3}
+  - {fileID: -533679909414043143, guid: 8696ddd9c66c5424eb3d1e0e436707fa, type: 3}
   popUpPrefab: {fileID: 2900527051445591179, guid: 009627a5eb1edae448c34b1cee4c18dc, type: 3}
 --- !u!4 &1752563134
 Transform:
