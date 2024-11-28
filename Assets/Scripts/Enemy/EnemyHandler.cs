@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class EnemyHandler : MonoBehaviour
     public float currentHealth;
 
     private CircleCollider2D collide;
+    private Animator animator; // Thêm Animator vào biến
+    private bool isDead;
 
     // Use Awake because it is called before Start
     void Awake()
@@ -21,6 +23,8 @@ public class EnemyHandler : MonoBehaviour
         spawner = FindFirstObjectByType<EnemySpawner>();
         drop = GetComponent<DropRateManager>();
         collide = GetComponent<CircleCollider2D>();
+        animator = GetComponent<Animator>(); // Thêm tham chiếu tới Animator
+
         currentDamage = enemyData.Damage;
         currentSpeed = enemyData.Speed;
         currentHealth = enemyData.MaxHealth;
@@ -28,15 +32,15 @@ public class EnemyHandler : MonoBehaviour
 
     void Update()
     {
-        // Check for nearby colliders within collider radius
+        // Kiểm tra các va chạm gần
         Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, collide.radius);
 
         foreach (Collider2D collider in nearbyObjects)
         {
-            // Ignore self-collisions
+            // Bỏ qua chính đối tượng
             if (collider.gameObject == this.gameObject) continue;
 
-            // Check if the collider is an enemy
+            // Kiểm tra nếu là kẻ địch
             if (collider.CompareTag("Enemy"))
             {
                 HandleOverlap(collider, 4f);
@@ -45,8 +49,23 @@ public class EnemyHandler : MonoBehaviour
             {
                 HandleOverlap(collider, 10f);
                 CharacterHandler player = collider.GetComponent<CharacterHandler>();
-                player.TakeDamage(currentDamage); // Damage the player if close
+                player.TakeDamage(currentDamage); // Gây sát thương cho người chơi nếu gần
             }
+        }
+
+        // Kiểm tra nếu kẻ địch chết
+        if (currentHealth <= 0)
+        {
+            // Kích hoạt animation chết
+            if (animator != null)
+            {
+                animator.SetBool("isDead", true);
+            }
+
+            // Các hành động khác khi kẻ địch chết
+            drop.DropPickUp();
+            ObjectPools.EnqueueObject(this, enemyName);
+            spawner.enemiesAlive -= 1;
         }
     }
 
@@ -57,12 +76,14 @@ public class EnemyHandler : MonoBehaviour
 
         DamagePopUp.Create(transform.position, dmg);
 
-        // Deactivate object if current health is lower or equal to 0
+        // Kiểm tra nếu máu <= 0
         if (currentHealth <= 0)
         {
-            drop.DropPickUp();
-            ObjectPools.EnqueueObject(this, enemyName);
-            spawner.enemiesAlive -= 1;
+            // Set isDead để kích hoạt animation chết
+            if (animator != null)
+            {
+                animator.SetBool("isDead", true);
+            }
         }
     }
 
@@ -71,5 +92,4 @@ public class EnemyHandler : MonoBehaviour
         Vector2 direction = (Vector2)(transform.position - other.transform.position);
         transform.position += (Vector3)(force * Time.deltaTime * direction.normalized);
     }
-
 }

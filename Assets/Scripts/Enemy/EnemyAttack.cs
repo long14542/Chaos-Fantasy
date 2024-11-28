@@ -10,6 +10,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject player;
     private EnemyHandler enemyHandler;
     private Animator animator;
+    private bool isAttacking;
 
     void Start()
     {
@@ -34,6 +35,13 @@ public class EnemyAttack : MonoBehaviour
             {
                 animator.SetBool("isAttacking", false);
             }
+
+            // Nếu kẻ địch chết, set isDead = true để kích hoạt animation chết
+            if (enemyHandler.currentHealth <= 0 && animator != null)
+            {
+                animator.SetBool("isDead", true);
+            }
+
             return;
         }
 
