@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSprite: {fileID: -2087693895, guid: 0d1bb305c22905c4c81f76e049386c67, type: 3}
   animationController: {fileID: 22100000, guid: 23679734a1cc6164c9bd035a9329465b, type: 2}
-  startingWeapon: {fileID: 5386848642831577647, guid: 1b5af089d237bce47be6aabbc7530315, type: 3}
+  startingWeapon: {fileID: 8247763035044299937, guid: 04e26843797be6b4faef21d55f112d2c, type: 3}
   maxHealth: 140
   moveSpeed: 2.5
   recovery: 1
