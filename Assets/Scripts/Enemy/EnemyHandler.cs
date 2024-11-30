@@ -26,10 +26,12 @@ public class EnemyHandler : MonoBehaviour
         currentHealth = enemyData.MaxHealth;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        // Only check on Objects layer to reduce the number of unncessary cheks
+        LayerMask mask = LayerMask.GetMask("Objects");
         // Check for nearby colliders within collider radius
-        Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, collide.radius);
+        Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, collide.radius, mask);
 
         foreach (Collider2D collider in nearbyObjects)
         {
@@ -39,11 +41,11 @@ public class EnemyHandler : MonoBehaviour
             // Check if the collider is an enemy
             if (collider.CompareTag("Enemy"))
             {
-                HandleOverlap(collider, 4f);
+                HandleOverlap(collider);
             }
             else if (collider.CompareTag("Player"))
             {
-                HandleOverlap(collider, 10f);
+                HandleOverlap(collider);
                 CharacterHandler player = collider.GetComponent<CharacterHandler>();
                 player.TakeDamage(currentDamage); // Damage the player if close
             }
@@ -66,10 +68,19 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
-    void HandleOverlap(Collider2D other, float force)
+    void HandleOverlap(Collider2D other)
     {
         Vector2 direction = (Vector2)(transform.position - other.transform.position);
-        transform.position += (Vector3)(force * Time.deltaTime * direction.normalized);
+        float distance = direction.magnitude;
+
+        // Calculate the overlap size
+        float combinedRadius = collide.radius + other.bounds.extents.x; // Assuming circular colliders
+        float overlap = combinedRadius - distance;
+
+        // Resolve overlap by moving this object out of the overlap
+        transform.position += (Vector3)(overlap * direction.normalized);
     }
+
+
 
 }

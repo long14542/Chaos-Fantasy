@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8329005427641290149}
   - component: {fileID: 8125464262493883647}
   - component: {fileID: 672676449279461819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlueGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

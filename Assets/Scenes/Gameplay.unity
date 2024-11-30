@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 87370799}
   - component: {fileID: 87370801}
   - component: {fileID: 87370800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Total Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 809926257}
   - component: {fileID: 809926256}
   - component: {fileID: 809926255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2372,7 +2372,7 @@ GameObject:
   - component: {fileID: 828086865}
   - component: {fileID: 828086867}
   - component: {fileID: 828086866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Current Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4513,7 +4513,7 @@ GameObject:
   - component: {fileID: 1708384267}
   - component: {fileID: 1708384269}
   - component: {fileID: 1708384268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MagnetCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5052,7 +5052,7 @@ GameObject:
   - component: {fileID: 1824087631}
   - component: {fileID: 1824087632}
   - component: {fileID: 1824087633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
