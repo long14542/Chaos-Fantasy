@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
@@ -32,22 +33,25 @@ public class EnemyHandler : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("Objects");
         // Check for nearby colliders within collider radius
         Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, collide.radius, mask);
+        
+        // Track processed pairs to avoid redundant checks
+        // HashSet is used instead of List because it avoid duplicates
+        // Which is good because we don't want to add the same pair
+        HashSet<(Collider2D, Collider2D)> processedPairs = new HashSet<(Collider2D, Collider2D)>();
 
-        foreach (Collider2D collider in nearbyObjects)
+        foreach (Collider2D obj1 in nearbyObjects)
         {
-            // Ignore self-collisions
-            if (collider.gameObject == this.gameObject) continue;
+            foreach (Collider2D obj2 in nearbyObjects)
+            {
+                // Skip self-collision and already processed pairs
+                if (obj1 == obj2 || processedPairs.Contains((obj1, obj2)) || processedPairs.Contains((obj2, obj1)))
+                    continue;
 
-            // Check if the collider is an enemy
-            if (collider.CompareTag("Enemy"))
-            {
-                HandleOverlap(collider);
-            }
-            else if (collider.CompareTag("Player"))
-            {
-                HandleOverlap(collider);
-                CharacterHandler player = collider.GetComponent<CharacterHandler>();
-                player.TakeDamage(currentDamage); // Damage the player if close
+                // Add the pair to the processed set
+                processedPairs.Add((obj1, obj2));
+
+                // Resolve overlap between obj1 and obj2
+                HandleOverlap(obj1, obj2);
             }
         }
     }
@@ -68,17 +72,24 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
-    void HandleOverlap(Collider2D other)
+    void HandleOverlap(Collider2D obj1, Collider2D obj2)
     {
-        Vector2 direction = (Vector2)(transform.position - other.transform.position);
+        Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
         float distance = direction.magnitude;
 
-        // Calculate the overlap size
-        float combinedRadius = collide.radius + other.bounds.extents.x; // Assuming circular colliders
+        float combinedRadius = obj1.bounds.extents.x + obj2.bounds.extents.x; // Assuming circular objects
+
+        // Calculate the overlap amount
         float overlap = combinedRadius - distance;
 
-        // Resolve overlap by moving this object out of the overlap
-        transform.position += (Vector3)(overlap * direction.normalized);
+        if (overlap > 0) // Resolve overlap if necessary
+        {
+            // Split the resolution equally between the two objects
+            Vector3 halfOverlap = (overlap / 2) * direction.normalized;
+
+            obj1.transform.position += halfOverlap;
+            obj2.transform.position -= halfOverlap;
+        }
     }
 
 

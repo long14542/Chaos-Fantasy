@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -495743934428735374}
   - component: {fileID: -3300405507885975105}
   - component: {fileID: 7599628520083892020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0099, y: 0.1949, z: 0}
-  m_LocalScale: {x: 0.8179745, y: 0.6646211, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -173,7 +173,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.27
 --- !u!114 &7599628520083892020
 MonoBehaviour:
   m_ObjectHideFlags: 0
