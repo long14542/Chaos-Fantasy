@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -495743934428735374}
   - component: {fileID: -3300405507885975105}
   - component: {fileID: 7599628520083892020}
+  - component: {fileID: 7836314103056753550}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -123,10 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 2a541541285868c459b574133e7af4fe, type: 2}
-  enemyName: Bat
-  currentSpeed: 0
-  currentDamage: 0
-  currentHealth: 0
 --- !u!114 &-495743934428735374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +184,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops: []
+--- !u!114 &7836314103056753550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964908974575422787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0102dfea91e8c744b013c4200cfb7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  attackRange: 0.5
+  attackCooldown: 1

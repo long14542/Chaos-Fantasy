@@ -13,68 +13,137 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        // Lấy tham chiếu đến người chơi
+        // Tìm Player
         player = GameObject.FindGameObjectWithTag("Player");
-        enemyHandler = GetComponent<EnemyHandler>();
-        animator = GetComponent<Animator>(); // Gắn Animator từ component
+        if (player == null)
+        {
+            Debug.LogError("Player not found! Ensure Player has the correct tag.");
+        }
+        else
+        {
+            Debug.Log("Player found successfully.");
+        }
 
+        // Lấy EnemyHandler
+        enemyHandler = GetComponent<EnemyHandler>();
+        if (enemyHandler == null)
+        {
+            Debug.LogError("EnemyHandler not found on this object.");
+        }
+        else
+        {
+            Debug.Log("EnemyHandler found successfully.");
+        }
+
+        // Lấy Animator
+        animator = GetComponent<Animator>();
         if (animator == null)
         {
-            Debug.LogError("Animator not found on Enemy!");
+            Debug.LogError("Animator not found on Enemy.");
+        }
+        else
+        {
+            Debug.Log("Animator found successfully.");
         }
     }
 
     void Update()
     {
-        // Nếu kẻ địch đã chết hoặc không tìm thấy người chơi, bỏ qua logic tấn công
-        if (enemyHandler == null || enemyHandler.GetCurrentHealth() <= 0 || player == null)
+        // Debug trạng thái kẻ địch
+        if (enemyHandler == null || enemyHandler.GetCurrentHealth() <= 0)
         {
-            // Đảm bảo tắt trạng thái "isAttacking" nếu enemy đã chết
-            if (animator != null && animator.GetBool("isAttacking"))
+            if (enemyHandler == null)
             {
-                animator.SetBool("isAttacking", false);
+                Debug.Log("EnemyHandler is null. Skipping attack logic.");
             }
-
-            // Nếu kẻ địch chết, set isDead = true để kích hoạt animation chết
-            if (enemyHandler.GetCurrentHealth() <= 0 && animator != null)
+            else if (enemyHandler.GetCurrentHealth() <= 0)
             {
-                animator.SetBool("isDead", true);
+                Debug.Log("Enemy is dead. Skipping attack logic.");
             }
-
             return;
         }
 
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        if (player == null)
+        {
+            Debug.Log("Player is null. Skipping attack logic.");
+            return;
+        }
 
-        // Nếu khoảng cách trong tầm tấn công và thời gian hồi đã hết
+        // Tính khoảng cách tới Player
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        Debug.Log($"Distance to Player: {distanceToPlayer}");
+
+        // Nếu khoảng cách trong tầm tấn công và cooldown đã sẵn sàng
         if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
-            Attack(); // Thực hiện tấn công
+            Debug.Log("Enemy is within attack range and attack cooldown is ready.");
+            Attack();
             lastAttackTime = Time.time; // Cập nhật thời gian tấn công cuối
         }
         else
         {
-            // Tắt trạng thái tấn công khi không tấn công
-            if (animator != null)
+            if (distanceToPlayer > attackRange)
             {
-                animator.SetBool("isAttacking", false);
+                Debug.Log("Enemy is out of attack range.");
             }
+            if (Time.time < lastAttackTime + attackCooldown)
+            {
+                Debug.Log("Attack cooldown not ready yet.");
+            }
+        }
+
+        // Reset trạng thái tấn công
+        if (animator != null && animator.GetBool("isAttacking") && Time.time >= lastAttackTime + 0.5f)
+        {
+            Debug.Log("Resetting attack animation.");
+            animator.SetBool("isAttacking", false);
         }
     }
 
     private void Attack()
     {
-        // Gây sát thương cho người chơi nếu trong tầm
+        // Gây sát thương cho người chơi
         CharacterHandler playerHandler = player.GetComponent<CharacterHandler>();
         if (playerHandler != null)
         {
             playerHandler.TakeDamage(attackDamage);
-        }
+            Debug.Log($"Player takes {attackDamage} damage from Enemy.");
 
-        // Kích hoạt trạng thái "isAttacking" để phát animation tấn công
-        if (animator != null)
+            // Kích hoạt animation tấn công
+            if (animator != null)
+            {
+                Debug.Log("Triggering attack animation.");
+                animator.SetBool("isAttacking", true);
+            }
+            else
+            {
+                Debug.LogError("Animator is null. Cannot trigger attack animation.");
+            }
+        }
+        else
         {
-            animator.SetBool("isAttacking", true);
+            Debug.LogError("CharacterHandler not found on Player.");
+        }
+    }
+
+    public void DealDamageToPlayer() // Gắn vào Animation Event
+    {
+        if (player != null)
+        {
+            CharacterHandler playerHandler = player.GetComponent<CharacterHandler>();
+            if (playerHandler != null)
+            {
+                playerHandler.TakeDamage(attackDamage);
+                Debug.Log("Player takes damage via Animation Event.");
+            }
+            else
+            {
+                Debug.LogError("CharacterHandler not found on Player.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Player is null in DealDamageToPlayer().");
         }
     }
 }
