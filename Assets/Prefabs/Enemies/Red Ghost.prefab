@@ -123,10 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: ab23076558962d04db54ac5adcc88fdc, type: 2}
-  enemyName: Red Ghost
-  currentSpeed: 0
-  currentDamage: 0
-  currentHealth: 0
 --- !u!114 &494248391997350068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +141,7 @@ MonoBehaviour:
     dropRate: 50
   - name: GreenGem
     itemPrefab: {fileID: 4373212321340365832, guid: 9d30dd8d8ba176740855f4bf5fdee955, type: 3}
-    dropRate: 1
+    dropRate: 0
 --- !u!114 &2529118881617628883
 MonoBehaviour:
   m_ObjectHideFlags: 0

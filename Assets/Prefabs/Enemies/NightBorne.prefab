@@ -183,7 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e79346963776884498d3a0d7ddf556f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops: []
+  drops:
+  - name: BlueGem
+    itemPrefab: {fileID: 4373212321340365832, guid: cdaf7ea55e7f4ff4a987a67920912a0d, type: 3}
+    dropRate: 50
 --- !u!114 &6272429869085630122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,4 +201,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   attackRange: 0.5
-  attackCooldown: 1
+  attackCooldown: 2

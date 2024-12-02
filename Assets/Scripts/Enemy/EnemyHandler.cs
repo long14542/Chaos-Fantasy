@@ -28,11 +28,7 @@ public class EnemyHandler : MonoBehaviour
 
     void Update()
     {
-        if (isDead)
-        {
-            CheckDeathAnimation(); // Kiểm tra khi nào hoạt ảnh chết kết thúc
-            return;
-        }
+        
 
         foreach (var collider in Physics2D.OverlapCircleAll(transform.position, collide.radius))
         {
@@ -45,6 +41,7 @@ public class EnemyHandler : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             Die();
+            InitializeFromPool();
         }
     }
 
@@ -64,25 +61,18 @@ public class EnemyHandler : MonoBehaviour
 
     private void Die()
     {
-        isDead = true; // Đánh dấu kẻ địch đã chết
+        isDead = true;
         currentHealth = 0;
 
-        // Dừng di chuyển
         if (movement != null) movement.enabled = false;
-
-        // Phát hoạt ảnh chết
-        if (animator != null)
-        {
-            animator.SetBool("isDead", true);
-        }
-
-        // Rớt đồ
         if (drop != null) drop.DropPickUp();
-
-        // Vô hiệu hóa collider
         if (collide != null) collide.enabled = false;
+
+        ObjectPools.EnqueueObject(this, enemyData.name); // Đưa vào pool ngay lập tức
+        spawner.enemiesAlive--; // Giảm số lượng kẻ địch còn sống
     }
 
+<<<<<<< HEAD
     private void CheckDeathAnimation()
     {
         if (animator != null)
@@ -91,35 +81,26 @@ public class EnemyHandler : MonoBehaviour
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
             {
+                GetComponent<SpriteRenderer>().enabled = false;
                 ReturnToPool();
             }
         }
     }
+=======
+>>>>>>> 0e0846e64877a9d54ceee72c89f2678a460dffb6
 
-    private void ReturnToPool()
-    {
-        ObjectPools.EnqueueObject(this, enemyData.name);
-        spawner.enemiesAlive--;
 
-        ResetEnemy();
-    }
 
     private void ResetEnemy()
     {
         isDead = false;
         currentHealth = enemyData.MaxHealth;
 
-        // Kích hoạt lại collider
         if (collide != null) collide.enabled = true;
-
-        // Kích hoạt lại di chuyển
         if (movement != null) movement.enabled = true;
-
-        // Đặt trạng thái animator về mặc định
         if (animator != null) animator.SetBool("isDead", false);
-
-        gameObject.SetActive(false); // Tắt game object
     }
+
 
     private void HandleOverlap(Collider2D other, float force)
     {
@@ -132,6 +113,13 @@ public class EnemyHandler : MonoBehaviour
         collider.GetComponent<CharacterHandler>().TakeDamage(currentDamage);
         HandleOverlap(collider, 10f);
     }
+
+    public void InitializeFromPool()
+    {
+        ResetEnemy();
+        gameObject.SetActive(true);
+    }
+
 
     public float GetCurrentHealth()
     {
