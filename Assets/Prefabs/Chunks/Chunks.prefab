@@ -4139,7 +4139,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4157,8 +4157,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853708545780326431}
-  m_Layer: 0
-  m_Name: LeftUpChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Left Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4188,8 +4188,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2822936804467234853}
-  m_Layer: 0
-  m_Name: DownChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4221,7 +4221,7 @@ GameObject:
   - component: {fileID: 2168488668869944346}
   - component: {fileID: 4372347751012484616}
   - component: {fileID: 8895271079379542442}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4310,8 +4310,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2086001468645699715}
-  m_Layer: 0
-  m_Name: RightUpChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Right Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4341,8 +4341,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3507220037742191497}
-  m_Layer: 0
-  m_Name: LeftChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4372,8 +4372,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2832195246840607036}
-  m_Layer: 0
-  m_Name: LeftDownChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Left Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4403,8 +4403,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737075379876618763}
-  m_Layer: 0
-  m_Name: RightDownChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Right Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4434,8 +4434,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4865839003510898713}
-  m_Layer: 0
-  m_Name: UpChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4597,8 +4597,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1777503397623696586}
-  m_Layer: 0
-  m_Name: RightChunkSpawnPoint
+  m_Layer: 3
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

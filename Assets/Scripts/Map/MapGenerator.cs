@@ -15,14 +15,24 @@ public class MapGenerator : MonoBehaviour
     [Header("Optimization")]
     public List<GameObject> spawnedChunks;
     GameObject latestChunk;
-    public float maxDistance; // MUST BE GREATER THAN THE LENGHT AND WIDTH OF THE CHUNK
+    public float maxDistance; // MUST BE GREATER THAN THE LENGTH AND WIDTH OF THE CHUNK
     private float currentDistance;
     private float OptimizerCooldown;
     public float OptimizerCooldownDuration;
+
+    void Awake()
+    {
+        // Load map data
+        chunks = MapSelector.LoadMap();
+        MapSelector.instance.DestroySingleton();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         playerLastPosition = player.transform.position;
+        // Spawn the first chunk before checking
+        SpawnChunk(playerLastPosition);
     }
 
     // Update is called once per frame
