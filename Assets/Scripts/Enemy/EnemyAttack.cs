@@ -4,7 +4,7 @@ public class EnemyAttack : MonoBehaviour
 {
     public float attackDamage = 10f; // Sát thương tấn công
     public float attackRange = 0.5f; // Khoảng cách tấn công
-    public float attackCooldown = 1f; // Thời gian hồi giữa các lần tấn công
+    public float attackCooldown = 1.1f; // Thời gian hồi giữa các lần tấn công
     private float lastAttackTime;
 
     private GameObject player;
