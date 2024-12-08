@@ -50,13 +50,13 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         // Debug trạng thái kẻ địch
-        if (enemyHandler == null || enemyHandler.GetCurrentHealth() <= 0)
+        if (enemyHandler == null || enemyHandler.currentHealth <= 0)
         {
             if (enemyHandler == null)
             {
                 Debug.Log("EnemyHandler is null. Skipping attack logic.");
             }
-            else if (enemyHandler.GetCurrentHealth() <= 0)
+            else if (enemyHandler.currentHealth <= 0)
             {
                 Debug.Log("Enemy is dead. Skipping attack logic.");
             }

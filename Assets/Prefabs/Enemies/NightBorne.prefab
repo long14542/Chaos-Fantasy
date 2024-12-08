@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 79784be869f26614a9fb9d7dee51d538, type: 2}
+  currentSpeed: 0
+  currentDamage: 0
+  currentHealth: 0
 --- !u!114 &537933733814760377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -194,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4037411187401868159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0102dfea91e8c744b013c4200cfb7b6, type: 3}
   m_Name: 

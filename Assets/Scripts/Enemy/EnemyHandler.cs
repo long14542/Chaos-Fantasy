@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
@@ -58,106 +57,100 @@ public class EnemyHandler : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int dmg)
+    {
+        if (isDead) return;
 
+        currentHealth -= dmg;
+        movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
+        DamagePopUp.Create(transform.position, dmg);
 
-        public void TakeDamage(int dmg)
+        if (currentHealth <= 0)
         {
-            if (isDead) return;
+            Die();
+            ReturnToPool(); // Animation is currently bug, added this to return entity to object pool
+        }
+    }
 
-            currentHealth -= dmg;
-            movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
-            DamagePopUp.Create(transform.position, dmg);
+    private void Die()
+    {
+        isDead = true; // Đánh dấu kẻ địch đã chết
+        currentHealth = 0;
 
-            if (currentHealth <= 0)
+        // Dừng di chuyển
+        if (movement != null) movement.enabled = false;
+
+        // Phát hoạt ảnh chết
+        if (animator != null)
+        {
+            animator.SetBool("isDead", true);
+        }
+
+        // Rớt đồ
+        if (drop != null) drop.DropPickUp();
+
+        // Vô hiệu hóa collider
+        if (collide != null) collide.enabled = false;
+    }
+
+    private void CheckDeathAnimation()
+    {
+        if (animator != null)
+        {
+            // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
             {
-                Die();
+                ReturnToPool();
             }
         }
+    }
 
-        private void Die()
+    private void ReturnToPool()
+    {
+        ObjectPools.EnqueueObject(this, enemyData.name);
+        spawner.enemiesAlive--;
+
+        ResetEnemy();
+    }
+
+    void HandleOverlap(Collider2D obj1, Collider2D obj2)
+    {
+        Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
+        float distance = direction.magnitude;
+
+        float combinedRadius = obj1.bounds.extents.x + obj2.bounds.extents.x; // Assuming circular objects
+
+        // Calculate the overlap amount
+        float overlap = combinedRadius - distance;
+
+        if (overlap > 0) // Resolve overlap if necessary
         {
-            isDead = true; // Đánh dấu kẻ địch đã chết
-            currentHealth = 0;
+            // Split the resolution equally between the two objects
+            Vector3 halfOverlap = (overlap / 2) * direction.normalized;
 
-            // Dừng di chuyển
-            if (movement != null) movement.enabled = false;
-
-            // Phát hoạt ảnh chết
-            if (animator != null)
-            {
-                animator.SetBool("isDead", true);
-            }
-
-            // Rớt đồ
-            if (drop != null) drop.DropPickUp();
-
-            // Vô hiệu hóa collider
-            if (collide != null) collide.enabled = false;
+            obj1.transform.position += halfOverlap;
+            obj2.transform.position -= halfOverlap;
         }
-
-        private void CheckDeathAnimation()
-        {
-            if (animator != null)
-            {
-                // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
-                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-                if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
-                {
-                    ReturnToPool();
-                }
-            }
-        }
-
-        private void ReturnToPool()
-        {
-            ObjectPools.EnqueueObject(this, enemyData.name);
-            spawner.enemiesAlive--;
-
-            ResetEnemy();
-        }
-
-        void HandleOverlap(Collider2D obj1, Collider2D obj2)
-        {
-            Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
-            float distance = direction.magnitude;
-
-            float combinedRadius = obj1.bounds.extents.x + obj2.bounds.extents.x; // Assuming circular objects
-
-            // Calculate the overlap amount
-            float overlap = combinedRadius - distance;
-
-            if (overlap > 0) // Resolve overlap if necessary
-            {
-                // Split the resolution equally between the two objects
-                Vector3 halfOverlap = (overlap / 2) * direction.normalized;
-
-                obj1.transform.position += halfOverlap;
-                obj2.transform.position -= halfOverlap;
-            }
-        }
+    }
 
 
-        private void ResetEnemy()
-        {
-            isDead = false;
-            currentHealth = enemyData.MaxHealth;
+    private void ResetEnemy()
+    {
+        isDead = false;
+        currentHealth = enemyData.MaxHealth;
 
-            // Kích hoạt lại collider
-            if (collide != null) collide.enabled = true;
+        // Kích hoạt lại collider
+        if (collide != null) collide.enabled = true;
 
-            // Kích hoạt lại di chuyển
-            if (movement != null) movement.enabled = true;
+        // Kích hoạt lại di chuyển
+        if (movement != null) movement.enabled = true;
 
-            // Đặt trạng thái animator về mặc định
-            if (animator != null) animator.SetBool("isDead", false);
-
-            gameObject.SetActive(false); // Tắt game object
-        }
-        
-        
-
+        // Đặt trạng thái animator về mặc định
+        if (animator != null) animator.SetBool("isDead", false);
 
     }
+}
 
 
     

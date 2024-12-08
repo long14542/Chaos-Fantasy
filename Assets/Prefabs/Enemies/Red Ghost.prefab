@@ -122,7 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0136951e5ea4b408247dd9927aaf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: ab23076558962d04db54ac5adcc88fdc, type: 2}
+  enemyData: {fileID: 11400000, guid: 4a0a6776be3b8074f86d0745cb177655, type: 2}
+  currentSpeed: 0
+  currentDamage: 0
+  currentHealth: 0
 --- !u!114 &494248391997350068
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 0
-  maxLevel: 1
+  maxLevel: 0
   itemName: 
   weaponData: {fileID: 11400000, guid: 265ed854a6cfd7d4cbfcfe287d9c513a, type: 2}

@@ -4,6 +4,8 @@ using UnityEngine;
 public class EnemyScriptableObject : ScriptableObject
 {
     // Base stats
+    public string e_name;
+    
     [SerializeField]
     private float speed;
     public float Speed { get => speed; private set => speed = value; }

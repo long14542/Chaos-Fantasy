@@ -15,5 +15,5 @@
 
 ### For the gameplay to work, you need to play the character selector scene first
 
-You need to make sure the enemyName in EnemyHandler and enemyName in EnemySpawner are
+You need to make sure e_name in EnemyScriptableObject and enemyName in EnemySpawner are
 EXACTLY THE SAME, if not the object pool won't work

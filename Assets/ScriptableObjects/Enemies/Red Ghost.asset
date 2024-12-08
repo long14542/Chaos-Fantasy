@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd73895928b5e92498d97f12796a6e80, type: 3}
-  m_Name: Skeleton
+  m_Name: Red Ghost
   m_EditorClassIdentifier: 
-  e_name: Skeleton
-  speed: 1
-  maxHealth: 8
+  e_name: Red Ghost
+  speed: 1.5
+  maxHealth: 20
   damage: 10

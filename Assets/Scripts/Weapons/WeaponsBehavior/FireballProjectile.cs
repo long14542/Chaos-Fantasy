@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FireballProjectile : Projectile
 {
@@ -24,7 +22,7 @@ public class FireballProjectile : Projectile
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
         // Kiểm tra nếu va chạm với quái (Enemy)
         if (collision.CompareTag("Enemy"))

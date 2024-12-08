@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4964908974575422787}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0099, y: 0.1949, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 2a541541285868c459b574133e7af4fe, type: 2}
+  currentSpeed: 0
+  currentDamage: 0
+  currentHealth: 0
 --- !u!114 &-495743934428735374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -194,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4964908974575422787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0102dfea91e8c744b013c4200cfb7b6, type: 3}
   m_Name: 

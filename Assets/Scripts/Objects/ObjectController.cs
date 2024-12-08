@@ -10,7 +10,7 @@ public class ObjectController : MonoBehaviour
     void Awake()
     {
         for (int i = 0; i < enemyPrefabs.Count; i++)
-            ObjectPools.SetupPool(enemyPrefabs[i], 50, enemyPrefabs[i].name);
+            ObjectPools.SetupPool(enemyPrefabs[i], 50, enemyPrefabs[i].enemyData.name);
         
         ObjectPools.SetupPool(popUpPrefab, 10, "DamagePopUp");
     }

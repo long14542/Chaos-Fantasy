@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 87370799}
   - component: {fileID: 87370801}
   - component: {fileID: 87370800}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Total Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,8 +1773,6 @@ MonoBehaviour:
       spawnCount: 0
     - enemyName: Skeleton
       spawnCount: 0
-    - enemyName: NightBorne
-      spawnCount: 0
     totalSpawnCount: 0
     spawnInterval: 1
   - waveName: wave 2
@@ -2241,7 +2239,7 @@ GameObject:
   - component: {fileID: 809926257}
   - component: {fileID: 809926256}
   - component: {fileID: 809926255}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HealthBar Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2374,7 +2372,7 @@ GameObject:
   - component: {fileID: 828086865}
   - component: {fileID: 828086867}
   - component: {fileID: 828086866}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Current Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
