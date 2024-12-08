@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
@@ -9,9 +11,10 @@ public class EnemyHandler : MonoBehaviour
     private DropRateManager drop;
     private Animator animator;
 
-    private float currentSpeed, currentDamage, currentHealth;
+    public float currentSpeed, currentDamage, currentHealth;
     private CircleCollider2D collide;
     private bool isDead = false; // Trạng thái để kiểm soát khi kẻ địch chết
+
 
     void Awake()
     {
@@ -26,120 +29,136 @@ public class EnemyHandler : MonoBehaviour
         currentHealth = enemyData.MaxHealth;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (isDead)
+        // Only check on Objects layer to reduce the number of unncessary cheks
+        LayerMask mask = LayerMask.GetMask("Objects");
+        // Check for nearby colliders within collider radius
+        Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, collide.radius, mask);
+
+        // Track processed pairs to avoid redundant checks
+        // HashSet is used instead of List because it avoid duplicates
+        // Which is good because we don't want to add the same pair
+        HashSet<(Collider2D, Collider2D)> processedPairs = new HashSet<(Collider2D, Collider2D)>();
+
+        foreach (Collider2D obj1 in nearbyObjects)
         {
-            CheckDeathAnimation(); // Kiểm tra khi nào hoạt ảnh chết kết thúc
-            return;
-        }
-
-        foreach (var collider in Physics2D.OverlapCircleAll(transform.position, collide.radius))
-        {
-            if (collider.gameObject == gameObject) continue;
-
-            if (collider.CompareTag("Enemy")) HandleOverlap(collider, 4f);
-            else if (collider.CompareTag("Player")) HandlePlayerCollision(collider);
-        }
-
-        if (currentHealth <= 0 && !isDead)
-        {
-            Die();
-        }
-    }
-
-    public void TakeDamage(int dmg)
-    {
-        if (isDead) return;
-
-        currentHealth -= dmg;
-        movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
-        DamagePopUp.Create(transform.position, dmg);
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        isDead = true; // Đánh dấu kẻ địch đã chết
-        currentHealth = 0;
-
-        // Dừng di chuyển
-        if (movement != null) movement.enabled = false;
-
-        // Phát hoạt ảnh chết
-        if (animator != null)
-        {
-            animator.SetBool("isDead", true);
-        }
-
-        // Rớt đồ
-        if (drop != null) drop.DropPickUp();
-
-        // Vô hiệu hóa collider
-        if (collide != null) collide.enabled = false;
-    }
-
-    private void CheckDeathAnimation()
-    {
-        if (animator != null)
-        {
-            // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
+            foreach (Collider2D obj2 in nearbyObjects)
             {
-                ReturnToPool();
+                // Skip self-collision and already processed pairs
+                if (obj1 == obj2 || processedPairs.Contains((obj1, obj2)) || processedPairs.Contains((obj2, obj1)))
+                    continue;
+
+                // Add the pair to the processed set
+                processedPairs.Add((obj1, obj2));
+
+                // Resolve overlap between obj1 and obj2
+                HandleOverlap(obj1, obj2);
             }
         }
     }
 
-    private void ReturnToPool()
-    {
-        ObjectPools.EnqueueObject(this, enemyData.name);
-        spawner.enemiesAlive--;
 
-        ResetEnemy();
+
+        public void TakeDamage(int dmg)
+        {
+            if (isDead) return;
+
+            currentHealth -= dmg;
+            movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
+            DamagePopUp.Create(transform.position, dmg);
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            isDead = true; // Đánh dấu kẻ địch đã chết
+            currentHealth = 0;
+
+            // Dừng di chuyển
+            if (movement != null) movement.enabled = false;
+
+            // Phát hoạt ảnh chết
+            if (animator != null)
+            {
+                animator.SetBool("isDead", true);
+            }
+
+            // Rớt đồ
+            if (drop != null) drop.DropPickUp();
+
+            // Vô hiệu hóa collider
+            if (collide != null) collide.enabled = false;
+        }
+
+        private void CheckDeathAnimation()
+        {
+            if (animator != null)
+            {
+                // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
+                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
+                {
+                    ReturnToPool();
+                }
+            }
+        }
+
+        private void ReturnToPool()
+        {
+            ObjectPools.EnqueueObject(this, enemyData.name);
+            spawner.enemiesAlive--;
+
+            ResetEnemy();
+        }
+
+        void HandleOverlap(Collider2D obj1, Collider2D obj2)
+        {
+            Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
+            float distance = direction.magnitude;
+
+            float combinedRadius = obj1.bounds.extents.x + obj2.bounds.extents.x; // Assuming circular objects
+
+            // Calculate the overlap amount
+            float overlap = combinedRadius - distance;
+
+            if (overlap > 0) // Resolve overlap if necessary
+            {
+                // Split the resolution equally between the two objects
+                Vector3 halfOverlap = (overlap / 2) * direction.normalized;
+
+                obj1.transform.position += halfOverlap;
+                obj2.transform.position -= halfOverlap;
+            }
+        }
+
+
+        private void ResetEnemy()
+        {
+            isDead = false;
+            currentHealth = enemyData.MaxHealth;
+
+            // Kích hoạt lại collider
+            if (collide != null) collide.enabled = true;
+
+            // Kích hoạt lại di chuyển
+            if (movement != null) movement.enabled = true;
+
+            // Đặt trạng thái animator về mặc định
+            if (animator != null) animator.SetBool("isDead", false);
+
+            gameObject.SetActive(false); // Tắt game object
+        }
+        
+        
+
+
     }
 
-    private void ResetEnemy()
-    {
-        isDead = false;
-        currentHealth = enemyData.MaxHealth;
 
-        // Kích hoạt lại collider
-        if (collide != null) collide.enabled = true;
+    
 
-        // Kích hoạt lại di chuyển
-        if (movement != null) movement.enabled = true;
-
-        // Đặt trạng thái animator về mặc định
-        if (animator != null) animator.SetBool("isDead", false);
-
-        gameObject.SetActive(false); // Tắt game object
-    }
-
-    private void HandleOverlap(Collider2D other, float force)
-    {
-        Vector2 direction = (Vector2)(transform.position - other.transform.position);
-        transform.position += (Vector3)(force * Time.deltaTime * direction.normalized);
-    }
-
-    private void HandlePlayerCollision(Collider2D collider)
-    {
-        collider.GetComponent<CharacterHandler>().TakeDamage(currentDamage);
-        HandleOverlap(collider, 10f);
-    }
-
-    public float GetCurrentHealth()
-    {
-        return currentHealth;
-    }
-
-    public float GetCurrentSpeed()
-    {
-        return currentSpeed;
-    }
-}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 494248391997350068}
   - component: {fileID: 2529118881617628883}
   - component: {fileID: -2206060429200710422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -188,4 +188,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.27

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5477486293395890739}
   - component: {fileID: 1922857668168558683}
   - component: {fileID: 8742675002625938956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordSlashPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
