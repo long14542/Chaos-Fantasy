@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skeleton_die
+  m_Name: Red_Ghost_Die
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,7 +22,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.85
+        time: 0.15
         value: 1
         inSlope: 0
         outSlope: 0
@@ -31,8 +31,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.96666664
-        value: 0.047058824
+        time: 0.48333332
+        value: 0.03529412
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -51,23 +51,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 289984541, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.11666667
-      value: {fileID: -733187178, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.23333333
-      value: {fileID: 1513075380, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.36666667
-      value: {fileID: 172279804, guid: 705386990593240499f7df8fc0b8c005, type: 3}
+      value: {fileID: -207517905, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+    - time: 0.15
+      value: {fileID: -207517905, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+    - time: 0.31666666
+      value: {fileID: 413667251, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
     - time: 0.48333332
-      value: {fileID: -2034961290, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.6
-      value: {fileID: -1543448632, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.73333335
-      value: {fileID: 1693149377, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.85
-      value: {fileID: -1568988456, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - time: 0.96666664
-      value: {fileID: 971081398, guid: 705386990593240499f7df8fc0b8c005, type: 3}
+      value: {fileID: 413667251, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -99,21 +89,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 289984541, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: -733187178, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: 1513075380, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: 172279804, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: -2034961290, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: -1543448632, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: 1693149377, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: -1568988456, guid: 705386990593240499f7df8fc0b8c005, type: 3}
-    - {fileID: 971081398, guid: 705386990593240499f7df8fc0b8c005, type: 3}
+    - {fileID: -207517905, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+    - {fileID: -207517905, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+    - {fileID: 413667251, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+    - {fileID: 413667251, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.9833333
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -134,7 +119,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.85
+        time: 0.15
         value: 1
         inSlope: 0
         outSlope: 0
@@ -143,8 +128,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.96666664
-        value: 0.047058824
+        time: 0.48333332
+        value: 0.03529412
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -163,7 +148,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.96666664
+  - time: 0.48333332
     functionName: CheckDeathAnimation
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Doomcaster
   m_EditorClassIdentifier: 
   icon: {fileID: 702515529, guid: a4dfd3b6a6d996b42b436de6d023179b, type: 3}
-  maxLevel: 0
-  itemName: 
-  controller: {fileID: 0}
-  prefab: {fileID: 0}
-  speed: 0
-  damage: 0
-  cooldownDuration: 0
-  pierce: 0
-  lifeTime: 0
+  maxLevel: 5
+  itemName: FireStaff
+  controller: {fileID: 8247763035044299937, guid: 04e26843797be6b4faef21d55f112d2c, type: 3}
+  prefab: {fileID: 1493865650724983838, guid: a4d0530d499697b47b5fb72a6fb886ec, type: 3}
+  speed: 3
+  damage: 10
+  cooldownDuration: 2
+  pierce: 1
+  lifeTime: 10
   damagePlus: 0

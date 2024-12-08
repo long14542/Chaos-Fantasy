@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7129871366706181994
+--- !u!1 &1493865650724983838
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1506327197776424420}
-  - component: {fileID: 8348339162022887498}
-  - component: {fileID: 2337516221566355833}
-  - component: {fileID: 3757582504974892125}
-  - component: {fileID: 494248391997350068}
-  - component: {fileID: 2529118881617628883}
-  - component: {fileID: -2206060429200710422}
-  m_Layer: 6
-  m_Name: Red Ghost
-  m_TagString: Enemy
+  - component: {fileID: 1896193546747194979}
+  - component: {fileID: 2379834347621339498}
+  - component: {fileID: 2583165217755472459}
+  - component: {fileID: -7031031525172690642}
+  - component: {fileID: -6301990410134897496}
+  - component: {fileID: 3529310277451665121}
+  m_Layer: 0
+  m_Name: FireballPrefab
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1506327197776424420
+--- !u!4 &1896193546747194979
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
+  m_GameObject: {fileID: 1493865650724983838}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8348339162022887498
+--- !u!212 &2379834347621339498
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
+  m_GameObject: {fileID: 1493865650724983838}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,28 +77,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -207517905, guid: 499ed0900358e584ebfc15ccdb6d803b, type: 3}
+  m_Sprite: {fileID: 631946367, guid: ece6b60f7e36cf4459c23d0f30786483, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.54, y: 0.56}
+  m_Size: {x: 0.19, y: 0.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2337516221566355833
+--- !u!95 &2583165217755472459
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
+  m_GameObject: {fileID: 1493865650724983838}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20ab9679b1e85824294e403ead623a7e, type: 2}
+  m_Controller: {fileID: 9100000, guid: a9b0a12f58b9d924e8f3511018bc4303, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110,57 +109,53 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3757582504974892125
+--- !u!114 &-7031031525172690642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
+  m_GameObject: {fileID: 1493865650724983838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa0136951e5ea4b408247dd9927aaf52, type: 3}
+  m_Script: {fileID: 11500000, guid: f9071a3162e707c4db78b2e7c01e159c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: ab23076558962d04db54ac5adcc88fdc, type: 2}
---- !u!114 &494248391997350068
-MonoBehaviour:
+  weaponData: {fileID: 11400000, guid: eed56a8b4c5341f47ae90151b15c980d, type: 2}
+--- !u!50 &-6301990410134897496
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e79346963776884498d3a0d7ddf556f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drops:
-  - name: BlueGem
-    itemPrefab: {fileID: 4373212321340365832, guid: cdaf7ea55e7f4ff4a987a67920912a0d, type: 3}
-    dropRate: 50
-  - name: GreenGem
-    itemPrefab: {fileID: 4373212321340365832, guid: 9d30dd8d8ba176740855f4bf5fdee955, type: 3}
-    dropRate: 0
---- !u!114 &2529118881617628883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21754c22e69d68429dd2b068f8194c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!58 &-2206060429200710422
+  m_GameObject: {fileID: 1493865650724983838}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 2
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &3529310277451665121
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7129871366706181994}
+  m_GameObject: {fileID: 1493865650724983838}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -186,6 +181,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.011174979, y: 0}
   serializedVersion: 2
-  m_Radius: 0.27
+  m_Radius: 0.09512664
