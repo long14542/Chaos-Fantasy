@@ -116,6 +116,10 @@ public class EnemyHandler : MonoBehaviour
 
     void HandleOverlap(Collider2D obj1, Collider2D obj2)
     {
+        // Determine if either object is the player
+        bool isPlayer1 = obj1.CompareTag("Player");
+        bool isPlayer2 = obj2.CompareTag("Player");
+
         Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
         float distance = direction.magnitude;
 
@@ -129,8 +133,21 @@ public class EnemyHandler : MonoBehaviour
             // Split the resolution equally between the two objects
             Vector3 halfOverlap = (overlap / 2) * direction.normalized;
 
-            obj1.transform.position += halfOverlap;
-            obj2.transform.position -= halfOverlap;
+            if (!isPlayer1 && !isPlayer2)
+            {
+                obj1.transform.position += halfOverlap;
+                obj2.transform.position -= halfOverlap;
+            }
+            else if (isPlayer1)
+            {
+                // Only move obj2 if obj1 is the player
+                obj2.transform.position -= (Vector3)(overlap * direction.normalized);
+            }
+            else
+            {
+                // Only move obj1 if obj2 is the player
+                obj1.transform.position += (Vector3)(overlap * direction.normalized);
+            }
         }
     }
 
