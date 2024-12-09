@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,7 +63,8 @@ public class CharacterHandler : MonoBehaviour
     public int itemId;
 
     ItemPool itemPool;
-
+    //Tính th?i gian ch?i(khi v?a ch?t)
+    public float timeElasped = 0;
     void Awake()
     {
         // Load character
@@ -118,6 +119,9 @@ public class CharacterHandler : MonoBehaviour
 
         // Recover health over time
         Recover();
+
+        //funtion tính th?i gian ch?i
+        timeElasped += Time.deltaTime;
     }
 
     // Increase exp on pick up exp gems/defeated a boss
@@ -174,8 +178,16 @@ public class CharacterHandler : MonoBehaviour
         
         UpdateHealthBar();
     }
+    [ContextMenu("testdie")]
     void Die()
     {
+        ScoreBoard.Instance.timeScoreboard= timeElasped;
+        ScoreBoard.Instance.lvPlayer = level;
+        ScoreBoard.Instance.weaponSlots = new(inventory.weaponSlots);
+        ScoreBoard.Instance.passiveSlots = new(inventory.passiveItemSlots);
+        // Đường dẫn file
+        string filePath = "Scoreboard.txt";
+        ScoreBoard.Instance.SaveToFile(filePath);
 
     }
     

@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemies; // Maximum number of enemies alive
     public bool maxEnemiesReached = false; // To know whether the maximum number of enemies has been reached or not
     public float waveInterval; // Wave interval between each wave
-
+    
     [Header("Spawn Position")]
     public List<Transform> spawnPoints;
 

@@ -64,12 +64,13 @@ public class EnemyHandler : MonoBehaviour
         currentHealth -= dmg;
         movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
         DamagePopUp.Create(transform.position, dmg);
-
+        ScoreBoard.Instance.totalDamage += dmg;
         if (currentHealth <= 0)
         {
             Die();
             ReturnToPool(); // Animation is currently bug, added this to return entity to object pool
         }
+        
     }
 
     private void Die()
@@ -91,6 +92,9 @@ public class EnemyHandler : MonoBehaviour
 
         // Vô hiệu hóa collider
         if (collide != null) collide.enabled = false;
+
+        //Tính số lượng quái giết
+        ScoreBoard.Instance.enemyKilled++;
     }
 
     private void CheckDeathAnimation()
