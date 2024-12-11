@@ -51,7 +51,7 @@ public class ItemPool : MonoBehaviour
 
     public void CreateItemTable(List<ItemData> itemsData)
     {
-        // Make a copy of the itemsData list so you don’t modify the original while iterating
+        // Make a copy of the itemsData list so you donï¿½t modify the original while iterating
         List<ItemData> remainingItems = new(itemsData);
 
         for (int a = 0; a < TableUI.Capacity; a++)
