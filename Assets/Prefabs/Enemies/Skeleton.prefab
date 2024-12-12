@@ -189,7 +189,7 @@ MonoBehaviour:
   drops:
   - name: BlueGem
     itemPrefab: {fileID: 4373212321340365832, guid: cdaf7ea55e7f4ff4a987a67920912a0d, type: 3}
-    dropRate: 100
+    dropRate: 60
 --- !u!114 &5516085547681944247
 MonoBehaviour:
   m_ObjectHideFlags: 0

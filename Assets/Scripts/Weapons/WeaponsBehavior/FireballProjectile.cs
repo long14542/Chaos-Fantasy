@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class FireballProjectile : Projectile
 {
@@ -15,6 +16,7 @@ public class FireballProjectile : Projectile
     // Update is called once per frame
     void Update()
     {
+        CheckDeathAnimation();
         // Fireball chỉ di chuyển nếu chưa va chạm
         if (!isHit)
         {
@@ -27,9 +29,37 @@ public class FireballProjectile : Projectile
         // Kiểm tra nếu va chạm với quái (Enemy)
         if (collision.CompareTag("Enemy"))
         {
-            isHit = true; // Đánh dấu trạng thái đã va chạm
-            ani.SetBool("isHit", true); // Cập nhật giá trị cho Animator để chuyển animation
-            currentSpeed = 0; // Dừng chuyển động của fireball
+            EnemyHandler enemy = collision.GetComponent<EnemyHandler>();
+            // Use damage increased with might
+            currentDamage = weaponData.damage; // DO NOT EVER DELETE this, it will break the damage number ;v Idk why 
+            int dmg = (int)MightAppliedDamaged();
+            enemy.TakeDamage(dmg);         
+            DecreasePierce();
+        }
+    }
+
+    protected override void DecreasePierce()
+    {
+        currentPierce -= 1;
+
+        if (currentPierce <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        isHit = true; // Đánh dấu trạng thái đã va chạm
+        ani.SetBool("isHit", true); // Cập nhật giá trị cho Animator để chuyển animation
+    }
+    void CheckDeathAnimation()
+    {
+        // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
+        AnimatorStateInfo stateInfo = ani.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("fireballhit") && !ani.IsInTransition(0))
+        {
+            Destroy(gameObject);
         }
     }
 }

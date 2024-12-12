@@ -5,6 +5,8 @@ public class EnemyScriptableObject : ScriptableObject
 {
     // Base stats
     public string e_name;
+
+    public string deathAnimName;
     
     [SerializeField]
     private float speed;

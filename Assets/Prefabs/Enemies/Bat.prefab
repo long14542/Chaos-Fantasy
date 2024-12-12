@@ -189,7 +189,7 @@ MonoBehaviour:
   drops:
   - name: GreenGem
     itemPrefab: {fileID: 4373212321340365832, guid: 9d30dd8d8ba176740855f4bf5fdee955, type: 3}
-    dropRate: 100
+    dropRate: 60
 --- !u!114 &7836314103056753550
 MonoBehaviour:
   m_ObjectHideFlags: 0

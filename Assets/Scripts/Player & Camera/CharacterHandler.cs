@@ -119,9 +119,6 @@ public class CharacterHandler : MonoBehaviour
 
         // Recover health over time
         Recover();
-
-        //funtion tính th?i gian ch?i
-        timeElasped += Time.deltaTime;
     }
 
     // Increase exp on pick up exp gems/defeated a boss
@@ -181,7 +178,7 @@ public class CharacterHandler : MonoBehaviour
     [ContextMenu("testdie")]
     void Die()
     {
-        ScoreBoard.Instance.timeScoreboard= timeElasped;
+        ScoreBoard.Instance.timeScoreboard = GameManager.instance.stopWatchDisplay.text;
         ScoreBoard.Instance.lvPlayer = level;
         ScoreBoard.Instance.weaponSlots = new(inventory.weaponSlots);
         ScoreBoard.Instance.passiveSlots = new(inventory.passiveItemSlots);

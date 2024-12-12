@@ -16,7 +16,7 @@ public class Staff : Weapon
         base.Attack();
         GameObject fireBall = Instantiate(weaponData.prefab);
         fireBall.transform.position = this.transform.position;
-        fireBall.GetComponent<KnifeProjectile>().CheckDirection(pm.ShootDir);
+        fireBall.GetComponent<FireballProjectile>().CheckDirection(pm.ShootDir);
     }
 
     public override void LevelUp()

@@ -9,6 +9,7 @@ public class EnemyHandler : MonoBehaviour
     private EnemySpawner spawner;
     private DropRateManager drop;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public float currentSpeed, currentDamage, currentHealth;
     private CircleCollider2D collide;
@@ -22,6 +23,7 @@ public class EnemyHandler : MonoBehaviour
         drop = GetComponent<DropRateManager>();
         collide = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         currentDamage = enemyData.Damage;
         currentSpeed = enemyData.Speed;
@@ -30,6 +32,7 @@ public class EnemyHandler : MonoBehaviour
 
     void FixedUpdate()
     {
+        CheckDeathAnimation();
         // Only check on Objects layer to reduce the number of unncessary cheks
         LayerMask mask = LayerMask.GetMask("Objects");
         // Check for nearby colliders within collider radius
@@ -68,7 +71,6 @@ public class EnemyHandler : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            ReturnToPool(); // Animation is currently bug, added this to return entity to object pool
         }
         
     }
@@ -103,7 +105,7 @@ public class EnemyHandler : MonoBehaviour
         {
             // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
+            if (stateInfo.IsName(enemyData.deathAnimName) && stateInfo.normalizedTime > 1 && !animator.IsInTransition(0)) // Hoạt ảnh "Die" kết thúc
             {
                 ReturnToPool();
             }
@@ -112,9 +114,9 @@ public class EnemyHandler : MonoBehaviour
 
     private void ReturnToPool()
     {
+
         ObjectPools.EnqueueObject(this, enemyData.name);
         spawner.enemiesAlive--;
-
         ResetEnemy();
     }
 
@@ -156,10 +158,15 @@ public class EnemyHandler : MonoBehaviour
     }
 
 
-    private void ResetEnemy()
+    void ResetEnemy()
     {
         isDead = false;
         currentHealth = enemyData.MaxHealth;
+        
+        // Resetting enemy's opacity
+        Color color = spriteRenderer.color;
+        color.a = 1f; // Fully visible
+        spriteRenderer.color = color;
 
         // Kích hoạt lại collider
         if (collide != null) collide.enabled = true;

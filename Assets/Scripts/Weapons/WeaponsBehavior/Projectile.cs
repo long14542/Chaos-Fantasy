@@ -101,7 +101,7 @@ public class Projectile : MonoBehaviour
     }
 
     // If pierce is 0 then destroy the weapon object
-    void DecreasePierce()
+    protected virtual void DecreasePierce()
     {
         currentPierce -= 1;
 
