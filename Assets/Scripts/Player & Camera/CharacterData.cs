@@ -36,4 +36,8 @@ public class CharacterData : ScriptableObject
     [SerializeField]
     private float magnet;
     public float Magnet { get => magnet; private set => magnet = value; }
+
+    [SerializeField]
+    private float cooldownReduction;
+    public float CooldownReduction { get => cooldownReduction; private set => cooldownReduction = value; }
 }

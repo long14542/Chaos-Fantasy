@@ -22,6 +22,8 @@ public class CharacterHandler : MonoBehaviour
     public float currentProjectileSpeed;
     [HideInInspector]
     public float currentMagnet;
+    [HideInInspector]
+    public float currentCooldownReduction;
 
     PlayerCollector collector;
     
@@ -82,6 +84,7 @@ public class CharacterHandler : MonoBehaviour
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentMagnet = characterData.Magnet;
+        currentCooldownReduction = characterData.CooldownReduction;
 
         collector.SetRadius(currentMagnet);
 
@@ -151,6 +154,16 @@ public class CharacterHandler : MonoBehaviour
             GameManager.instance.StartLevelUpScreen();
             // Create item table
             itemPool.ChooseItems();
+        }
+    }
+
+    public void ApplyWeaponBuffs() 
+    {
+        foreach (var weapon in inventory.weaponSlots) 
+        {
+            if (weapon.item == null) continue;
+            Weapon weaponToBuff = weapon.item as Weapon;
+            weaponToBuff.ApplyBuffs();
         }
     }
 
