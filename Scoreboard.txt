@@ -1,9 +1,7 @@
-Enemy Killed: 49
-Time Scoreboard: 0:32
-Player Level: 7
+Enemy Killed: 0
+Time Scoreboard: 0:00
+Player Level: 1
 Weapon Slots:
 - Knife
 Passive Slots:
-- Wings
-- Haste
-Total Damage: 650
+Total Damage: 0

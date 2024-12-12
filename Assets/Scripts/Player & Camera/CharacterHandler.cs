@@ -195,6 +195,7 @@ public class CharacterHandler : MonoBehaviour
         ScoreBoard.Instance.lvPlayer = level;
         ScoreBoard.Instance.weaponSlots = new(inventory.weaponSlots);
         ScoreBoard.Instance.passiveSlots = new(inventory.passiveItemSlots);
+        GameManager.instance.TriggerGameOver();
         // Đường dẫn file
         string filePath = "Scoreboard.txt";
         ScoreBoard.Instance.SaveToFile(filePath);

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,8 +23,10 @@ public class GameManager : MonoBehaviour
     [Header("Screens")]
     public GameObject levelUpScreen;
     [Header("UI Elements")]
+    public GameOverDisplay gameOverDisplay;
     public GameObject pauseMenu; 
     public Button pauseButton; 
+
     void Awake()
     {
         if (instance == null)
@@ -130,4 +132,10 @@ public class GameManager : MonoBehaviour
 
         stopWatchDisplay.text = string.Format("{0}:{1:00}", minutes, seconds);
     }
+    public void TriggerGameOver()
+    {
+        gameOverDisplay.ShowGameOverScreen();
+        Time.timeScale = 0; // Dừng trò chơi
+    }
+
 }
