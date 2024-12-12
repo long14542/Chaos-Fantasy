@@ -27,5 +27,6 @@ public class Item : MonoBehaviour
     public virtual void LevelUp()
     {
         if (CanLevelUp()) currentLevel += 1;
+        else return;
     }
 }
