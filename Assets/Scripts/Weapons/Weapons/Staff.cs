@@ -19,8 +19,9 @@ public class Staff : Weapon
         fireBall.GetComponent<FireballProjectile>().CheckDirection(pm.ShootDir);
     }
 
-    public override void LevelUp()
+    public override bool LevelUp()
     {
-        base.LevelUp();
+        if (!base.LevelUp()) return false;
+        return true;
     }
 }

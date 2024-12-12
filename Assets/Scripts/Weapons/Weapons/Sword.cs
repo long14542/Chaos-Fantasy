@@ -18,8 +18,9 @@ public class Sword : Weapon
         slash.transform.position = this.transform.position;
     }
 
-    public override void LevelUp()
+    public override bool LevelUp()
     {
-        base.LevelUp();
+        if (!base.LevelUp()) return false;
+        return true;
     }
 }

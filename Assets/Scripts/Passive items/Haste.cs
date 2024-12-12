@@ -5,16 +5,16 @@ public class Haste : PassiveItem
     protected override void ApplyModifier()
     {
         owner.currentCooldownReduction = owner.characterData.CooldownReduction + currentMultiplier;
-        Debug.Log("update owner cooldown reduction, " + owner.currentCooldownReduction + ", curren multi: " + currentMultiplier);
         
         owner.ApplyWeaponBuffs();
     }
 
-    public override void LevelUp()
+    public override bool LevelUp()
     {
-        base.LevelUp();
-
+        if (!base.LevelUp()) return false;
+        Debug.Log("hers");
         currentMultiplier += passiveItemData.multiplierUpNextLevel;
         ApplyModifier();
+        return true;
     }
 }

@@ -40,10 +40,6 @@ public class Weapon : Item
         Debug.Log("level up current cooldown: "+ currentCooldownDuration + ", weapon: " + weaponData.itemName);
     }
 
-    public override void LevelUp()
-    {
-        base.LevelUp();
-    }
 
     protected virtual void Attack()
     {
