@@ -1,8 +1,9 @@
-Enemy Killed: 7
-Time Scoreboard: 11.1152
-Player Level: 3
+Enemy Killed: 49
+Time Scoreboard: 0:32
+Player Level: 7
 Weapon Slots:
 - Knife
 Passive Slots:
-- Spinach
-Total Damage: 128
+- Wings
+- Haste
+Total Damage: 650
