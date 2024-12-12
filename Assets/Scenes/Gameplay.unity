@@ -2119,6 +2119,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f8915c487d79a8c46ad7e2853a1ff22b, type: 2}
   - {fileID: 11400000, guid: 2c73bb546b0925a4ca3df7e57ad951da, type: 2}
   - {fileID: 11400000, guid: 68d696dda5e36194186be883545e2083, type: 2}
+  - {fileID: 11400000, guid: eed56a8b4c5341f47ae90151b15c980d, type: 2}
   unavailableItems: []
   TableUI:
   - displayName: {fileID: 873597298}
@@ -5526,7 +5527,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1689266146}
   - component: {fileID: 1689266148}
-  - component: {fileID: 1689266147}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5549,14 +5549,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1689266147
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689266145}
-  m_Enabled: 1
 --- !u!20 &1689266148
 Camera:
   m_ObjectHideFlags: 0

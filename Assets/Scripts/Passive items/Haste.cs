@@ -4,7 +4,7 @@ public class Haste : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        owner.currentCooldownReduction += currentMultiplier;
+        owner.currentCooldownReduction = owner.characterData.CooldownReduction + currentMultiplier;
         Debug.Log("update owner cooldown reduction, " + owner.currentCooldownReduction + ", curren multi: " + currentMultiplier);
         
         owner.ApplyWeaponBuffs();

@@ -191,7 +191,7 @@ public class CharacterHandler : MonoBehaviour
     [ContextMenu("testdie")]
     void Die()
     {
-        ScoreBoard.Instance.timeScoreboard = GameManager.instance.stopWatchDisplay.text;
+        ScoreBoard.Instance.timeScoreboard = GameManager.instance.stopWatchDisplay;
         ScoreBoard.Instance.lvPlayer = level;
         ScoreBoard.Instance.weaponSlots = new(inventory.weaponSlots);
         ScoreBoard.Instance.passiveSlots = new(inventory.passiveItemSlots);
