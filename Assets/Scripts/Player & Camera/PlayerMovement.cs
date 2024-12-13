@@ -13,13 +13,11 @@ public class PlayerMovement : MonoBehaviour
     // Character stats
     private Rigidbody2D body;
     
-    public CharacterData characterData;
     public float currentMoveSpeed;
     
     // Start is called before the first frame update
     void Start()
     {
-        currentMoveSpeed = characterData.MoveSpeed;
         body = GetComponent<Rigidbody2D>();
         // Set the default facing: right
         ShootDir = new Vector2(1, 0);

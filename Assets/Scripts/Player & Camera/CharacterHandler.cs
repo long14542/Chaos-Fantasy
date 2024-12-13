@@ -67,16 +67,16 @@ public class CharacterHandler : MonoBehaviour
 
     void Awake()
     {
-        movement = GetComponent<PlayerMovement>();
         // Load character
         characterData = CharacterSelector.LoadData();
-        movement.characterData = CharacterSelector.LoadData();
         CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<Inventory>();
         collector = GetComponentInChildren<PlayerCollector>();
         itemPool = FindFirstObjectByType<ItemPool>();
 
+        movement = GetComponent<PlayerMovement>();
+        movement.currentMoveSpeed = characterData.MoveSpeed;
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;

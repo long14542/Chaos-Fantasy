@@ -27,6 +27,7 @@ public class EnemyHandler : MonoBehaviour
 
         currentDamage = enemyData.Damage;
         currentHealth = enemyData.MaxHealth;
+        movement.currentSpeed = enemyData.Speed;
     }
 
     void FixedUpdate()

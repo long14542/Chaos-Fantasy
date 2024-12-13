@@ -2,7 +2,6 @@
 
 public class EnemyMovement : MonoBehaviour, IKnockback
 {
-    public EnemyData enemyData;
     GameObject player;
 
     Vector3 knockbackVelocity;
@@ -12,7 +11,6 @@ public class EnemyMovement : MonoBehaviour, IKnockback
     // Start is called before the first frame update
     void Start()
     {
-        currentSpeed = enemyData.Speed;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

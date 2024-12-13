@@ -10,7 +10,7 @@ public class Wings : PassiveItem
     }
     protected override void ApplyModifier()
     {
-        movement.currentMoveSpeed = movement.characterData.MoveSpeed * (1 + currentMultiplier / 100f);
+        movement.currentMoveSpeed = owner.characterData.MoveSpeed * (1 + currentMultiplier / 100f);
     }
 
     public override bool LevelUp()
