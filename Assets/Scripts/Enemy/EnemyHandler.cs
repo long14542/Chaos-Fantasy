@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
-    public EnemyScriptableObject enemyData;
+    public EnemyData enemyData;
 
     private EnemyMovement movement;
     private EnemySpawner spawner;
@@ -11,7 +11,7 @@ public class EnemyHandler : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    public float currentSpeed, currentDamage, currentHealth;
+    public float currentDamage, currentHealth;
     private CircleCollider2D collide;
     private bool isDead = false; // Trạng thái để kiểm soát khi kẻ địch chết
 
@@ -26,7 +26,6 @@ public class EnemyHandler : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         currentDamage = enemyData.Damage;
-        currentSpeed = enemyData.Speed;
         currentHealth = enemyData.MaxHealth;
     }
 

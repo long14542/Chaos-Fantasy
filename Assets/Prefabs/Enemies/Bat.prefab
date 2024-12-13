@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 2a541541285868c459b574133e7af4fe, type: 2}
-  currentSpeed: 0
   currentDamage: 0
   currentHealth: 0
 --- !u!114 &-495743934428735374
@@ -140,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21754c22e69d68429dd2b068f8194c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2a541541285868c459b574133e7af4fe, type: 2}
+  currentSpeed: 0
 --- !u!58 &-3300405507885975105
 CircleCollider2D:
   m_ObjectHideFlags: 0

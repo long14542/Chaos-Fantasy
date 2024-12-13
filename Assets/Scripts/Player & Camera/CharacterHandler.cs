@@ -8,10 +8,9 @@ public class CharacterHandler : MonoBehaviour
     public CharacterData characterData;
 
     PlayerAnimation animator;
+    PlayerMovement movement;
 
     // Current character stats
-    [HideInInspector]
-    public float currentMoveSpeed;
     [HideInInspector]
     public float currentHealth;
     [HideInInspector]
@@ -65,12 +64,13 @@ public class CharacterHandler : MonoBehaviour
     public int itemId;
 
     ItemPool itemPool;
-    //Tính th?i gian ch?i(khi v?a ch?t)
-    public float timeElasped = 0;
+
     void Awake()
     {
+        movement = GetComponent<PlayerMovement>();
         // Load character
         characterData = CharacterSelector.LoadData();
+        movement.characterData = CharacterSelector.LoadData();
         CharacterSelector.instance.DestroySingleton();
 
         inventory = GetComponent<Inventory>();
@@ -80,7 +80,6 @@ public class CharacterHandler : MonoBehaviour
         // Assign current stats to the starting stats
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentMagnet = characterData.Magnet;
@@ -231,13 +230,13 @@ public class CharacterHandler : MonoBehaviour
         weaponId += 1;
     }
 
-    public void AcquireItem(GameObject item)
+    public void AcquirePassiveItem(GameObject item)
     {
         // Instantiate the item and then set the item to be the child of the character
         GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
         spawnedItem.transform.SetParent(this.transform);
         // Put the item into the inventory
-        inventory.AddItem(itemId, spawnedItem.GetComponent<PassiveItem>());
+        inventory.AddPassiveItem(itemId, spawnedItem.GetComponent<PassiveItem>());
         itemId += 1;
     }
 

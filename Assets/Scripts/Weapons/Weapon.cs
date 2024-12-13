@@ -14,7 +14,6 @@ public class Weapon : Item
         base.Initialize(data);
 
         currentCooldownDuration = data.cooldownDuration * (1 - owner.currentCooldownReduction / 100f);
-        Debug.Log("Init current cooldown: "+ currentCooldownDuration + ", weapon: " + weaponData.itemName);
     }
 
     // Start is called before the first frame update
@@ -37,7 +36,6 @@ public class Weapon : Item
     public void ApplyBuffs() 
     {
         currentCooldownDuration = weaponData.cooldownDuration * (1 - owner.currentCooldownReduction / 100f);
-        Debug.Log("level up current cooldown: "+ currentCooldownDuration + ", weapon: " + weaponData.itemName);
     }
 
 

@@ -106,7 +106,7 @@ public class ItemPool : MonoBehaviour
                         TableUI[a].optionButton.onClick.AddListener(() =>
                         {
                             //Debug.Log("adding");
-                            player.AcquireItem(passiveItemData.prefab);
+                            player.AcquirePassiveItem(passiveItemData.prefab);
                             GameManager.instance.EndLevelUpScreen();
                         });
                         TableUI[a].icon.sprite = passiveItemData.icon;

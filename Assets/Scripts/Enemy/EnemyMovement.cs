@@ -2,17 +2,18 @@
 
 public class EnemyMovement : MonoBehaviour, IKnockback
 {
-    private EnemyHandler enemy;
+    public EnemyData enemyData;
     GameObject player;
 
     Vector3 knockbackVelocity;
     float knockbackDuration;
+    public float currentSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentSpeed = enemyData.Speed;
         player = GameObject.FindGameObjectWithTag("Player");
-        enemy = GetComponent<EnemyHandler>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class EnemyMovement : MonoBehaviour, IKnockback
         else
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemy.currentSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
 
             // Xoay theo hướng trục X khi di chuyển
             if (direction.x > 0) // Di chuyển sang phải
