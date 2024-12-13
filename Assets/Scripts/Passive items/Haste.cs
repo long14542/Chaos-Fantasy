@@ -1,5 +1,5 @@
 using UnityEngine;
-// Spinach increases all damage done by the player
+// Haste decreases all weapons cooldown duration
 public class Haste : PassiveItem
 {
     protected override void ApplyModifier()
@@ -12,7 +12,6 @@ public class Haste : PassiveItem
     public override bool LevelUp()
     {
         if (!base.LevelUp()) return false;
-        Debug.Log("hers");
         currentMultiplier += passiveItemData.multiplierUpNextLevel;
         ApplyModifier();
         return true;

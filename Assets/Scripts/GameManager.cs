@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.Playing;
         pauseMenu.SetActive(false);  // Hide the pause menu initially
+        Time.timeScale = 1f;
 
         // Set up the button's onClick event to toggle pause state
         pauseButton.onClick.AddListener(TogglePause);

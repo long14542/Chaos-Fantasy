@@ -1,5 +1,5 @@
 Enemy Killed: 0
-Time Scoreboard: 0:00
+Time Scoreboard: 0:07
 Player Level: 1
 Weapon Slots:
 - Knife

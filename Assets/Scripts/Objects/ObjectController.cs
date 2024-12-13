@@ -9,6 +9,9 @@ public class ObjectController : MonoBehaviour
 
     void Awake()
     {
+        // Clear the pool when enter a new Gameplay Scene
+        ObjectPools.ClearPools();
+
         for (int i = 0; i < enemyPrefabs.Count; i++)
             ObjectPools.SetupPool(enemyPrefabs[i], 50, enemyPrefabs[i].enemyData.name);
         
