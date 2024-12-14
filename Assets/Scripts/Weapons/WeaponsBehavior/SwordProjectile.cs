@@ -1,4 +1,4 @@
-
+﻿using UnityEngine;
 
 public class SwordProjectile : Projectile
 {
@@ -9,5 +9,4 @@ public class SwordProjectile : Projectile
 
         transform.position += direction * -0.1f;
     }
-
 }

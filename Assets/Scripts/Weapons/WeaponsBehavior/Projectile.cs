@@ -95,8 +95,11 @@ public class Projectile : MonoBehaviour
             // Use damage increased with might
             currentDamage = weaponData.damage; // DO NOT EVER DELETE this, it will break the damage number ;v Idk why 
             int dmg = (int) MightAppliedDamaged();
-            enemy.TakeDamage(dmg);
-            DecreasePierce();
+            if (currentPierce > 0)
+            {
+                enemy.TakeDamage(dmg);
+                DecreasePierce();
+            }
         }
     }
 
@@ -104,7 +107,6 @@ public class Projectile : MonoBehaviour
     protected virtual void DecreasePierce()
     {
         currentPierce -= 1;
-
         if (currentPierce <= 0)
         {
             Destroy(gameObject);
