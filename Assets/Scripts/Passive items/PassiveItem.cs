@@ -19,7 +19,7 @@ public class PassiveItem : Item
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         Initialize(passiveItemData);
         ApplyModifier();

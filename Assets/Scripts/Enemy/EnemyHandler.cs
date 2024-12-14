@@ -148,6 +148,15 @@ public class EnemyHandler : MonoBehaviour
         bool isPlayer1 = obj1.CompareTag("Player");
         bool isPlayer2 = obj2.CompareTag("Player");
 
+        bool isProjectile1 = obj1.CompareTag("Projectile");
+        bool isProjectile2 = obj2.CompareTag("Projectile");
+
+        if (isProjectile1 || isProjectile2)
+        {
+            HandleProjectile(obj1, obj2, isProjectile1);
+            return;
+        }
+
         Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
         float distance = direction.magnitude;
 
@@ -178,6 +187,22 @@ public class EnemyHandler : MonoBehaviour
                 // Only move obj1 if obj2 is the player
                 obj1.transform.position += (Vector3)(overlap * direction.normalized);
             }
+        }
+    }
+
+    void HandleProjectile(Collider2D obj1, Collider2D obj2, bool isProjectile1)
+    {
+        if (isProjectile1)
+        {
+            Projectile projectile = obj1.GetComponent<Projectile>();
+            TakeDamage((int)projectile.MightAppliedDamaged());
+            projectile.DecreasePierce();
+        }
+        else
+        {
+            Projectile projectile = obj2.GetComponent<Projectile>();
+            TakeDamage((int)projectile.MightAppliedDamaged());
+            projectile.DecreasePierce();
         }
     }
 

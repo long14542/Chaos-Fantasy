@@ -85,23 +85,8 @@ public class Projectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotation);
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Check if there is collision with objects tag Enemy
-        if (collision.CompareTag("Enemy"))
-        {
-            // Reference the enemyHandler from the Collider
-            EnemyHandler enemy = collision.GetComponent<EnemyHandler>();
-            // Use damage increased with might
-            currentDamage = weaponData.damage; // DO NOT EVER DELETE this, it will break the damage number ;v Idk why 
-            int dmg = (int) MightAppliedDamaged();
-            enemy.TakeDamage(dmg);
-            DecreasePierce();
-        }
-    }
-
     // If pierce is 0 then destroy the weapon object
-    protected virtual void DecreasePierce()
+    public virtual void DecreasePierce()
     {
         currentPierce -= 1;
 

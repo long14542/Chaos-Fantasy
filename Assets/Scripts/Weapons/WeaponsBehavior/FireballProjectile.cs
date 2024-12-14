@@ -24,21 +24,7 @@ public class FireballProjectile : Projectile
         }
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Kiểm tra nếu va chạm với quái (Enemy)
-        if (collision.CompareTag("Enemy"))
-        {
-            EnemyHandler enemy = collision.GetComponent<EnemyHandler>();
-            // Use damage increased with might
-            currentDamage = weaponData.damage; // DO NOT EVER DELETE this, it will break the damage number ;v Idk why 
-            int dmg = (int)MightAppliedDamaged();
-            enemy.TakeDamage(dmg);         
-            DecreasePierce();
-        }
-    }
-
-    protected override void DecreasePierce()
+    public override void DecreasePierce()
     {
         currentPierce -= 1;
 

@@ -4,9 +4,10 @@ public class Wings : PassiveItem
 {
     private PlayerMovement movement;
 
-    void Start()
+    protected override void Start()
     {
         movement = FindFirstObjectByType<PlayerMovement>();
+        base.Start();
     }
     protected override void ApplyModifier()
     {
