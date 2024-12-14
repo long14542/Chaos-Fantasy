@@ -15,6 +15,8 @@ public class EnemyHandler : MonoBehaviour
     private CircleCollider2D collide;
     private bool isDead = false; // Trạng thái để kiểm soát khi kẻ địch chết
 
+    private GameObject player;
+
 
     void Awake()
     {
@@ -28,6 +30,11 @@ public class EnemyHandler : MonoBehaviour
         currentDamage = enemyData.Damage;
         currentHealth = enemyData.MaxHealth;
         movement.currentSpeed = enemyData.Speed;
+    }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void FixedUpdate()
@@ -58,6 +65,21 @@ public class EnemyHandler : MonoBehaviour
                 HandleOverlap(obj1, obj2);
             }
         }
+
+        CheckPlayerDistance();
+    }
+
+    private void CheckPlayerDistance()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) >= 20f)
+        {
+            Relocate();
+        }
+    }
+
+    private void Relocate()
+    {
+        transform.position = player.transform.position + spawner.spawnPoints[Random.Range(0, spawner.spawnPoints.Count)].position;
     }
 
     public void TakeDamage(int dmg)
@@ -146,11 +168,13 @@ public class EnemyHandler : MonoBehaviour
             }
             else if (isPlayer1)
             {
+                obj1.GetComponent<CharacterHandler>().TakeDamage(currentDamage);
                 // Only move obj2 if obj1 is the player
                 obj2.transform.position -= (Vector3)(overlap * direction.normalized);
             }
             else
             {
+                obj2.GetComponent<CharacterHandler>().TakeDamage(currentDamage);
                 // Only move obj1 if obj2 is the player
                 obj1.transform.position += (Vector3)(overlap * direction.normalized);
             }

@@ -1,4 +1,3 @@
-using UnityEngine;
 // Haste decreases all weapons cooldown duration
 public class Haste : PassiveItem
 {
