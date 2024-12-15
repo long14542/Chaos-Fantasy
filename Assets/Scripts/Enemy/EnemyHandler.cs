@@ -17,6 +17,8 @@ public class EnemyHandler : MonoBehaviour
 
     private GameObject player;
 
+    HashSet<(Collider2D, Collider2D)> ProjectileCollide = new HashSet<(Collider2D, Collider2D)>();
+
 
     void Awake()
     {
@@ -54,8 +56,23 @@ public class EnemyHandler : MonoBehaviour
         {
             foreach (Collider2D obj2 in nearbyObjects)
             {
-                // Skip self-collision and already processed pairs
-                if (obj1 == obj2 || processedPairs.Contains((obj1, obj2)) || processedPairs.Contains((obj2, obj1)))
+                if (obj1 == obj2)
+                    continue;
+
+                bool isProjectile1 = obj1.CompareTag("Projectile");
+                bool isProjectile2 = obj2.CompareTag("Projectile");
+                if (ProjectileCollide.Contains((obj1, obj2)) || ProjectileCollide.Contains((obj2, obj1)))
+                    continue;
+                
+                if (isProjectile1 || isProjectile2)
+                {
+                    HandleProjectile(obj1, obj2, isProjectile1);
+                    ProjectileCollide.Add((obj1, obj2));
+                    continue;
+                }
+                
+                // Skipalready processed pairs
+                if (processedPairs.Contains((obj1, obj2)) || processedPairs.Contains((obj2, obj1)))
                     continue;
 
                 // Add the pair to the processed set
@@ -110,6 +127,8 @@ public class EnemyHandler : MonoBehaviour
         {
             animator.SetBool("isDead", true);
         }
+        
+        ProjectileCollide.Clear(); // Clear projectile pairs when reset
 
         // Rớt đồ
         if (drop != null) drop.DropPickUp();
@@ -147,15 +166,6 @@ public class EnemyHandler : MonoBehaviour
         // Determine if either object is the player
         bool isPlayer1 = obj1.CompareTag("Player");
         bool isPlayer2 = obj2.CompareTag("Player");
-
-        bool isProjectile1 = obj1.CompareTag("Projectile");
-        bool isProjectile2 = obj2.CompareTag("Projectile");
-
-        if (isProjectile1 || isProjectile2)
-        {
-            HandleProjectile(obj1, obj2, isProjectile1);
-            return;
-        }
 
         Vector2 direction = (Vector2)(obj1.transform.position - obj2.transform.position);
         float distance = direction.magnitude;
