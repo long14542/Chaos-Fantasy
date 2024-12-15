@@ -61,11 +61,12 @@ public class EnemyHandler : MonoBehaviour
 
                 bool isProjectile1 = obj1.CompareTag("Projectile");
                 bool isProjectile2 = obj2.CompareTag("Projectile");
-                if (ProjectileCollide.Contains((obj1, obj2)) || ProjectileCollide.Contains((obj2, obj1)))
-                    continue;
                 
                 if (isProjectile1 || isProjectile2)
                 {
+                    if (ProjectileCollide.Contains((obj1, obj2)) || ProjectileCollide.Contains((obj2, obj1)))
+                        continue;
+                    
                     HandleProjectile(obj1, obj2, isProjectile1);
                     ProjectileCollide.Add((obj1, obj2));
                     continue;
