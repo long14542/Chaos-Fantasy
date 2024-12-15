@@ -9,4 +9,9 @@ public class SwordProjectile : Projectile
 
         transform.position += direction * -0.1f;
     }
+    public void SetRange(float rangeMultiplier)
+    {
+        transform.localScale *= rangeMultiplier;
+    }
+
 }

@@ -8,7 +8,6 @@ public class Projectile : MonoBehaviour
     public WeaponData weaponData;
     protected Vector3 direction;
     CharacterHandler playerStats;
-
     protected float currentDamage;
     protected float currentSpeed;
     protected int currentPierce;

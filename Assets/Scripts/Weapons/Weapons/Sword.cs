@@ -11,42 +11,56 @@ public class Sword : Weapon
     protected override void Attack()
     {
         base.Attack();
-        // Spawn slashes based on current level
+
+        float rangeMultiplier = 1f;
         switch (currentLevel)
         {
             case 1:
-                SpawnSlash(pm.ShootDir); // Default single direction
+                rangeMultiplier = 1f; // Phạm vi bình thường
+                SpawnSlash(pm.ShootDir, rangeMultiplier);
                 break;
             case 2:
-                // Spawn in both front and back
-                SpawnSlash(pm.ShootDir);
-                SpawnSlash(-pm.ShootDir);
+                rangeMultiplier = 1.3f;
+                SpawnSlash(pm.ShootDir, rangeMultiplier);
                 break;
             case 3:
-                // Spawn in four directions: up, down, left, right
-                SpawnSlash(Vector2.up);
-                SpawnSlash(Vector2.down);
-                SpawnSlash(Vector2.left);
-                SpawnSlash(Vector2.right);
+                rangeMultiplier = 1.3f; // Phạm vi tăng
+                SpawnSlash(pm.ShootDir, rangeMultiplier);
+                SpawnSlash(-pm.ShootDir, rangeMultiplier);
                 break;
-            default:
-                Debug.LogWarning("Unhandled level in Sword.Attack");
+            case 4:
+                rangeMultiplier = 1.3f; // Phạm vi lớn hơn
+                SpawnSlash(Vector2.up, rangeMultiplier);
+                SpawnSlash(Vector2.down, rangeMultiplier);
+                SpawnSlash(Vector2.left, rangeMultiplier);
+                SpawnSlash(Vector2.right, rangeMultiplier);
                 break;
+            case 5:
+                rangeMultiplier = 1.6f; // Phạm vi lớn hơn
+                SpawnSlash(Vector2.up, rangeMultiplier);
+                SpawnSlash(Vector2.down, rangeMultiplier);
+                SpawnSlash(Vector2.left, rangeMultiplier);
+                SpawnSlash(Vector2.right, rangeMultiplier);
+                break;
+
         }
     }
 
-    private void SpawnSlash(Vector2 direction)
+
+    private void SpawnSlash(Vector2 direction, float rangeMultiplier = 1f)
     {
-        direction.Normalize();
-        GameObject slash = Instantiate(weaponData.prefab); // Tạo slash
+        GameObject slash = Instantiate(weaponData.prefab);
         SwordProjectile projectile = slash.GetComponent<SwordProjectile>();
 
         if (projectile != null)
         {
-            projectile.CheckDirection(direction); // Thiết lập hướng chém
+            projectile.CheckDirection(direction);
+            projectile.SetRange(rangeMultiplier); // Điều chỉnh phạm vi
         }
+
         slash.transform.position = this.transform.position;
     }
+
 
 
     public override bool LevelUp()
