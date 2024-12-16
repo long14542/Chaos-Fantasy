@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class GameManager : MonoBehaviour
     public GameObject levelUpScreen;
     [Header("UI Elements")]
     public GameObject pauseMenu; 
-    public Button pauseButton; 
+    public Button pauseButton;
+    public AudioManager audioManager;  
     void Awake()
     {
         if (instance == null)
@@ -47,14 +49,19 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
     void Start()
-    {
-        currentState = GameState.Playing;
-        pauseMenu.SetActive(false);  // Hide the pause menu initially
+{
+    currentState = GameState.Playing;
+    pauseMenu.SetActive(false);  // Ẩn menu pause ban đầu
 
-        // Set up the button's onClick event to toggle pause state
-        pauseButton.onClick.AddListener(TogglePause);
+    // Gọi nhạc gameplay khi bắt đầu game
+    if (audioManager != null)
+    {
+        audioManager.PlayGameplayMusic();  // Chạy nhạc gameplay
     }
-    void Update()
+
+    // Set up the button's onClick event to toggle pause state
+    pauseButton.onClick.AddListener(TogglePause);
+}    void Update()
     {
         if (currentState == GameState.Playing)
         {
@@ -130,4 +137,17 @@ public class GameManager : MonoBehaviour
 
         stopWatchDisplay.text = string.Format("{0}:{1:00}", minutes, seconds);
     }
+
+       public void StartGame()
+    {
+        // Chuyển sang Gameplay Scene
+        SceneManager.LoadScene("GameplayScene");
+
+        // Gọi nhạc gameplay sau khi chuyển scene
+        if (audioManager != null)
+        {
+            audioManager.PlayGameplayMusic();
+        }
+    }
 }
+

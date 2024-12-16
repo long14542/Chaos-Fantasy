@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Knife
-  - Enemy
+  - Audio
   layers:
   - Default
   - TransparentFX
