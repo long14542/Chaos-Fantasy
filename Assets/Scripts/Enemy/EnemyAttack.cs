@@ -10,6 +10,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject player;
     private EnemyHandler enemyHandler;
     private Animator animator;
+    private SpriteAnimationCreator spriteAnimationCreator; // Tham chiếu đến SpriteAnimationCreator
 
     void Start()
     {
@@ -44,6 +45,17 @@ public class EnemyAttack : MonoBehaviour
         else
         {
             Debug.Log("Animator found successfully.");
+        }
+
+        // Lấy SpriteAnimationCreator
+        spriteAnimationCreator = GetComponent<SpriteAnimationCreator>();
+        if (spriteAnimationCreator == null)
+        {
+            Debug.LogError("SpriteAnimationCreator not found on this object.");
+        }
+        else
+        {
+            Debug.Log("SpriteAnimationCreator found successfully.");
         }
     }
 
@@ -118,6 +130,13 @@ public class EnemyAttack : MonoBehaviour
             else
             {
                 Debug.LogError("Animator is null. Cannot trigger attack animation.");
+            }
+
+            // Tạo animation từ sprite (nếu có)
+            if (spriteAnimationCreator != null)
+            {
+                Debug.Log("Creating sprite animation for attack.");
+                spriteAnimationCreator.CreateAni();
             }
         }
         else

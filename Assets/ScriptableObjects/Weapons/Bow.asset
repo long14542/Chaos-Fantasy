@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b499a91e9b0ee9145bb7db3bdf0c6dc0, type: 3}
-  m_Name: Knife
+  m_Name: Bow
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 26cca66fdf854f441aac566101554c87, type: 3}
+  icon: {fileID: 1721871025, guid: f86bb5ed7ec07e64fb996c56b411c77a, type: 3}
   maxLevel: 5
-  itemName: Knife
-  controller: {fileID: 5386848642831577647, guid: 1b5af089d237bce47be6aabbc7530315, type: 3}
-  prefab: {fileID: 826361756072723164, guid: aa6fcbf50102bcd46aa2a3ad1aa8e48b, type: 3}
+  itemName: Arrow
+  controller: {fileID: 5595649356969491520, guid: 783c95e58ea9ee947a128ca7bdbe721c, type: 3}
+  prefab: {fileID: 3750776185839555673, guid: 0e304ac078b008943adbcc00cbe9bb44, type: 3}
   speed: 10
   damage: 10
-  cooldownDuration: 1
+  cooldownDuration: 2
   pierce: 1
   lifeTime: 1.5
   damagePlus: 0
