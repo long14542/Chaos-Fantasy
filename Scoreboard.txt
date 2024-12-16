@@ -1,7 +1,0 @@
-Enemy Killed: 2
-Time Scoreboard: 6.405186
-Player Level: 2
-Weapon Slots:
-- Sword
-Passive Slots:
-Total Damage: 20

@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour, IKnockback
 
     [Header("Bonuses")]
     public int expGranted;
+    public int healthGranted;
 
     public virtual bool Collect(CharacterHandler target, float speed)
     {

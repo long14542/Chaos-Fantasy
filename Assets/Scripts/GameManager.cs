@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [Header("Screens")]
     public GameObject levelUpScreen;
     [Header("UI Elements")]
+    public GameOverDisplay gameOverDisplay;
     public GameObject pauseMenu; 
     public Button pauseButton;
     public AudioManager audioManager;  
@@ -49,9 +50,10 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
     void Start()
-{
-    currentState = GameState.Playing;
-    pauseMenu.SetActive(false);  // Ẩn menu pause ban đầu
+    {
+        currentState = GameState.Playing;
+        pauseMenu.SetActive(false);  // Hide the pause menu initially
+        Time.timeScale = 1f;
 
     // Gọi nhạc gameplay khi bắt đầu game
     if (audioManager != null)
@@ -149,5 +151,11 @@ public class GameManager : MonoBehaviour
             audioManager.PlayGameplayMusic();
         }
     }
+    public void TriggerGameOver()
+    {
+        gameOverDisplay.ShowGameOverScreen();
+        Time.timeScale = 0; // Dừng trò chơi
+    }
+
 }
 

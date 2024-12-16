@@ -104,7 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: f0fdea73edc1fd84fa352b3b53e40336, type: 2}
-  currentSpeed: 0
   currentDamage: 0
   currentHealth: 0
 --- !u!114 &4029490991855672915
@@ -119,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21754c22e69d68429dd2b068f8194c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: f0fdea73edc1fd84fa352b3b53e40336, type: 2}
+  currentSpeed: 0
 --- !u!58 &-2823169156625503455
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ MonoBehaviour:
   drops:
   - name: BlueGem
     itemPrefab: {fileID: 4373212321340365832, guid: cdaf7ea55e7f4ff4a987a67920912a0d, type: 3}
-    dropRate: 100
+    dropRate: 60
 --- !u!114 &5516085547681944247
 MonoBehaviour:
   m_ObjectHideFlags: 0

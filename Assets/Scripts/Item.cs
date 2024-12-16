@@ -24,8 +24,13 @@ public class Item : MonoBehaviour
         return currentLevel < maxLevel;
     }
 
-    public virtual void LevelUp()
+    public virtual bool LevelUp()
     {
-        if (CanLevelUp()) currentLevel += 1;
+        if (CanLevelUp())
+        {
+            currentLevel += 1;
+            return true;
+        }
+        return false;
     }
 }

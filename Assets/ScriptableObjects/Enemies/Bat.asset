@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   e_name: Bat
+  deathAnimName: Bat_die
   speed: 2
   maxHealth: 6
   damage: 9

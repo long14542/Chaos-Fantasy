@@ -1,20 +1,18 @@
-using UnityEngine;
-// Spinach increases all damage done by the player
+// Haste decreases all weapons cooldown duration
 public class Haste : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        owner.currentCooldownReduction += currentMultiplier;
-        Debug.Log("update owner cooldown reduction, " + owner.currentCooldownReduction + ", curren multi: " + currentMultiplier);
+        owner.currentCooldownReduction = owner.characterData.CooldownReduction + currentMultiplier;
         
         owner.ApplyWeaponBuffs();
     }
 
-    public override void LevelUp()
+    public override bool LevelUp()
     {
-        base.LevelUp();
-
+        if (!base.LevelUp()) return false;
         currentMultiplier += passiveItemData.multiplierUpNextLevel;
         ApplyModifier();
+        return true;
     }
 }

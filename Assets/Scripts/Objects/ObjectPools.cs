@@ -63,4 +63,10 @@ public static class ObjectPools
         poolDictionary[name].Enqueue(newInstance); // Add the item to pool dictionary
         return newInstance;
     }
+
+    public static void ClearPools()
+    {
+        poolDictionary.Clear();
+        poolBackUp.Clear();
+    }
 }

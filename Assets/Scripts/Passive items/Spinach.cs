@@ -7,11 +7,12 @@ public class Spinach : PassiveItem
         owner.currentMight = owner.characterData.Might * (1 + currentMultiplier / 100f);
     }
 
-    public override void LevelUp()
+    public override bool LevelUp()
     {
-        base.LevelUp();
+        if (!base.LevelUp()) return false;
 
         currentMultiplier += passiveItemData.multiplierUpNextLevel;
         ApplyModifier();
+        return true;
     }
 }

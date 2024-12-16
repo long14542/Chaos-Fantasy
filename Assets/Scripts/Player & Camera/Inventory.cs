@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
         weaponSlots[id].AssignItem(weapon);
     }
 
-    public void AddItem(int id, PassiveItem item)
+    public void AddPassiveItem(int id, PassiveItem item)
     {
         passiveItemSlots[id].AssignItem(item);
     }

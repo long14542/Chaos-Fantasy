@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1013958325, guid: 9a21979062fc03843b425947d722ee8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.5, y: 0.625}
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 2a541541285868c459b574133e7af4fe, type: 2}
-  currentSpeed: 0
   currentDamage: 0
   currentHealth: 0
 --- !u!114 &-495743934428735374
@@ -140,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21754c22e69d68429dd2b068f8194c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2a541541285868c459b574133e7af4fe, type: 2}
+  currentSpeed: 0
 --- !u!58 &-3300405507885975105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ MonoBehaviour:
   drops:
   - name: GreenGem
     itemPrefab: {fileID: 4373212321340365832, guid: 9d30dd8d8ba176740855f4bf5fdee955, type: 3}
-    dropRate: 100
+    dropRate: 60
 --- !u!114 &7836314103056753550
 MonoBehaviour:
   m_ObjectHideFlags: 0

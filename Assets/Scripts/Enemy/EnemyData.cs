@@ -1,10 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObjects/Enemy")]
-public class EnemyScriptableObject : ScriptableObject
+public class EnemyData : ScriptableObject
 {
     // Base stats
     public string e_name;
+
+    public string deathAnimName;
     
     [SerializeField]
     private float speed;

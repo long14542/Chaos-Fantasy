@@ -1,4 +1,4 @@
-
+﻿using UnityEngine;
 
 public class SwordProjectile : Projectile
 {
@@ -8,6 +8,10 @@ public class SwordProjectile : Projectile
         base.Start();
 
         transform.position += direction * -0.1f;
+    }
+    public void SetRange(float rangeMultiplier)
+    {
+        transform.localScale *= rangeMultiplier;
     }
 
 }

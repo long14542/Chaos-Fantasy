@@ -3,16 +3,21 @@ using UnityEngine;
 
 public class EnemyHandler : MonoBehaviour
 {
-    public EnemyScriptableObject enemyData;
+    public EnemyData enemyData;
 
     private EnemyMovement movement;
     private EnemySpawner spawner;
     private DropRateManager drop;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
-    public float currentSpeed, currentDamage, currentHealth;
+    public float currentDamage, currentHealth;
     private CircleCollider2D collide;
     private bool isDead = false; // Trạng thái để kiểm soát khi kẻ địch chết
+
+    private GameObject player;
+
+    HashSet<(Collider2D, Collider2D)> ProjectileCollide = new HashSet<(Collider2D, Collider2D)>();
 
 
     void Awake()
@@ -22,14 +27,21 @@ public class EnemyHandler : MonoBehaviour
         drop = GetComponent<DropRateManager>();
         collide = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         currentDamage = enemyData.Damage;
-        currentSpeed = enemyData.Speed;
         currentHealth = enemyData.MaxHealth;
+        movement.currentSpeed = enemyData.Speed;
+    }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void FixedUpdate()
     {
+        CheckDeathAnimation();
         // Only check on Objects layer to reduce the number of unncessary cheks
         LayerMask mask = LayerMask.GetMask("Objects");
         // Check for nearby colliders within collider radius
@@ -44,8 +56,24 @@ public class EnemyHandler : MonoBehaviour
         {
             foreach (Collider2D obj2 in nearbyObjects)
             {
-                // Skip self-collision and already processed pairs
-                if (obj1 == obj2 || processedPairs.Contains((obj1, obj2)) || processedPairs.Contains((obj2, obj1)))
+                if (obj1 == obj2)
+                    continue;
+
+                bool isProjectile1 = obj1.CompareTag("Projectile");
+                bool isProjectile2 = obj2.CompareTag("Projectile");
+                
+                if (isProjectile1 || isProjectile2)
+                {
+                    if (ProjectileCollide.Contains((obj1, obj2)) || ProjectileCollide.Contains((obj2, obj1)))
+                        continue;
+                    
+                    HandleProjectile(obj1, obj2, isProjectile1);
+                    ProjectileCollide.Add((obj1, obj2));
+                    continue;
+                }
+                
+                // Skipalready processed pairs
+                if (processedPairs.Contains((obj1, obj2)) || processedPairs.Contains((obj2, obj1)))
                     continue;
 
                 // Add the pair to the processed set
@@ -55,6 +83,21 @@ public class EnemyHandler : MonoBehaviour
                 HandleOverlap(obj1, obj2);
             }
         }
+
+        CheckPlayerDistance();
+    }
+
+    private void CheckPlayerDistance()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) >= 20f)
+        {
+            Relocate();
+        }
+    }
+
+    private void Relocate()
+    {
+        transform.position = player.transform.position + spawner.spawnPoints[Random.Range(0, spawner.spawnPoints.Count)].position;
     }
 
     public void TakeDamage(int dmg)
@@ -68,7 +111,6 @@ public class EnemyHandler : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            ReturnToPool(); // Animation is currently bug, added this to return entity to object pool
         }
         
     }
@@ -86,6 +128,8 @@ public class EnemyHandler : MonoBehaviour
         {
             animator.SetBool("isDead", true);
         }
+        
+        ProjectileCollide.Clear(); // Clear projectile pairs when reset
 
         // Rớt đồ
         if (drop != null) drop.DropPickUp();
@@ -103,7 +147,7 @@ public class EnemyHandler : MonoBehaviour
         {
             // Kiểm tra nếu hoạt ảnh chết đã hoàn tất
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.IsName("Die") && stateInfo.normalizedTime >= 1f) // Hoạt ảnh "Die" kết thúc
+            if (stateInfo.IsName(enemyData.deathAnimName) && stateInfo.normalizedTime > 1 && !animator.IsInTransition(0)) // Hoạt ảnh "Die" kết thúc
             {
                 ReturnToPool();
             }
@@ -112,9 +156,9 @@ public class EnemyHandler : MonoBehaviour
 
     private void ReturnToPool()
     {
+
         ObjectPools.EnqueueObject(this, enemyData.name);
         spawner.enemiesAlive--;
-
         ResetEnemy();
     }
 
@@ -144,22 +188,45 @@ public class EnemyHandler : MonoBehaviour
             }
             else if (isPlayer1)
             {
+                obj1.GetComponent<CharacterHandler>().TakeDamage(currentDamage);
                 // Only move obj2 if obj1 is the player
                 obj2.transform.position -= (Vector3)(overlap * direction.normalized);
             }
             else
             {
+                obj2.GetComponent<CharacterHandler>().TakeDamage(currentDamage);
                 // Only move obj1 if obj2 is the player
                 obj1.transform.position += (Vector3)(overlap * direction.normalized);
             }
         }
     }
 
+    void HandleProjectile(Collider2D obj1, Collider2D obj2, bool isProjectile1)
+    {
+        if (isProjectile1)
+        {
+            Projectile projectile = obj1.GetComponent<Projectile>();
+            TakeDamage((int)projectile.MightAppliedDamaged());
+            projectile.DecreasePierce();
+        }
+        else
+        {
+            Projectile projectile = obj2.GetComponent<Projectile>();
+            TakeDamage((int)projectile.MightAppliedDamaged());
+            projectile.DecreasePierce();
+        }
+    }
 
-    private void ResetEnemy()
+
+    void ResetEnemy()
     {
         isDead = false;
         currentHealth = enemyData.MaxHealth;
+        
+        // Resetting enemy's opacity
+        Color color = spriteRenderer.color;
+        color.a = 1f; // Fully visible
+        spriteRenderer.color = color;
 
         // Kích hoạt lại collider
         if (collide != null) collide.enabled = true;
