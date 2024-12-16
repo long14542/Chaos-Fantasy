@@ -18,7 +18,7 @@ public class EnemyHandler : MonoBehaviour
     private GameObject player;
 
     HashSet<(Collider2D, Collider2D)> ProjectileCollide = new HashSet<(Collider2D, Collider2D)>();
-
+    AudioManager audioManager;
 
     void Awake()
     {
@@ -32,6 +32,7 @@ public class EnemyHandler : MonoBehaviour
         currentDamage = enemyData.Damage;
         currentHealth = enemyData.MaxHealth;
         movement.currentSpeed = enemyData.Speed;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -106,6 +107,7 @@ public class EnemyHandler : MonoBehaviour
 
         currentHealth -= dmg;
         movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
+        audioManager.PlaySFX(audioManager.hitenemyMusic);
         DamagePopUp.Create(transform.position, dmg);
         ScoreBoard.Instance.totalDamage += dmg;
         if (currentHealth <= 0)

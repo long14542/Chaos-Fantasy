@@ -1,41 +1,76 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource SFXSource;
+
     public AudioClip menuMusic;
     public AudioClip gameplayMusic;
-    private AudioSource audioSource;
+    public AudioClip atkMusic;
+    public AudioClip deathMusic;
+    public AudioClip hitenemyMusic;
+    private void Awake()
+    {
+        // Đảm bảo AudioManager không bị phá hủy khi chuyển scene
+        DontDestroyOnLoad(gameObject);
+    }
 
-    
-    // Phát nhạc menu
+    private void OnEnable()
+    {
+        // Đăng ký sự kiện sceneLoaded
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        // Hủy đăng ký sự kiện sceneLoaded
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Kiểm tra tên scene để phát nhạc phù hợp
+        if (scene.name == "Menu") // Thay "Menu" bằng tên scene Menu của bạn
+        {
+            PlayMenuMusic();
+        }
+        else if (scene.name == "Gameplay") // Thay "Gameplay" bằng tên scene Gameplay của bạn
+        {
+            PlayGameplayMusic();
+        }
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
+
     public void PlayMenuMusic()
     {
-        // Nếu đang phát gameplay music, dừng lại và phát menu music
-        if (audioSource.clip != menuMusic)
+        if (musicSource.clip != menuMusic)
         {
-            audioSource.Stop();
-            audioSource.clip = menuMusic;
-            audioSource.loop = true;
-            audioSource.Play();
+            musicSource.Stop();
+            musicSource.clip = menuMusic;
+            musicSource.loop = true;
+            musicSource.Play();
         }
     }
 
-    // Phát nhạc gameplay
     public void PlayGameplayMusic()
     {
-        // Dừng nhạc menu nếu đang phát
-        if (audioSource.clip != gameplayMusic)
+        if (musicSource.clip != gameplayMusic)
         {
-            audioSource.Stop();
-            audioSource.clip = gameplayMusic;
-            audioSource.loop = true;
-            audioSource.Play();
+            musicSource.Stop();
+            musicSource.clip = gameplayMusic;
+            musicSource.loop = true;
+            musicSource.Play();
         }
     }
 
-    // Dừng nhạc
     public void StopMusic()
     {
-        audioSource.Stop();
+        musicSource.Stop();
     }
 }
