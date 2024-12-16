@@ -1735,6 +1735,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1823,6 +1824,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1824087626}
   offset: {x: 0, y: 0, z: -10}
+--- !u!81 &519420034
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
 --- !u!1 &532180608
 GameObject:
   m_ObjectHideFlags: 0
@@ -7685,6 +7694,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0}
   ShootDir: {x: 0, y: 0}
   lastHorizontal: {x: 0, y: 0}
+  currentMoveSpeed: 0
 --- !u!95 &1824087628
 Animator:
   serializedVersion: 5
@@ -7731,7 +7741,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
-  currentMoveSpeed: 0
   currentHealth: 0
   currentRecovery: 0
   currentMight: 0
@@ -7760,7 +7769,6 @@ MonoBehaviour:
     expCapIncrease: 16
   weaponId: 0
   itemId: 0
-  timeElasped: 0
 --- !u!114 &1824087631
 MonoBehaviour:
   m_ObjectHideFlags: 0
