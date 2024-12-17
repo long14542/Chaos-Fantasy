@@ -227,7 +227,7 @@ public class EnemyHandler : MonoBehaviour
         
         // Resetting enemy's opacity
         Color color = spriteRenderer.color;
-        color.a = 1f; // Fully visible
+        color = new Color(1, 1, 1); // Fully visible
         spriteRenderer.color = color;
 
         // Kích hoạt lại collider

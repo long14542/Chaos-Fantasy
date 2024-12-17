@@ -23,3 +23,10 @@ MonoBehaviour:
   pierce: 1
   lifeTime: 1.5
   damagePlus: 0
+  Descriptions:
+  - Fire an arrow at facing direction
+  - Fire arrows in 2 directions
+  - Fire in 3 arrows cone shapes
+  - Fire in 4 directions
+  - Max Level
+  - Max Level
