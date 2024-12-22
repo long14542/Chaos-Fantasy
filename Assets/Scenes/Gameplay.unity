@@ -5626,14 +5626,13 @@ GameObject:
   - component: {fileID: 1319460624}
   - component: {fileID: 1319460627}
   - component: {fileID: 1319460626}
-  - component: {fileID: 1319460628}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1319460624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5697,23 +5696,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319460623}
   m_CullTransparentMesh: 1
---- !u!114 &1319460628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319460623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3655011b5cd8ba743b387514e2173d9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyKilledText: {fileID: 1061208497}
-  timeText: {fileID: 1588298004}
-  playerLevelText: {fileID: 922110847}
-  totalDamageText: {fileID: 920223828}
-  gameOverPanel: {fileID: 1319460623}
 --- !u!1 &1369460850
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,13 +6274,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce522722353cfbc4f9d76f13dda078b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 2
   stopWatchDisplay: {fileID: 342780798}
   levelUpScreen: {fileID: 731072956}
-  gameOverDisplay: {fileID: 1319460628}
   pauseMenu: {fileID: 532180608}
   pauseButton: {fileID: 958378087}
   audioManager: {fileID: 0}
+  gameOverPanel: {fileID: 1319460623}
+  enemyKilledText: {fileID: 1061208497}
+  timeText: {fileID: 922110847}
+  playerLevelText: {fileID: 1588298004}
+  totalDamageText: {fileID: 920223828}
 --- !u!4 &1563380504
 Transform:
   m_ObjectHideFlags: 0

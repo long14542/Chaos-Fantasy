@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     {
         Playing,
         Paused,
-        LevelUp
+        LevelUp,
     }
     public GameState currentState;
 
@@ -23,11 +23,17 @@ public class GameManager : MonoBehaviour
 
     [Header("Screens")]
     public GameObject levelUpScreen;
+
     [Header("UI Elements")]
-    public GameOverDisplay gameOverDisplay;
     public GameObject pauseMenu; 
     public Button pauseButton;
-    public AudioManager audioManager;  
+    public AudioManager audioManager;
+    [Header("Game Over")]
+    public GameObject gameOverPanel;
+    public TextMeshProUGUI enemyKilledText;
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI playerLevelText;
+    public TextMeshProUGUI totalDamageText;
     void Awake()
     {
         if (instance == null)
@@ -48,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         levelUpScreen.SetActive(false);
         pauseMenu.SetActive(false);
+        gameOverPanel.SetActive(false);
     }
     void Start()
     {
@@ -153,9 +160,20 @@ public class GameManager : MonoBehaviour
     }
     public void TriggerGameOver()
     {
-        gameOverDisplay.ShowGameOverScreen();
+        ShowGameOverScreen();
         Time.timeScale = 0; // Dừng trò chơi
-    }
 
+    }
+    public void ShowGameOverScreen()
+    {
+        // Gán dữ liệu từ ScoreBoard
+        var scoreboard = ScoreBoard.Instance;
+        enemyKilledText.text = $"Enemies Killed: {scoreboard.enemyKilled}";
+        timeText.text = $"Time: {scoreboard.timeScoreboard.text}";
+        playerLevelText.text = $"Player Level: {scoreboard.lvPlayer}";
+        totalDamageText.text = $"Total Damage: {scoreboard.totalDamage}";
+
+        gameOverPanel.SetActive(true);
+    }
 }
 
