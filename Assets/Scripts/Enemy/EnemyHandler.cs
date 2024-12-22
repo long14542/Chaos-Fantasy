@@ -101,21 +101,29 @@ public class EnemyHandler : MonoBehaviour
         transform.position = player.transform.position + spawner.spawnPoints[Random.Range(0, spawner.spawnPoints.Count)].position;
     }
 
+    private int currentHitEnemies = 0;
+
     public void TakeDamage(int dmg)
     {
         if (isDead) return;
 
         currentHealth -= dmg;
-        movement.Knockback(5f, 0.2f); // Đẩy lùi khi nhận sát thương
-        audioManager.PlaySFX(audioManager.hitenemyMusic);
+        movement.Knockback(5f, 0.2f);
+
+        // Tăng bộ đếm và giới hạn âm thanh
+        currentHitEnemies++;
+        float volume = Mathf.Clamp(1f / currentHitEnemies, 0.2f, 1f); // Giảm âm lượng khi đánh nhiều kẻ địch
+        audioManager.PlaySFX(audioManager.hitenemyMusic, volume);
+
         DamagePopUp.Create(transform.position, dmg);
         ScoreBoard.Instance.totalDamage += dmg;
         if (currentHealth <= 0)
         {
             Die();
         }
-        
+        currentHitEnemies--; // Giảm bộ đếm khi xử lý xong
     }
+
 
     private void Die()
     {

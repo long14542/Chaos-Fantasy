@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 58790c2764a6822448a3e2556849487c, type: 3}
   maxLevel: 5
-  itemName: Sword
+  itemName: Hammer
   controller: {fileID: 6082097362924063716, guid: 69c73728b5513144f9a1d95cd559f413, type: 3}
   prefab: {fileID: 6187635788430547618, guid: 400b2917225d7f445812d4d2b10b45b0, type: 3}
   speed: 0
