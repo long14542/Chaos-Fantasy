@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Knife : Weapon
 {
-    public int baseKnifeCount = 1;        // Số dao cơ bản
+    public int baseKnifeCount = 2;        // Số dao cơ bản
     public float rotationSpeed = 150f;   // Tốc độ quay mặc định
     public float orbitRadius = 2f;     // Bán kính quay mặc định
     public float defaultSizeFactor = 1f; // Hệ số kích thước mặc định
@@ -40,38 +40,38 @@ public class Knife : Weapon
 
         switch (currentLevel)
         {
-            case 1: // Level 1: 1 dao, kích thước mặc định
-                knifeCount = 1;
-                orbitRadius = 1.5f;
-                rotationSpeed = 100f;
-                sizeFactor = defaultSizeFactor;
-                break;
-
-            case 2: // Level 2: 2 dao, kích thước mặc định
+            case 1: // Level 1: 2 dao, kích thước mặc định
                 knifeCount = 2;
                 orbitRadius = 1.5f;
                 rotationSpeed = 100f;
                 sizeFactor = defaultSizeFactor;
                 break;
 
-            case 3: // Level 3: 2 dao, kích thước lớn hơn, quay nhanh hơn
+            case 2: // Level 2: 2 dao, quay nhanh hơn kích thước mặc định
                 knifeCount = 2;
                 orbitRadius = 1.5f;
-                rotationSpeed = 150f; // Tăng tốc độ quay
+                rotationSpeed = 130f;
+                sizeFactor = defaultSizeFactor;
+                break;
+
+            case 3: // Level 3: 3 dao, kích thước lớn hơn
+                knifeCount = 3;
+                orbitRadius = 1.5f;
+                rotationSpeed = 130f; // Tăng tốc độ quay
                 sizeFactor = largeSizeFactor;
                 break;
 
             case 4: // Level 4: 3 dao, kích thước mặc định
                 knifeCount = 3;
                 orbitRadius = 1.5f;
-                rotationSpeed = 100f;
-                sizeFactor = defaultSizeFactor;
+                rotationSpeed = 150f;
+                sizeFactor = largeSizeFactor;
                 break;
 
-            case 5: // Level 5: 3 dao, kích thước lớn hơn
-                knifeCount = 3;
+            case 5: // Level 5: 4 dao, kích thước lớn hơn
+                knifeCount = 4;
                 orbitRadius = 1.5f;
-                rotationSpeed = 150f; // Tăng tốc độ quay
+                rotationSpeed = 200f; // Tăng tốc độ quay
                 sizeFactor = largeSizeFactor;
                 break;
 
