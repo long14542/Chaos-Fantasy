@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b499a91e9b0ee9145bb7db3bdf0c6dc0, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  icon: {fileID: 424051949, guid: a4dfd3b6a6d996b42b436de6d023179b, type: 3}
+  icon: {fileID: 21300000, guid: ab1a89a55e745014aa3dc1a99061c498, type: 3}
   maxLevel: 5
   itemName: Sword
   controller: {fileID: 5386848642831577647, guid: 0f40393f2e450c44fb08274d5a6d677c, type: 3}
