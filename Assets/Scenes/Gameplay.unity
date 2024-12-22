@@ -2875,7 +2875,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2c73bb546b0925a4ca3df7e57ad951da, type: 2}
   - {fileID: 11400000, guid: 68d696dda5e36194186be883545e2083, type: 2}
   - {fileID: 11400000, guid: eed56a8b4c5341f47ae90151b15c980d, type: 2}
-  - {fileID: 11400000, guid: 1d9b2afc9c9784944814447e9e6e067f, type: 2}
   unavailableItems: []
   TableUI:
   - displayName: {fileID: 873597298}

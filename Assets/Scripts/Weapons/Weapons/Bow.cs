@@ -78,7 +78,7 @@ public class Bow : Weapon
         arrow.transform.position = this.transform.position;
 
         // Truyền hướng bắn cho projectile
-        KnifeProjectile projectile = arrow.GetComponent<KnifeProjectile>();
+        BowProjectile projectile = arrow.GetComponent<BowProjectile>();
         if (projectile != null)
         {
             projectile.CheckDirection(direction);
