@@ -23,4 +23,9 @@ MonoBehaviour:
   pierce: 99
   lifeTime: 0.34
   damagePlus: 0
-  Descriptions: []
+  Descriptions:
+  - Hit in small area
+  - Hit in small area
+  - Hit in small area
+  - Hit in small area
+  - Hit in small area
