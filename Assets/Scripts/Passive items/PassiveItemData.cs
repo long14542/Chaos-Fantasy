@@ -6,6 +6,6 @@ public class PassiveItemData : ItemData
 {
     public GameObject prefab;
     public float multiplier;
-    public int multiplierUpNextLevel;
+    public float multiplierUpNextLevel;
     public List<string> Descriptions;
 }

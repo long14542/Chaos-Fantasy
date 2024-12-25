@@ -2877,6 +2877,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eed56a8b4c5341f47ae90151b15c980d, type: 2}
   - {fileID: 11400000, guid: 1d9b2afc9c9784944814447e9e6e067f, type: 2}
   - {fileID: 11400000, guid: 3131e1db640180e4db009c0a76bf345a, type: 2}
+  - {fileID: 11400000, guid: ce9205dcddaa6d649b310a6c3c2c8497, type: 2}
   unavailableItems: []
   TableUI:
   - displayName: {fileID: 873597298}
@@ -8186,7 +8187,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824087622}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
