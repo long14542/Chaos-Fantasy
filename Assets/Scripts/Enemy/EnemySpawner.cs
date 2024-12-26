@@ -69,7 +69,9 @@ public class EnemySpawner : MonoBehaviour
         {
             currentWave += 1;
         }
+        Debug.Log(currentWave);
     }
+
 
 
 

@@ -2624,23 +2624,71 @@ MonoBehaviour:
     enemyGroups:
     - enemyName: Ghost
       spawnCount: 0
-    - enemyName: Bat
+    - enemyName: Red Ghost
       spawnCount: 0
-    - enemyName: Skeleton
+    - enemyName: Bat
       spawnCount: 0
     totalSpawnCount: 0
     spawnInterval: 1
   - waveName: wave 2
     enemyGroups:
-    - enemyName: Red Ghost
+    - enemyName: Bat
+      spawnCount: 0
+    - enemyName: Crow
+      spawnCount: 0
+    - enemyName: Metal
+      spawnCount: 0
+    totalSpawnCount: 0
+    spawnInterval: 1
+  - waveName: wave 3
+    enemyGroups:
+    - enemyName: AxeDemon
+      spawnCount: 0
+    - enemyName: Bringer
+      spawnCount: 0
+    - enemyName: Cthulu
+      spawnCount: 0
+    totalSpawnCount: 0
+    spawnInterval: 1
+  - waveName: wave 4
+    enemyGroups:
+    - enemyName: CultistPriest
+      spawnCount: 0
+    - enemyName: Bringer
+      spawnCount: 0
+    - enemyName: Cthulu
+      spawnCount: 0
+    - enemyName: DungeonMaster
+      spawnCount: 0
+    totalSpawnCount: 0
+    spawnInterval: 1
+  - waveName: wave 5
+    enemyGroups:
+    - enemyName: CultistPriest
+      spawnCount: 0
+    - enemyName: DemonSlime
+      spawnCount: 0
+    - enemyName: Cthulu
+      spawnCount: 0
+    totalSpawnCount: 0
+    spawnInterval: 1
+  - waveName: wave 6
+    enemyGroups:
+    - enemyName: FrostGuardian
+      spawnCount: 0
+    - enemyName: MechaGolem
+      spawnCount: 0
+    - enemyName: ShardsoulSlayer
+      spawnCount: 0
+    - enemyName: SkeletonSpider
       spawnCount: 0
     totalSpawnCount: 0
     spawnInterval: 1
   currentWave: 0
   enemiesAlive: 0
-  maxEnemies: 300
+  maxEnemies: 50
   maxEnemiesReached: 0
-  waveInterval: 60
+  waveInterval: 20
   spawnPoints:
   - {fileID: 2127915127}
   - {fileID: 1502776458}
@@ -7162,6 +7210,18 @@ MonoBehaviour:
   - {fileID: 6619004742912599845, guid: e5e6befcd9aa04f4aa751a8e2c80f335, type: 3}
   - {fileID: -714600252653890725, guid: 556641b4fde8c794db2e7d118361a793, type: 3}
   - {fileID: -533679909414043143, guid: 8696ddd9c66c5424eb3d1e0e436707fa, type: 3}
+  - {fileID: 1900256436683880336, guid: c072811386bae1542bbada5d89a59be2, type: 3}
+  - {fileID: 7521518443035718235, guid: a1bc56da6fae9bc41a31ea9aabf5a34d, type: 3}
+  - {fileID: 6939546562238060562, guid: ba8ea20a8327bd7499ee8486c0cf289c, type: 3}
+  - {fileID: -6171491766414554747, guid: 5980aafde6d8b1d4793ef1b964f191fc, type: 3}
+  - {fileID: 8717864636428458450, guid: 2e6cb9624dcab0f45971fb580bdb895c, type: 3}
+  - {fileID: -8032974321342860757, guid: 578342f78b58ec84f815cac6530bbf79, type: 3}
+  - {fileID: 9126713557164822820, guid: 589da902365060b47b8afbafc4fa5e11, type: 3}
+  - {fileID: -4828867097949715779, guid: 6f5532ac82de1eb4ab6f77525ee3baf3, type: 3}
+  - {fileID: 5420558394585680283, guid: fb98c7350eaedc340b0caf01290cdbce, type: 3}
+  - {fileID: 7401628220713672399, guid: 5eb86400f7d23244ab7c5d99eb843c4e, type: 3}
+  - {fileID: 5692795745600819551, guid: 21885a9088b68504bba6d7500548d6de, type: 3}
+  - {fileID: -2570217254407855040, guid: 7e6062040a7d141479b566fd6c3e841b, type: 3}
   popUpPrefab: {fileID: 2900527051445591179, guid: 009627a5eb1edae448c34b1cee4c18dc, type: 3}
 --- !u!4 &1752563134
 Transform:

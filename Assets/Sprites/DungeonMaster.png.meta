@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 4aed1c94027a7e94c8a989e4bcd20bd7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DungeonMaster_5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1084
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90c9759fffc74a49803f0a574cf604e
+      internalID: 167132086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1084
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15fcb68a47b33942b2d1ecc772659b4
+      internalID: -1998845579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_7
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 960
+        width: 119
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8242f9ccfe74043b107d443db22b11
+      internalID: 1046663383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_8
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 960
+        width: 128
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ca029279d171148946ba99d81c901b
+      internalID: 993123904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 960
+        width: 99
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968e2b5202091694faaf44907190bbb8
+      internalID: -1658915375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_15
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 960
+        width: 98
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229a9b7f8b256c54098f9da27190b54c
+      internalID: 1484988693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_24
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 748
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8c4faccf8c827499933f83b8170eab
+      internalID: 345552494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_25
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 748
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d0d564b7e2e1349bdf42fc2b7ce386
+      internalID: 365953683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_26
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 748
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a04e5e514ee7f4b858bf930fdb120f
+      internalID: -1044387173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 72
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb4abb03d7c76143b8f25790ad93662
+      internalID: 79705607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 640
+        width: 72
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268b1efa498aca74ebda4d955a0106c4
+      internalID: -412510547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 72
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f7783ec8cded343b6cae721e2eec93
+      internalID: -10364701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_34
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 640
+        width: 72
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c85aa04461f09449d9620fdf00d7d5
+      internalID: 1511720141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_112
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 144
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2225656a0f6711f4baa3b1054768ae38
+      internalID: 60449953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_113
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 140
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214eb8e2e4cffcf4dba771e8cf42130b
+      internalID: -1262991191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_115
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 12
+        width: 115
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f5a6fcb64b09845886a28747c919b0
+      internalID: -441306195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_118
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 12
+        width: 110
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd2224b1da15fa439803bcc20e9cfc1
+      internalID: 866230778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_119
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 0
+        width: 113
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0daaaf947f3dbec4cb83475debf0374f
+      internalID: 610319205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMaster_122
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 0
+        width: 114
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68daa376bfbcd6442a9b18ef07b6052d
+      internalID: 1659582599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DungeonMaster_0: 2080030070
+      DungeonMaster_1: 598689475
+      DungeonMaster_10: -1939365386
+      DungeonMaster_100: 1775363749
+      DungeonMaster_101: 933872204
+      DungeonMaster_102: -1811980152
+      DungeonMaster_103: -201221204
+      DungeonMaster_104: -1069081563
+      DungeonMaster_105: 608900260
+      DungeonMaster_106: -645316320
+      DungeonMaster_107: -92114860
+      DungeonMaster_108: -103159115
+      DungeonMaster_109: -1689323306
+      DungeonMaster_11: 1508831252
+      DungeonMaster_110: 1949790422
+      DungeonMaster_111: 190398121
+      DungeonMaster_112: 60449953
+      DungeonMaster_113: -1262991191
+      DungeonMaster_114: -374108915
+      DungeonMaster_115: -441306195
+      DungeonMaster_116: 1189740252
+      DungeonMaster_117: 1183026892
+      DungeonMaster_118: 866230778
+      DungeonMaster_119: 610319205
+      DungeonMaster_12: 1835795738
+      DungeonMaster_120: -1531042652
+      DungeonMaster_121: 506189492
+      DungeonMaster_122: 1659582599
+      DungeonMaster_123: -676547325
+      DungeonMaster_13: 1899574295
+      DungeonMaster_14: -1658915375
+      DungeonMaster_15: 1484988693
+      DungeonMaster_16: 558873574
+      DungeonMaster_17: 2000064852
+      DungeonMaster_18: 2027792283
+      DungeonMaster_19: -453979728
+      DungeonMaster_2: 2073726074
+      DungeonMaster_20: -94999204
+      DungeonMaster_21: -681436860
+      DungeonMaster_22: 1051145153
+      DungeonMaster_23: 900646470
+      DungeonMaster_24: 345552494
+      DungeonMaster_25: 365953683
+      DungeonMaster_26: -1044387173
+      DungeonMaster_27: 1528727666
+      DungeonMaster_28: 79705607
+      DungeonMaster_29: 1037430006
+      DungeonMaster_3: -1095729485
+      DungeonMaster_30: -412510547
+      DungeonMaster_31: 1345125303
+      DungeonMaster_32: -10364701
+      DungeonMaster_33: 1455059638
+      DungeonMaster_34: 1511720141
+      DungeonMaster_35: -30219552
+      DungeonMaster_36: -1145263178
+      DungeonMaster_37: 1674651123
+      DungeonMaster_38: -1069036724
+      DungeonMaster_39: 1390685077
+      DungeonMaster_4: 298463880
+      DungeonMaster_40: -879008010
+      DungeonMaster_41: -912259118
+      DungeonMaster_42: 1874678228
+      DungeonMaster_43: -2037186549
+      DungeonMaster_44: -1356709118
+      DungeonMaster_45: 1340540738
+      DungeonMaster_46: -1642270848
+      DungeonMaster_47: -229654634
+      DungeonMaster_48: 698724391
+      DungeonMaster_49: -941505591
+      DungeonMaster_5: 167132086
+      DungeonMaster_50: 1854074847
+      DungeonMaster_51: -983733336
+      DungeonMaster_52: 1838575594
+      DungeonMaster_53: 1255016499
+      DungeonMaster_54: -1841725016
+      DungeonMaster_55: 1042244611
+      DungeonMaster_56: -363098037
+      DungeonMaster_57: 1907158452
+      DungeonMaster_58: 1531058056
+      DungeonMaster_59: 1506837377
+      DungeonMaster_6: -1998845579
+      DungeonMaster_60: -906601567
+      DungeonMaster_61: 1376648110
+      DungeonMaster_62: -901687221
+      DungeonMaster_63: -320901112
+      DungeonMaster_64: -739254167
+      DungeonMaster_65: 906343465
+      DungeonMaster_66: 331636504
+      DungeonMaster_67: 1183655661
+      DungeonMaster_68: -1244955284
+      DungeonMaster_69: -211678565
+      DungeonMaster_7: 1046663383
+      DungeonMaster_70: 292892426
+      DungeonMaster_71: -2122316929
+      DungeonMaster_72: 65265747
+      DungeonMaster_73: -333158600
+      DungeonMaster_74: 1547026628
+      DungeonMaster_75: 299490807
+      DungeonMaster_76: 278356194
+      DungeonMaster_77: -2040527871
+      DungeonMaster_78: -938810871
+      DungeonMaster_79: 1097926369
+      DungeonMaster_8: 993123904
+      DungeonMaster_80: -113873931
+      DungeonMaster_81: 1591186539
+      DungeonMaster_82: 1802374010
+      DungeonMaster_83: -1554974339
+      DungeonMaster_84: -534994923
+      DungeonMaster_85: -1033242670
+      DungeonMaster_86: -1263917332
+      DungeonMaster_87: 48701295
+      DungeonMaster_88: -119711171
+      DungeonMaster_89: 1103276692
+      DungeonMaster_9: -752822735
+      DungeonMaster_90: -733220315
+      DungeonMaster_91: -1206972386
+      DungeonMaster_92: -1847882264
+      DungeonMaster_93: 949708316
+      DungeonMaster_94: -10424956
+      DungeonMaster_95: -242248910
+      DungeonMaster_96: 869126669
+      DungeonMaster_97: -349484073
+      DungeonMaster_98: -633863291
+      DungeonMaster_99: 286424128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

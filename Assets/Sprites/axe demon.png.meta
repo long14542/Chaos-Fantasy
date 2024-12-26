@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f5d99b3f3d63744e9907e371a72ed1d
+guid: 53c1bc997dd52dc45bcbc7837dca1c43
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_0
+      name: axe demon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3200
-        width: 800
-        height: 400
+        x: 34
+        y: 487
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e167dbe5ed7d68547bb7ca51bb4ba09d
-      internalID: 1772976568
+      spriteID: e3a0730840c19484d8979df3cb3b7a68
+      internalID: -868847625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_1
+      name: axe demon_1
       rect:
         serializedVersion: 2
-        x: 800
-        y: 3200
-        width: 800
-        height: 400
+        x: 138
+        y: 488
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8277830a98caf1e4e9e7335be29ba787
-      internalID: -2036254759
+      spriteID: a3b360e8b2b1744458b22a6328903569
+      internalID: -729815678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_2
+      name: axe demon_2
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 3200
-        width: 800
-        height: 400
+        x: 213
+        y: 488
+        width: 47
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83739d38b5f95384bb060b7e868702d3
-      internalID: 1582872196
+      spriteID: 9ba6af45b814b5d46b2d55522c3ac8f2
+      internalID: 808399202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_3
+      name: axe demon_3
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 3200
-        width: 800
-        height: 400
+        x: 316
+        y: 488
+        width: 80
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 890514cfa237c534b828013266fe5e77
-      internalID: -1414468725
+      spriteID: 663d9e4ce198ec8408de59c8eac52526
+      internalID: -1062858850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_4
+      name: axe demon_4
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 3200
-        width: 800
-        height: 400
+        x: 440
+        y: 488
+        width: 27
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2de105de3c6df784bb1112f2b63ce0d3
-      internalID: 1086091261
+      spriteID: fdfdae3a0fdc21848b54bf4b332c67bd
+      internalID: -521635008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_5
+      name: axe demon_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2800
-        width: 800
-        height: 400
+        x: 540
+        y: 488
+        width: 38
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1d69e1ffa4f3e4589d03b2c2a7f218
-      internalID: -1164081460
+      spriteID: 1a06bed4752649b4d8e6d7028c93e3eb
+      internalID: 35284091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_6
+      name: axe demon_6
       rect:
         serializedVersion: 2
-        x: 800
-        y: 2800
-        width: 800
-        height: 400
+        x: 634
+        y: 487
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8335a4da1a71ec840a2644942602ccd4
-      internalID: 965085859
+      spriteID: 3df05463978048444a17878f0f253fa2
+      internalID: 938104026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_7
+      name: axe demon_7
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 2800
-        width: 800
-        height: 400
+        x: 724
+        y: 488
+        width: 35
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b756dd8ed458944995d6771d283df2e
-      internalID: 442490498
+      spriteID: 845f529cc19d6c743932439927e7be43
+      internalID: -579366727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_8
+      name: axe demon_8
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 2800
-        width: 800
-        height: 400
+        x: 10
+        y: 408
+        width: 51
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6acca624c8fa8ad4f88e01fbfa152859
-      internalID: -1894127010
+      spriteID: 4ed1b2492faf3174db8a76a0e8818315
+      internalID: 2015369593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_9
+      name: axe demon_9
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 2800
-        width: 800
-        height: 400
+        x: 113
+        y: 408
+        width: 79
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20fe13367de2fb548bbbd112de460b17
-      internalID: 942335856
+      spriteID: 7fd2ab778d871ed489fe7a7f5de8d986
+      internalID: -2147481162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_10
+      name: axe demon_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2400
-        width: 800
-        height: 400
+        x: 239
+        y: 408
+        width: 25
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4522ecf61a40c194591c6a4c3848489a
-      internalID: -1153348185
+      spriteID: a1a179e6899c561429564039e7531940
+      internalID: -919025938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_11
+      name: axe demon_11
       rect:
         serializedVersion: 2
-        x: 800
-        y: 2400
-        width: 800
-        height: 400
+        x: 340
+        y: 408
+        width: 41
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3771cd7bea83cf4e807c68415244c17
-      internalID: 600044522
+      spriteID: 3e480303d5f15974c8f6db8f4d2d284b
+      internalID: -430453422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_12
+      name: axe demon_12
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 2400
-        width: 800
-        height: 400
+        x: 434
+        y: 407
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9afcf4e29ab8ff4a842aadc5dfb396b
-      internalID: -1335978455
+      spriteID: 4450bd45814d6d34fb3e1a398e8f65bb
+      internalID: 1653554319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_13
+      name: axe demon_13
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 2400
-        width: 800
-        height: 400
+        x: 538
+        y: 407
+        width: 32
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +397,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24585d7d164a4c0429ea470976d824b5
-      internalID: 1272882926
+      spriteID: 2b3d5d8f751c4984caf3328bb6fb97e0
+      internalID: -1690267782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_14
+      name: axe demon_14
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 2400
-        width: 800
-        height: 400
+        x: 632
+        y: 408
+        width: 36
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e32ba2b9f9df80d42b3ce802b1b79511
-      internalID: -1053756432
+      spriteID: b3f4bba65a4441540817891df299bbb5
+      internalID: 1246374469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_15
+      name: axe demon_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2000
-        width: 800
-        height: 400
+        x: 728
+        y: 408
+        width: 46
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +439,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a454d4e80158a27458c5a060c7d65f68
-      internalID: 477738655
+      spriteID: ff06f5d7cae20cf4284a4391a90dbf81
+      internalID: 1094759175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_16
+      name: axe demon_16
       rect:
         serializedVersion: 2
-        x: 800
-        y: 2000
-        width: 800
-        height: 400
+        x: 34
+        y: 327
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +460,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b1da26d398d3234688de9e7e3e850b9
-      internalID: -1137340839
+      spriteID: 7c31c5055b8869a49a92d4685b0a73be
+      internalID: 1062217414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_17
+      name: axe demon_17
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 2000
-        width: 800
-        height: 400
+        x: 133
+        y: 328
+        width: 30
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,20 +481,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d0e8c59516806f44b91119a588bf752
-      internalID: 1186363358
+      spriteID: 11b63337543ba9547a2c41e3bec97944
+      internalID: 1422941048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_18
+      name: axe demon_18
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 2000
-        width: 800
-        height: 400
+        x: 227
+        y: 329
+        width: 39
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,20 +502,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cf7c300c5eca7c4988d402107bcc949
-      internalID: -1095159043
+      spriteID: b26aa0625f879ea4dba8aeeff53c3e5a
+      internalID: 1505849020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_19
+      name: axe demon_19
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 2000
-        width: 800
-        height: 400
+        x: 325
+        y: 328
+        width: 52
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,20 +523,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b8d6e637a8488489235c09a85d03f0
-      internalID: 594346575
+      spriteID: 163c12f7ae48d7c4aa191a13e8e4349e
+      internalID: 406191667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_20
+      name: axe demon_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1600
-        width: 800
-        height: 400
+        x: 434
+        y: 327
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,20 +544,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06d74a38e20dcb746a8813cc5ad752b8
-      internalID: -481448139
+      spriteID: 06bde8fc30fd2ae4bb1e2cb1dfe1b865
+      internalID: -1722015119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_21
+      name: axe demon_21
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1600
-        width: 800
-        height: 400
+        x: 533
+        y: 325
+        width: 26
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,20 +565,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 865b2c89aa2ff0a49b794deb06f8b9f1
-      internalID: 1079774215
+      spriteID: 5ac8411782b167e4cb8068054a347782
+      internalID: -1781300399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_22
+      name: axe demon_22
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1600
-        width: 800
-        height: 400
+        x: 632
+        y: 327
+        width: 26
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,20 +586,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b9de81a3beddc643bdf42938b05a865
-      internalID: 740004503
+      spriteID: 3030ba4e15de0104ab6dafad13c5ce88
+      internalID: 607564997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_23
+      name: axe demon_23
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1600
-        width: 800
-        height: 400
+        x: 734
+        y: 327
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,20 +607,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 225e4dd8e8ba53d42a6afc5cd9175eec
-      internalID: -1103419181
+      spriteID: bfeada58ed5e9474f9b00330fe7b7e53
+      internalID: -1168633307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_24
+      name: axe demon_24
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 1600
-        width: 800
-        height: 400
+        x: 33
+        y: 246
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,20 +628,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 615cacfe90693524f88c3a1ebbeec3cc
-      internalID: 330550639
+      spriteID: d09548aa12ce29348972d69f8b2242dd
+      internalID: -725506936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_25
+      name: axe demon_25
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1200
-        width: 800
-        height: 400
+        x: 133
+        y: 246
+        width: 28
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -649,20 +649,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f4109c88c74974ab7f80666b71e0c3
-      internalID: 1468705059
+      spriteID: b81a467fe93f9a04d8d6982cf9a7036a
+      internalID: -2129063921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_26
+      name: axe demon_26
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1200
-        width: 800
-        height: 400
+        x: 232
+        y: 246
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,20 +670,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd82ae6373766894d8d456b70f3dff8b
-      internalID: -1173745958
+      spriteID: a1ff7da2493bc5449aaf54bd530fedc9
+      internalID: 861847502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_27
+      name: axe demon_27
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1200
-        width: 800
-        height: 400
+        x: 335
+        y: 246
+        width: 27
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -691,20 +691,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f6ef0bd9206a24d895f67afc0de499
-      internalID: -1418088376
+      spriteID: 3fb6c65615e58ed4b96cbdd4873cb484
+      internalID: 2080706217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_28
+      name: axe demon_28
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1200
-        width: 800
-        height: 400
+        x: 434
+        y: 247
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,20 +712,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15fa06225497b4441a1c7cb5ed967cd6
-      internalID: -234365477
+      spriteID: 365fbdbc50325a840b0bc28d6ca571ce
+      internalID: 1782418916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_29
+      name: axe demon_29
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 1200
-        width: 800
-        height: 400
+        x: 534
+        y: 248
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -733,20 +733,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6140a1212e4214a48841162f5b6930b7
-      internalID: 1350847425
+      spriteID: 99b3e0cddd4c5734eb547411e778271e
+      internalID: 1021067312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_30
+      name: axe demon_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 800
-        width: 800
-        height: 400
+        x: 634
+        y: 248
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -754,20 +754,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c7a90be4e502c14db4861a728d09217
-      internalID: 1896141294
+      spriteID: cbddf1dcec52ef04f83963e361acf099
+      internalID: -57063353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_31
+      name: axe demon_31
       rect:
         serializedVersion: 2
-        x: 800
-        y: 800
-        width: 800
-        height: 400
+        x: 734
+        y: 248
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,20 +775,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6ada0f4f8e0ef847bf67cc4cc33f95c
-      internalID: 205775660
+      spriteID: b63bdfc0c76c1c24a9dbdebb7288a743
+      internalID: 1836267822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_32
+      name: axe demon_32
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 800
-        width: 800
-        height: 400
+        x: 34
+        y: 168
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,20 +796,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45a0a15cf76e62341b16da24bd42a1bc
-      internalID: -1223604307
+      spriteID: 02395ad2b71e0964aaf616f85cf12fbd
+      internalID: -1703079180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_33
+      name: axe demon_33
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 800
-        width: 800
-        height: 400
+        x: 134
+        y: 167
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -817,20 +817,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5794eb25e06b91243a5606cd5e2890d1
-      internalID: -880046091
+      spriteID: 83cdecda84f049a40a023e0fa7a86534
+      internalID: 246969930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_34
+      name: axe demon_34
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 800
-        width: 800
-        height: 400
+        x: 234
+        y: 168
+        width: 24
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -838,20 +838,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c26db752ec03d1e40965d08f6c7179ed
-      internalID: -1283224876
+      spriteID: c4ad7197332d9bc4da1815d2071bfb50
+      internalID: 1695243974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_35
+      name: axe demon_35
       rect:
         serializedVersion: 2
-        x: 0
-        y: 400
-        width: 800
-        height: 400
+        x: 332
+        y: 166
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -859,20 +859,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8ea88da8c93ba4418cdef29c628cdf6
-      internalID: -713767234
+      spriteID: 75dbe98ca0d2b4b4db883a02495adeb6
+      internalID: 2132948868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_36
+      name: axe demon_36
       rect:
         serializedVersion: 2
-        x: 800
-        y: 400
-        width: 800
-        height: 400
+        x: 434
+        y: 168
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -880,20 +880,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e45f78a2294e724188f9b13c8b8895b
-      internalID: 936727571
+      spriteID: 89652f0435d902545b8836d0f1f6e347
+      internalID: 1172161805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_37
+      name: axe demon_37
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 400
-        width: 800
-        height: 400
+        x: 534
+        y: 168
+        width: 24
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -901,20 +901,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec17818c598d57f4ebd065f07f2a401f
-      internalID: 611492114
+      spriteID: 921ac03ebd4cfd243946592940a0202b
+      internalID: 1064385189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_38
+      name: axe demon_38
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 400
-        width: 800
-        height: 400
+        x: 634
+        y: 166
+        width: 24
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -922,20 +922,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 491038db89c05bc4582eca8204e67fe8
-      internalID: -1582453227
+      spriteID: c15a7c939692c2448814e02d3838bb88
+      internalID: 2004452790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_39
+      name: axe demon_39
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 400
-        width: 800
-        height: 400
+        x: 734
+        y: 168
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -943,20 +943,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71910f589725aac4fa5d21ba16a36db0
-      internalID: 1826438048
+      spriteID: 1e2d2987c5fe7614bb24d71f3b6b5746
+      internalID: 740172477
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_40
+      name: axe demon_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 400
+        x: 24
+        y: 88
+        width: 53
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -964,20 +964,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c02995edbdca20e4cacd2c1167028a50
-      internalID: -1119160899
+      spriteID: b47a53f44c5eb904fbd27e0e8f6bf796
+      internalID: 650057864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_41
+      name: axe demon_41
       rect:
         serializedVersion: 2
-        x: 800
-        y: 0
-        width: 800
-        height: 400
+        x: 129
+        y: 88
+        width: 48
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -985,20 +985,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c6ae0696cabe7b419eadc6ae3b7f7d7
-      internalID: -1400492831
+      spriteID: 7684681205e2e584cb91435e03165ef1
+      internalID: -946020857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_42
+      name: axe demon_42
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 800
-        height: 400
+        x: 231
+        y: 88
+        width: 31
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1006,20 +1006,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d9461dd99a4ae04680584408c299d2a
-      internalID: -2087042518
+      spriteID: 40b205a3d8b23f64584c31ce1795db79
+      internalID: -1074352751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_43
+      name: axe demon_43
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 0
-        width: 800
-        height: 400
+        x: 335
+        y: 86
+        width: 27
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1027,20 +1027,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f9e602a902c519418b7463b5f576f04
-      internalID: -1650472103
+      spriteID: af641c7e1710f624e8260566f518989c
+      internalID: -1005202422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monster1-ezgif.com-gif-to-sprite-converter_44
+      name: axe demon_44
       rect:
         serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 800
-        height: 400
+        x: 434
+        y: 87
+        width: 24
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1048,8 +1048,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f05fa352d25940247993178e061db7ff
-      internalID: 1020822253
+      spriteID: 73650b1cc288ad54db060fcbe2cd0c16
+      internalID: -997805216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe demon_45
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 88
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8012ab8553891d4981dfc5ec743a586
+      internalID: -1013364240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe demon_46
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 86
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f86a96b75c769147bad834e3dfd6fb0
+      internalID: -1338141193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe demon_47
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 88
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e20b8ceafc3a5c42984f05ff42c62bc
+      internalID: -1593100814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe demon_48
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 8
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7935aeba18d3e784d8e9668116ae6763
+      internalID: -400245886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe demon_49
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 6
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1779c269d3cc79541b078da17968ad52
+      internalID: 1696345834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe demon_50
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 8
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d29f788001aa44f89b3ef7bef077e6
+      internalID: -1767389211
       vertices: []
       indices: 
       edges: []
@@ -1065,51 +1191,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      monster1-ezgif.com-gif-to-sprite-converter_0: 1772976568
-      monster1-ezgif.com-gif-to-sprite-converter_1: -2036254759
-      monster1-ezgif.com-gif-to-sprite-converter_10: -1153348185
-      monster1-ezgif.com-gif-to-sprite-converter_11: 600044522
-      monster1-ezgif.com-gif-to-sprite-converter_12: -1335978455
-      monster1-ezgif.com-gif-to-sprite-converter_13: 1272882926
-      monster1-ezgif.com-gif-to-sprite-converter_14: -1053756432
-      monster1-ezgif.com-gif-to-sprite-converter_15: 477738655
-      monster1-ezgif.com-gif-to-sprite-converter_16: -1137340839
-      monster1-ezgif.com-gif-to-sprite-converter_17: 1186363358
-      monster1-ezgif.com-gif-to-sprite-converter_18: -1095159043
-      monster1-ezgif.com-gif-to-sprite-converter_19: 594346575
-      monster1-ezgif.com-gif-to-sprite-converter_2: 1582872196
-      monster1-ezgif.com-gif-to-sprite-converter_20: -481448139
-      monster1-ezgif.com-gif-to-sprite-converter_21: 1079774215
-      monster1-ezgif.com-gif-to-sprite-converter_22: 740004503
-      monster1-ezgif.com-gif-to-sprite-converter_23: -1103419181
-      monster1-ezgif.com-gif-to-sprite-converter_24: 330550639
-      monster1-ezgif.com-gif-to-sprite-converter_25: 1468705059
-      monster1-ezgif.com-gif-to-sprite-converter_26: -1173745958
-      monster1-ezgif.com-gif-to-sprite-converter_27: -1418088376
-      monster1-ezgif.com-gif-to-sprite-converter_28: -234365477
-      monster1-ezgif.com-gif-to-sprite-converter_29: 1350847425
-      monster1-ezgif.com-gif-to-sprite-converter_3: -1414468725
-      monster1-ezgif.com-gif-to-sprite-converter_30: 1896141294
-      monster1-ezgif.com-gif-to-sprite-converter_31: 205775660
-      monster1-ezgif.com-gif-to-sprite-converter_32: -1223604307
-      monster1-ezgif.com-gif-to-sprite-converter_33: -880046091
-      monster1-ezgif.com-gif-to-sprite-converter_34: -1283224876
-      monster1-ezgif.com-gif-to-sprite-converter_35: -713767234
-      monster1-ezgif.com-gif-to-sprite-converter_36: 936727571
-      monster1-ezgif.com-gif-to-sprite-converter_37: 611492114
-      monster1-ezgif.com-gif-to-sprite-converter_38: -1582453227
-      monster1-ezgif.com-gif-to-sprite-converter_39: 1826438048
-      monster1-ezgif.com-gif-to-sprite-converter_4: 1086091261
-      monster1-ezgif.com-gif-to-sprite-converter_40: -1119160899
-      monster1-ezgif.com-gif-to-sprite-converter_41: -1400492831
-      monster1-ezgif.com-gif-to-sprite-converter_42: -2087042518
-      monster1-ezgif.com-gif-to-sprite-converter_43: -1650472103
-      monster1-ezgif.com-gif-to-sprite-converter_44: 1020822253
-      monster1-ezgif.com-gif-to-sprite-converter_5: -1164081460
-      monster1-ezgif.com-gif-to-sprite-converter_6: 965085859
-      monster1-ezgif.com-gif-to-sprite-converter_7: 442490498
-      monster1-ezgif.com-gif-to-sprite-converter_8: -1894127010
-      monster1-ezgif.com-gif-to-sprite-converter_9: 942335856
+      axe demon_0: -868847625
+      axe demon_1: -729815678
+      axe demon_10: -919025938
+      axe demon_11: -430453422
+      axe demon_12: 1653554319
+      axe demon_13: -1690267782
+      axe demon_14: 1246374469
+      axe demon_15: 1094759175
+      axe demon_16: 1062217414
+      axe demon_17: 1422941048
+      axe demon_18: 1505849020
+      axe demon_19: 406191667
+      axe demon_2: 808399202
+      axe demon_20: -1722015119
+      axe demon_21: -1781300399
+      axe demon_22: 607564997
+      axe demon_23: -1168633307
+      axe demon_24: -725506936
+      axe demon_25: -2129063921
+      axe demon_26: 861847502
+      axe demon_27: 2080706217
+      axe demon_28: 1782418916
+      axe demon_29: 1021067312
+      axe demon_3: -1062858850
+      axe demon_30: -57063353
+      axe demon_31: 1836267822
+      axe demon_32: -1703079180
+      axe demon_33: 246969930
+      axe demon_34: 1695243974
+      axe demon_35: 2132948868
+      axe demon_36: 1172161805
+      axe demon_37: 1064385189
+      axe demon_38: 2004452790
+      axe demon_39: 740172477
+      axe demon_4: -521635008
+      axe demon_40: 650057864
+      axe demon_41: -946020857
+      axe demon_42: -1074352751
+      axe demon_43: -1005202422
+      axe demon_44: -997805216
+      axe demon_45: -1013364240
+      axe demon_46: -1338141193
+      axe demon_47: -1593100814
+      axe demon_48: -400245886
+      axe demon_49: 1696345834
+      axe demon_5: 35284091
+      axe demon_50: -1767389211
+      axe demon_6: 938104026
+      axe demon_7: -579366727
+      axe demon_8: 2015369593
+      axe demon_9: -2147481162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
