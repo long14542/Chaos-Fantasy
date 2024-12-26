@@ -210,7 +210,6 @@ public class CharacterHandler : MonoBehaviour
         if (currentHealth < characterData.MaxHealth)
         {
             currentHealth += currentRecovery * Time.deltaTime;
-            Debug.Log(currentHealth);
 
             // To make sure currentHealth never exceed maxHealth
             if (currentHealth > characterData.MaxHealth)

@@ -4,8 +4,8 @@ using UnityEngine;
 public class Weapon : Item
 {
     public WeaponData weaponData;
-    private float cooldown;
-    private float currentCooldownDuration;
+    protected float cooldown;
+    protected float currentCooldownDuration;
 
     protected PlayerMovement pm;
     AudioManager audioManager;

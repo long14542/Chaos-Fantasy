@@ -2636,11 +2636,17 @@ MonoBehaviour:
       spawnCount: 0
     totalSpawnCount: 0
     spawnInterval: 1
+  - waveName: wave 3
+    enemyGroups:
+    - enemyName: Skeleton
+      spawnCount: 0
+    totalSpawnCount: 0
+    spawnInterval: 1
   currentWave: 0
   enemiesAlive: 0
   maxEnemies: 300
   maxEnemiesReached: 0
-  waveInterval: 60
+  waveInterval: 10
   spawnPoints:
   - {fileID: 2127915127}
   - {fileID: 1502776458}
