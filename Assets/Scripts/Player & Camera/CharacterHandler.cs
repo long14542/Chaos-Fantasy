@@ -217,6 +217,7 @@ public class CharacterHandler : MonoBehaviour
                 currentHealth = characterData.MaxHealth;
             }
         }
+        UpdateHealthBar();
     }
 
     public void AcquireWeapon(GameObject wp)

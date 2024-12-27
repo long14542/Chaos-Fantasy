@@ -1,4 +1,3 @@
-using UnityEngine;
 // Wings increases player's movement speed
 public class Wings : PassiveItem
 {

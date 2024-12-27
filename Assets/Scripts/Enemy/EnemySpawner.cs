@@ -37,20 +37,23 @@ public class EnemySpawner : MonoBehaviour
     [Header("Spawn Position")]
     public List<Transform> spawnPoints;
 
+    bool isPreparingNextWave = false; // Add a flag to prevent multiple coroutine calls
     void Start()
     {
         player = FindFirstObjectByType<CharacterHandler>().transform;
     }
 
+
     void Update()
     {
-        // Check to see if it's time to start the next wave
-        if (currentWave < waves.Count)
+        // Check if it's time to start the next wave
+        if (currentWave < waves.Count && !isPreparingNextWave)
         {
             StartCoroutine(StartNextWave());
         }
 
         spawnTimer += Time.deltaTime;
+
         // Enemy spawn after a certain amount of time
         if (spawnTimer >= waves[currentWave].spawnInterval)
         {
@@ -61,15 +64,18 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator StartNextWave()
     {
+        isPreparingNextWave = true; // Set flag to prevent re-entry
+
         // Wait for waveInterval seconds before starting a new wave
         yield return new WaitForSeconds(waveInterval);
 
-        // If there are more waves to start then move on to the new wave and calculate its quota
+        // If there are more waves to start, move to the next wave
         if (currentWave < waves.Count - 1)
         {
             currentWave += 1;
         }
-        Debug.Log(currentWave);
+
+        isPreparingNextWave = false; // Reset flag once coroutine is done
     }
 
 

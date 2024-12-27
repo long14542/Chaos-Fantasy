@@ -20,10 +20,12 @@ MonoBehaviour:
   speed: 2
   damage: 20
   cooldownDuration: 2
-  pierce: 99999
-  lifeTime: 10000
+  pierce: 100
+  lifeTime: 5
   damagePlus: 0
   Descriptions:
+  - Rotate around the player
+  - "\u01B0efwe"
   - "\u01B0efwe"
   - "\u01B0efwe"
   - "\u01B0efwe"

@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
+﻿using UnityEngine;
 
 public class FireballProjectile : Projectile
 {
