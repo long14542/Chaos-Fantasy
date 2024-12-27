@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7401628220713672399}
   - component: {fileID: 8375429388134118704}
   - component: {fileID: 2500307610671570186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Metal
   m_TagString: Enemy
   m_Icon: {fileID: 0}

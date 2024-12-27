@@ -62,15 +62,16 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);  // Hide the pause menu initially
         Time.timeScale = 1f;
 
-    // Gọi nhạc gameplay khi bắt đầu game
-    if (audioManager != null)
-    {
-        audioManager.PlayGameplayMusic();  // Chạy nhạc gameplay
-    }
+        // Gọi nhạc gameplay khi bắt đầu game
+        if (audioManager != null)
+        {
+            audioManager.PlayGameplayMusic();  // Chạy nhạc gameplay
+        }
 
-    // Set up the button's onClick event to toggle pause state
-    pauseButton.onClick.AddListener(TogglePause);
-}    void Update()
+        // Set up the button's onClick event to toggle pause state
+        pauseButton.onClick.AddListener(TogglePause);
+    }   
+    void Update()
     {
         if (currentState == GameState.Playing)
         {
@@ -90,7 +91,6 @@ public class GameManager : MonoBehaviour
                 TogglePause();
             }
         }
-
     }
     public void TogglePause()
     {
@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
         stopWatchDisplay.text = string.Format("{0}:{1:00}", minutes, seconds);
     }
 
-       public void StartGame()
+    public void StartGame()
     {
         // Chuyển sang Gameplay Scene
         SceneManager.LoadScene("GameplayScene");

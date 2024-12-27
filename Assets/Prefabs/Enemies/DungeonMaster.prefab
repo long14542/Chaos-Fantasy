@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1320206462026147794}
   - component: {fileID: 9126713557164822820}
   - component: {fileID: 5824984065815890130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DungeonMaster
   m_TagString: Enemy
   m_Icon: {fileID: 0}

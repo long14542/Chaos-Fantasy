@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1900256436683880336}
   - component: {fileID: 1196982716589551333}
   - component: {fileID: 5848618446624353827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AxeDemon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
