@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6580641483848280627}
   - component: {fileID: 7012310676338064134}
   - component: {fileID: 7521518443035718235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bringer
   m_TagString: Enemy
   m_Icon: {fileID: 0}

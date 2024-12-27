@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6294701640203875553}
   - component: {fileID: 5088587709754001077}
   - component: {fileID: 4403975836964159177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SkeletonSpider
   m_TagString: Enemy
   m_Icon: {fileID: 0}

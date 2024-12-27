@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5692795745600819551}
   - component: {fileID: 4559599626718803093}
   - component: {fileID: 421792711564155135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShardsoulSlayer
   m_TagString: Enemy
   m_Icon: {fileID: 0}

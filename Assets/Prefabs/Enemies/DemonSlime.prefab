@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8032974321342860757}
   - component: {fileID: -8115815961369694492}
   - component: {fileID: 2945140596262419058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DemonSlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}

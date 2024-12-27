@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7634808151496502099}
   - component: {fileID: -6828132718287485043}
   - component: {fileID: -4828867097949715779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrostGuardian
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5823520707767734892}
   - component: {fileID: 8717864636428458450}
   - component: {fileID: 8749170606030879193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CultistPriest
   m_TagString: Enemy
   m_Icon: {fileID: 0}

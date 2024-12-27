@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5920589174346537637}
   - component: {fileID: -2384782732625488134}
   - component: {fileID: 7341291931250330308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cthulu
   m_TagString: Enemy
   m_Icon: {fileID: 0}
