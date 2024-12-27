@@ -50,3 +50,6 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 1d9b2afc9c9784944814447e9e6e067f, type: 2}
   baseKnifeCount: 1
   rotationSpeed: 100
+  orbitRadius: 2
+  defaultSizeFactor: 1
+  largeSizeFactor: 1.5

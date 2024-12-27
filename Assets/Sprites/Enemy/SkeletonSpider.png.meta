@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f86bb5ed7ec07e64fb996c56b411c77a
+guid: c4135810b33fd5e40bacacee0109f49e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bow and Arrows_0
+      name: SkeletonKing_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 16
-        width: 11
-        height: 32
+        x: 48
+        y: 688
+        width: 248
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,125 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f241048c60e58046b7ac900ab5c5543
-      internalID: 69934739
+      spriteID: a25df9866cc9876428787c10e55cc2da
+      internalID: -289491136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bow and Arrows_1
+      name: SkeletonKing_6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 688
+        width: 244
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4e9670ee4acca4088f59a1a2969ec7
+      internalID: 1788688706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonKing_12
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 672
+        width: 292
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a546826476e904eb4f0f4152a2f046
+      internalID: -299947053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonKing_14
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 338
+        width: 290
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86eaf3814289d6d4b9ac011252917e99
+      internalID: 1503526686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonKing_15
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 368
+        width: 244
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea7389a45cfa664192d176eae192819
+      internalID: 2071818208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonKing_16
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 368
+        width: 244
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d541e4d70dc9b42ac7246097a2b282
+      internalID: -750053631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonKing_21
       rect:
         serializedVersion: 2
         x: 32
-        y: 20
-        width: 16
-        height: 9
+        y: 48
+        width: 244
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3017ad400849d24d9022196c325fa22
-      internalID: 1721871025
+      spriteID: 5b41b32e408b96246aaf0bdb6706e818
+      internalID: -1017142819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bow and Arrows_2
+      name: SkeletonKing_23
       rect:
         serializedVersion: 2
-        x: 32
-        y: 37
-        width: 16
-        height: 7
+        x: 368
+        y: 48
+        width: 248
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,50 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9e0ed03f12c2749bf7eda6277699e8
-      internalID: -339830848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bow and Arrows_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 5
-        width: 16
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99d9927e04685e249830852fc1f7f496
-      internalID: 940702900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bow and Arrows_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 5
-        width: 16
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d6394fdd355003438fd076ee3572b05
-      internalID: 1054992505
+      spriteID: 24cbdccc5a95636439206af53e2cb652
+      internalID: 1306227075
       vertices: []
       indices: 
       edges: []
@@ -225,11 +288,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bow and Arrows_0: 69934739
-      Bow and Arrows_1: 1721871025
-      Bow and Arrows_2: -339830848
-      Bow and Arrows_3: 940702900
-      Bow and Arrows_4: 1054992505
+      SkeletonKing_0: -903887492
+      SkeletonKing_1: -292610123
+      SkeletonKing_10: 684230701
+      SkeletonKing_11: 795061589
+      SkeletonKing_12: -299947053
+      SkeletonKing_13: 1679975089
+      SkeletonKing_14: 1503526686
+      SkeletonKing_15: 2071818208
+      SkeletonKing_16: -750053631
+      SkeletonKing_17: 47655189
+      SkeletonKing_18: -1638632194
+      SkeletonKing_19: -978002199
+      SkeletonKing_2: 1960180930
+      SkeletonKing_20: -265672818
+      SkeletonKing_21: -1017142819
+      SkeletonKing_22: -2034742995
+      SkeletonKing_23: 1306227075
+      SkeletonKing_24: -539356962
+      SkeletonKing_3: -289491136
+      SkeletonKing_4: 1095398636
+      SkeletonKing_5: 2117038429
+      SkeletonKing_6: 1788688706
+      SkeletonKing_7: -1486912246
+      SkeletonKing_8: 1838556153
+      SkeletonKing_9: 1011539344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
